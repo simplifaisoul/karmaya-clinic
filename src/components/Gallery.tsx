@@ -1,81 +1,130 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
+import { X, ZoomIn } from 'lucide-react';
 
 const Gallery = () => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-    // Placeholder mapping:
-    // gallery1.jpg: Group photo outside
-    // gallery2.jpg: Inside photo with patient
-    // gallery3.jpg: Other inside/team photo
-    // gallery4.jpg ...
     const images = [
-        { src: '/images/gallery1.jpg', alt: 'Karmaya Team - Outside' },
-        { src: '/images/gallery2.jpg', alt: 'Patient Consultation' },
-        { src: '/images/gallery3.jpg', alt: 'Clinic Examination' },
-        { src: '/images/gallery4.jpg', alt: 'Community Outreach' },
-        { src: '/images/gallery5.jpg', alt: 'Health Education' },
-        { src: '/images/gallery6.jpg', alt: 'Volunteers' },
+        {
+            src: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\'%3E%3Crect fill=\'%232A9D8F\' width=\'600\' height=\'400\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'20\' fill=\'white\'%3ETeam Outside Clinic%3C/text%3E%3C/svg%3E',
+            alt: 'Karmaya Team - Outside Clinic',
+            span: 'md:col-span-2 md:row-span-2'
+        },
+        {
+            src: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'%3E%3Crect fill=\'%23264653\' width=\'400\' height=\'400\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'18\' fill=\'white\'%3EPatient Consultation%3C/text%3E%3C/svg%3E',
+            alt: 'Patient Consultation',
+            span: ''
+        },
+        {
+            src: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'%3E%3Crect fill=\'%23E9C46A\' width=\'400\' height=\'400\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'18\' fill=\'%23264653\'%3ECommunity Outreach%3C/text%3E%3C/svg%3E',
+            alt: 'Community Outreach',
+            span: ''
+        },
+        {
+            src: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'%3E%3Crect fill=\'%23F4A261\' width=\'400\' height=\'300\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'18\' fill=\'white\'%3EHealth Education%3C/text%3E%3C/svg%3E',
+            alt: 'Health Education',
+            span: 'md:col-span-2'
+        },
+        {
+            src: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'%3E%3Crect fill=\'%232A9D8F\' width=\'400\' height=\'400\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'18\' fill=\'white\'%3EVolunteers at Work%3C/text%3E%3C/svg%3E',
+            alt: 'Volunteers at Work',
+            span: ''
+        },
+        {
+            src: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'%3E%3Crect fill=\'%23264653\' width=\'400\' height=\'400\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'18\' fill=\'white\'%3EMedical Services%3C/text%3E%3C/svg%3E',
+            alt: 'Medical Services',
+            span: ''
+        },
     ];
 
     return (
-        <section id="gallery" className="py-24 bg-neutral-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h2 className="text-primary font-bold tracking-wide uppercase mb-2">Our Impact</h2>
-                    <h3 className="text-4xl font-heading font-bold text-neutral-900 mb-6">Moments of Care</h3>
-                    <p className="max-w-2xl mx-auto text-neutral-600">
-                        Glimpses into the daily lives we touch and the communities we serve.
-                        <span className="block text-sm mt-2 italic text-neutral-500">(To the user: Please replace these placeholder images with your actual photos in the code)</span>
-                    </p>
-                </div>
+        <section id="gallery" className="py-24 bg-gradient-to-b from-neutral-50 to-white relative overflow-hidden">
+            {/* Background Decoration */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {images.map((img, index) => (
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-16"
+                >
+                    <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full font-semibold text-sm mb-4">
+                        📸 Our Impact
+                    </span>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                        Stories from the <span className="gradient-text">Field</span>
+                    </h2>
+                    <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
+                        Witness the transformation we're bringing to communities across the Philippines
+                    </p>
+                </motion.div>
+
+                {/* Masonry Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[200px]">
+                    {images.map((image, index) => (
                         <motion.div
                             key={index}
-                            layoutId={`image-${index}`}
-                            onClick={() => setSelectedImage(img.src)}
-                            whileHover={{ scale: 1.03 }}
-                            className="cursor-pointer overflow-hidden rounded-xl shadow-md bg-white h-64 relative group"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className={`group relative overflow-hidden rounded-2xl cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300 ${image.span}`}
+                            onClick={() => setSelectedImage(image.src)}
                         >
                             <img
-                                src={img.src}
-                                alt={img.alt}
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                src={image.src}
+                                alt={image.alt}
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             />
-                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                    <p className="text-white font-semibold text-lg mb-2">{image.alt}</p>
+                                    <div className="flex items-center gap-2 text-white/80">
+                                        <ZoomIn className="w-4 h-4" />
+                                        <span className="text-sm">Click to view</span>
+                                    </div>
+                                </div>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
-
-                <AnimatePresence>
-                    {selectedImage && (
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            onClick={() => setSelectedImage(null)}
-                            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
-                        >
-                            <button
-                                className="absolute top-4 right-4 text-white hover:text-secondary focus:outline-none"
-                                onClick={() => setSelectedImage(null)}
-                            >
-                                <X className="w-10 h-10" />
-                            </button>
-                            <motion.img
-                                layoutId={`image-${images.findIndex(img => img.src === selectedImage)}`}
-                                src={selectedImage}
-                                alt="Enlarged view"
-                                className="max-w-full max-h-[90vh] rounded-lg shadow-2xl"
-                                onClick={(e) => e.stopPropagation()}
-                            />
-                        </motion.div>
-                    )}
-                </AnimatePresence>
             </div>
+
+            {/* Lightbox Modal */}
+            <AnimatePresence>
+                {selectedImage && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
+                        onClick={() => setSelectedImage(null)}
+                    >
+                        <motion.button
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.8 }}
+                            className="absolute top-6 right-6 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+                            onClick={() => setSelectedImage(null)}
+                        >
+                            <X className="w-6 h-6 text-white" />
+                        </motion.button>
+                        <motion.img
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
+                            src={selectedImage}
+                            alt="Gallery Image"
+                            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+                            onClick={(e) => e.stopPropagation()}
+                        />
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 };
