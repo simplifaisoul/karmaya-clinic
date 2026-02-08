@@ -1,0 +1,70 @@
+import React from 'react';
+import { Mail, Phone, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+
+const Footer = () => {
+    return (
+        <footer id="contact" className="bg-neutral-900 text-white pt-16 pb-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+
+                    {/* Brand */}
+                    <div className="col-span-1 md:col-span-2">
+                        <h2 className="text-3xl font-heading font-bold mb-4 text-white">
+                            Karmaya<span className="text-secondary">Clinics</span>
+                        </h2>
+                        <p className="text-neutral-400 max-w-sm mb-6">
+                            "People helping people" through positive energy and tangible action. Providing holistic primary care to underserved communities worldwide.
+                        </p>
+                        <div className="flex space-x-4">
+                            <a href="#" className="bg-neutral-800 p-2 rounded-full hover:bg-primary transition-colors">
+                                <Facebook className="h-5 w-5" />
+                            </a>
+                            <a href="#" className="bg-neutral-800 p-2 rounded-full hover:bg-primary transition-colors">
+                                <Instagram className="h-5 w-5" />
+                            </a>
+                            <a href="#" className="bg-neutral-800 p-2 rounded-full hover:bg-primary transition-colors">
+                                <Twitter className="h-5 w-5" />
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* Quick Links */}
+                    <div>
+                        <h3 className="text-lg font-bold mb-4 border-b border-neutral-700 pb-2 inline-block">Quick Links</h3>
+                        <ul className="space-y-3">
+                            <li><a href="#mission" className="text-neutral-400 hover:text-white transition-colors">Our Mission</a></li>
+                            <li><a href="#pillars" className="text-neutral-400 hover:text-white transition-colors">The 9 Pillars</a></li>
+                            <li><a href="#innovation" className="text-neutral-400 hover:text-white transition-colors">Sustainability</a></li>
+                            <li><a href="#gallery" className="text-neutral-400 hover:text-white transition-colors">Gallery</a></li>
+                        </ul>
+                    </div>
+
+                    {/* Contact */}
+                    <div>
+                        <h3 className="text-lg font-bold mb-4 border-b border-neutral-700 pb-2 inline-block">Get in Touch</h3>
+                        <ul className="space-y-4">
+                            <li className="flex items-start">
+                                <MapPin className="h-5 w-5 text-secondary mr-3 mt-1 flex-shrink-0" />
+                                <span className="text-neutral-400">Philippines (Pilot) | Cebu (Upcoming)</span>
+                            </li>
+                            <li className="flex items-center">
+                                <Mail className="h-5 w-5 text-secondary mr-3 flex-shrink-0" />
+                                <a href="mailto:info@karmayaclinics.org" className="text-neutral-400 hover:text-white transition-colors">info@karmayaclinics.org</a>
+                            </li>
+                            <li className="flex items-center">
+                                <Phone className="h-5 w-5 text-secondary mr-3 flex-shrink-0" />
+                                <span className="text-neutral-400">+1 (555) 123-4567</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div className="border-t border-neutral-800 mt-12 pt-8 text-center text-neutral-500 text-sm">
+                    <p>&copy; {new Date().getFullYear()} Karmaya MicroClinics. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    );
+};
+
+export default Footer;
