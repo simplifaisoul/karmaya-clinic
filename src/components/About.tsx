@@ -54,7 +54,7 @@ const About = () => {
                                 <div className="relative bg-gradient-to-br from-white to-neutral-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-neutral-100 overflow-hidden">
                                     {/* Gradient overlay on hover */}
                                     <div className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                                    
+
                                     <div className="relative z-10">
                                         <div className={`w-14 h-14 bg-gradient-to-br ${value.color} rounded-xl flex items-center justify-center mb-4 shadow-lg`}>
                                             <Icon className="w-7 h-7 text-white" />
@@ -64,27 +64,46 @@ const About = () => {
                                         </div>
                                         <h3 className="text-xl font-bold text-neutral-900 mb-2">{value.word}</h3>
                                     </div>
-                            </div>
-                        </div>
-
-                        <div className="flex items-start">
-                            <div className="flex-shrink-0">
-                                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-action text-white">
-                                    <Smile className="h-6 w-6" />
                                 </div>
+                            </motion.div>
+                        );
+                    })}
+                </div>
+
+                {/* Mission Statement */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="bg-gradient-to-br from-primary to-primary-dark rounded-3xl p-12 md:p-16 text-white shadow-2xl relative overflow-hidden"
+                >
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"></div>
+
+                    <div className="relative z-10">
+                        <h3 className="text-3xl md:text-4xl font-bold mb-6 text-center">Our Mission</h3>
+                        <p className="text-xl md:text-2xl leading-relaxed text-center max-w-4xl mx-auto font-light">
+                            To provide <span className="font-bold text-secondary">accessible, holistic primary healthcare</span> to underserved communities through a sustainable micro-clinic model that empowers local populations and creates lasting positive change.
+                        </p>
+                        <div className="mt-10 flex flex-wrap justify-center gap-6">
+                            <div className="text-center">
+                                <div className="text-4xl font-bold text-secondary mb-2">100%</div>
+                                <div className="text-white/80">Community-Driven</div>
                             </div>
-                            <div className="ml-4">
-                                <h5 className="text-lg font-bold text-neutral-900">Community Driven</h5>
-                                <p className="mt-2 text-neutral-600">
-                                    We empower communities to take ownership of their health journey, fostering a spirit of
-                                    "people helping people".
-                                </p>
+                            <div className="text-center">
+                                <div className="text-4xl font-bold text-secondary mb-2">9</div>
+                                <div className="text-white/80">Service Pillars</div>
+                            </div>
+                            <div className="text-center">
+                                <div className="text-4xl font-bold text-secondary mb-2">∞</div>
+                                <div className="text-white/80">Impact Potential</div>
                             </div>
                         </div>
                     </div>
+                </motion.div>
             </div>
-        </div>
-        </section >
+        </section>
     );
 };
 
