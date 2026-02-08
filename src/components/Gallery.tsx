@@ -7,32 +7,32 @@ const Gallery = () => {
 
     const images = [
         {
-            src: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\'%3E%3Crect fill=\'%232A9D8F\' width=\'600\' height=\'400\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'20\' fill=\'white\'%3ETeam Outside Clinic%3C/text%3E%3C/svg%3E',
+            src: '/images/clinic_team_outside.jpg',
             alt: 'Karmaya Team - Outside Clinic',
             span: 'md:col-span-2 md:row-span-2'
         },
         {
-            src: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'%3E%3Crect fill=\'%23264653\' width=\'400\' height=\'400\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'18\' fill=\'white\'%3EPatient Consultation%3C/text%3E%3C/svg%3E',
+            src: '/images/patient_consultation.jpg',
             alt: 'Patient Consultation',
             span: ''
         },
         {
-            src: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'%3E%3Crect fill=\'%23E9C46A\' width=\'400\' height=\'400\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'18\' fill=\'%23264653\'%3ECommunity Outreach%3C/text%3E%3C/svg%3E',
+            src: '/images/clinic_team_outside.jpg',
             alt: 'Community Outreach',
             span: ''
         },
         {
-            src: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'%3E%3Crect fill=\'%23F4A261\' width=\'400\' height=\'300\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'18\' fill=\'white\'%3EHealth Education%3C/text%3E%3C/svg%3E',
+            src: '/images/patient_consultation.jpg',
             alt: 'Health Education',
             span: 'md:col-span-2'
         },
         {
-            src: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'%3E%3Crect fill=\'%232A9D8F\' width=\'400\' height=\'400\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'18\' fill=\'white\'%3EVolunteers at Work%3C/text%3E%3C/svg%3E',
+            src: '/images/clinic_team_outside.jpg',
             alt: 'Volunteers at Work',
             span: ''
         },
         {
-            src: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'%3E%3Crect fill=\'%23264653\' width=\'400\' height=\'400\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'18\' fill=\'white\'%3EMedical Services%3C/text%3E%3C/svg%3E',
+            src: '/images/patient_consultation.jpg',
             alt: 'Medical Services',
             span: ''
         },

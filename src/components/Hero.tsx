@@ -111,50 +111,33 @@ const Hero = () => {
 
                     {/* Right Image */}
                     <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.3 }}
-                        className="relative"
-                    >
-                        <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 animate-pulse-glow">
-                            <img
-                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%232A9D8F' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='white'%3EKarmaya Team Photo%3C/text%3E%3C/svg%3E"
-                                alt="Karmaya Clinic Team"
-                                className="w-full h-auto"
-                                onError={(e) => {
-                                    e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%232A9D8F' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='white'%3EKarmaya Team%3C/text%3E%3C/svg%3E";
-                                }}
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-teal-900/50 to-transparent"></div>
-                        </div>
-
                         {/* Floating Badge */}
                         <motion.div
-                            className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-2xl"
-                            animate={{ y: [0, -10, 0] }}
-                            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                        >
-                            <div className="flex items-center gap-3">
-                                <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center">
-                                    <Globe className="w-6 h-6 text-white" />
-                                </div>
-                                <div>
-                                    <div className="text-sm text-neutral-600">Expanding to</div>
-                                    <div className="font-bold text-neutral-900">Cebu, Philippines</div>
-                                </div>
+                        className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-2xl"
+                        animate={{ y: [0, -10, 0] }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                        <div className="flex items-center gap-3">
+                            <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center">
+                                <Globe className="w-6 h-6 text-white" />
                             </div>
-                        </motion.div>
+                            <div>
+                                <div className="text-sm text-neutral-600">Expanding to</div>
+                                <div className="font-bold text-neutral-900">Cebu, Philippines</div>
+                            </div>
+                        </div>
                     </motion.div>
-                </div>
+                </motion.div>
             </div>
+        </div>
 
-            {/* Decorative Wave */}
-            <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10">
-                <svg className="relative block w-full h-[100px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#F9FAFB"></path>
-                </svg>
-            </div>
-        </section>
+            {/* Decorative Wave */ }
+    <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10">
+        <svg className="relative block w-full h-[100px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#F9FAFB"></path>
+        </svg>
+    </div>
+        </section >
     );
 };
 
