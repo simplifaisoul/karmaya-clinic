@@ -35,8 +35,8 @@ const Header = () => {
                                     {link.name}
                                 </a>
                             ))}
-                            <a href="#donate" className="bg-action hover:bg-red-600 text-white px-5 py-2 rounded-full font-bold transition-transform transform hover:scale-105 shadow-md">
-                                Donate
+                            <a href="#contact" className="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-full font-bold transition-all transform hover:scale-105 shadow-md hover:shadow-lg border border-transparent">
+                                Contact Us
                             </a>
                         </div>
                     </div>
@@ -58,21 +58,21 @@ const Header = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-white border-t border-neutral-100"
+                        className="md:hidden bg-white border-t border-neutral-100 shadow-xl"
                     >
-                        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                        <div className="px-4 pt-4 pb-6 space-y-2 sm:px-3">
                             {navLinks.map((link) => (
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    className="block px-3 py-2 rounded-md text-base font-medium text-neutral-800 hover:text-primary hover:bg-neutral-50"
+                                    className="block px-3 py-3 rounded-md text-base font-medium text-neutral-800 hover:text-primary hover:bg-neutral-50 transition-colors"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     {link.name}
                                 </a>
                             ))}
-                            <a href="#donate" className="block w-full text-center mt-4 bg-action text-white px-5 py-3 rounded-full font-bold">
-                                Donate
+                            <a href="#contact" className="block w-full text-center mt-6 bg-primary text-white px-5 py-3 rounded-full font-bold shadow-md">
+                                Contact Us
                             </a>
                         </div>
                     </motion.div>

@@ -5,14 +5,18 @@ import { X } from 'lucide-react';
 const Gallery = () => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-    // Placeholders - User should replace these with actual clinic photos
+    // Placeholder mapping:
+    // gallery1.jpg: Group photo outside
+    // gallery2.jpg: Inside photo with patient
+    // gallery3.jpg: Other inside/team photo
+    // gallery4.jpg ...
     const images = [
-        { src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800', alt: 'Clinic Interior' },
-        { src: 'https://images.unsplash.com/photo-1584515933487-9bc86d2ab253?auto=format&fit=crop&q=80&w=800', alt: 'Community Meeting' },
-        { src: 'https://images.unsplash.com/photo-1542884748-2b87b366e2d2?auto=format&fit=crop&q=80&w=800', alt: 'Medical Checkup' },
-        { src: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800', alt: 'Happy Children' },
-        { src: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&q=80&w=800', alt: 'Health Education' },
-        { src: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&q=80&w=800', alt: 'Community Support' },
+        { src: '/images/gallery1.jpg', alt: 'Karmaya Team - Outside' },
+        { src: '/images/gallery2.jpg', alt: 'Patient Consultation' },
+        { src: '/images/gallery3.jpg', alt: 'Clinic Examination' },
+        { src: '/images/gallery4.jpg', alt: 'Community Outreach' },
+        { src: '/images/gallery5.jpg', alt: 'Health Education' },
+        { src: '/images/gallery6.jpg', alt: 'Volunteers' },
     ];
 
     return (

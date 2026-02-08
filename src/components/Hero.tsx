@@ -7,13 +7,12 @@ const Hero = () => {
         <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
             {/* Background Image with Overlay */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-gradient-to-r from-teal-900/90 to-teal-800/70 z-10" />
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-900/95 to-teal-800/80 z-10" />
                 <img
-                    src="https://images.unsplash.com/photo-1576091160550-217358c7db81?q=80&w=2000&auto=format&fit=crop"
-                    alt="Clinic Background"
+                    src="/images/hero.jpg"
+                    alt="Karmaya Clinic Team"
                     className="w-full h-full object-cover"
                 />
-                {/* Note to user: Replace this image with the real clinic photo by putting it in public/images/ and changing the src */}
             </div>
 
             <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
@@ -21,30 +20,30 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="max-w-3xl"
+                    className="max-w-4xl"
                 >
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 drop-shadow-lg">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 drop-shadow-2xl">
                         Karmaya <span className="text-secondary">MicroClinics</span>
                     </h1>
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-white mb-6">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-white mb-8 leading-normal">
                         Kindness, Action, Resilience & <span className="text-secondary font-bold">Hope.</span>
+                        <br />
+                        <span className="text-lg sm:text-xl opacity-90 block mt-4 font-sans">"People helping people" through positive energy and tangible action.</span>
                     </h2>
-                    <p className="text-xl sm:text-2xl text-neutral-100 mb-8 font-light max-w-2xl leading-relaxed">
-                        A sustainable micro-clinic model bringing holistic primary care to underserved communities. "People helping people."
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
+
+                    <div className="flex flex-col sm:flex-row gap-5 justify-center sm:justify-start">
                         <a
                             href="#mission"
-                            className="px-8 py-4 bg-secondary hover:bg-secondary-dark text-neutral-900 font-bold rounded-full transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-2 group"
+                            className="px-8 py-4 bg-secondary hover:bg-secondary-dark text-neutral-900 font-bold rounded-full transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(233,196,106,0.3)] flex items-center justify-center gap-2 group text-lg"
                         >
-                            Learn More
+                            Our Mission
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </a>
                         <a
-                            href="#donate"
-                            className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-primary-dark transition-all flex items-center justify-center"
+                            href="#contact"
+                            className="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold rounded-full hover:bg-white hover:text-primary-dark transition-all flex items-center justify-center text-lg shadow-lg hover:shadow-xl"
                         >
-                            Support Us
+                            Get Involved
                         </a>
                     </div>
                 </motion.div>
