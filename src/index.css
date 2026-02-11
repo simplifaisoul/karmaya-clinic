@@ -66,11 +66,11 @@ html {
 
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(42, 157, 143, 0.3);
+    box-shadow: 0 0 20px rgba(100, 149, 237, 0.3);
   }
 
   50% {
-    box-shadow: 0 0 40px rgba(42, 157, 143, 0.6);
+    box-shadow: 0 0 40px rgba(100, 149, 237, 0.6);
   }
 }
 

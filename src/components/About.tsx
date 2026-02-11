@@ -26,7 +26,7 @@ const About = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <span className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full font-semibold text-sm mb-4">
+                    <span className="inline-block px-4 py-2 bg-action/10 text-action rounded-full font-semibold text-sm mb-4">
                         💡 Our Foundation
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">

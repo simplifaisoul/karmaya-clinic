@@ -10,7 +10,7 @@ const Footer = () => {
                     {/* Brand */}
                     <div className="col-span-1 md:col-span-2">
                         <h2 className="text-3xl font-heading font-bold mb-4 text-white">
-                            Karmaya<span className="text-secondary">Clinics</span>
+                            Karmaya<span className="text-primary-light">Clinics</span>
                         </h2>
                         <p className="text-neutral-400 max-w-sm mb-6">
                             "People helping people" through positive energy and tangible action. Providing holistic primary care to underserved communities worldwide.
@@ -33,9 +33,9 @@ const Footer = () => {
                         <h3 className="text-lg font-bold mb-4 border-b border-neutral-700 pb-2 inline-block">Quick Links</h3>
                         <ul className="space-y-3">
                             <li><a href="#mission" className="text-neutral-400 hover:text-white transition-colors">Our Mission</a></li>
-                            <li><a href="#pillars" className="text-neutral-400 hover:text-white transition-colors">The 9 Pillars</a></li>
-                            <li><a href="#innovation" className="text-neutral-400 hover:text-white transition-colors">Sustainability</a></li>
-                            <li><a href="#gallery" className="text-neutral-400 hover:text-white transition-colors">Gallery</a></li>
+                            <li><a href="#pillars" className="text-neutral-400 hover:text-white transition-colors">Our Work</a></li>
+                            <li><a href="#innovation" className="text-neutral-400 hover:text-white transition-colors">Partners</a></li>
+                            <li><a href="#gallery" className="text-neutral-400 hover:text-white transition-colors">Impact</a></li>
                         </ul>
                     </div>
 
@@ -44,15 +44,15 @@ const Footer = () => {
                         <h3 className="text-lg font-bold mb-4 border-b border-neutral-700 pb-2 inline-block">Get in Touch</h3>
                         <ul className="space-y-4">
                             <li className="flex items-start">
-                                <MapPin className="h-5 w-5 text-secondary mr-3 mt-1 flex-shrink-0" />
+                                <MapPin className="h-5 w-5 text-primary-light mr-3 mt-1 flex-shrink-0" />
                                 <span className="text-neutral-400">Philippines (Pilot) | Cebu (Upcoming)</span>
                             </li>
                             <li className="flex items-center">
-                                <Mail className="h-5 w-5 text-secondary mr-3 flex-shrink-0" />
+                                <Mail className="h-5 w-5 text-primary-light mr-3 flex-shrink-0" />
                                 <a href="mailto:info@karmayaclinics.org" className="text-neutral-400 hover:text-white transition-colors">info@karmayaclinics.org</a>
                             </li>
                             <li className="flex items-center">
-                                <Phone className="h-5 w-5 text-secondary mr-3 flex-shrink-0" />
+                                <Phone className="h-5 w-5 text-primary-light mr-3 flex-shrink-0" />
                                 <span className="text-neutral-400">+1 (555) 123-4567</span>
                             </li>
                         </ul>

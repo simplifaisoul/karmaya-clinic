@@ -4,7 +4,7 @@ import { ArrowRight, Heart, Users, Globe } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-teal-950 via-teal-900 to-teal-800">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-900">
             {/* Animated Background Pattern */}
             <div className="absolute inset-0 opacity-10">
                 <div className="absolute inset-0" style={{
@@ -44,38 +44,46 @@ const Hero = () => {
                             </span>
                         </motion.div>
 
-                        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-6">
+                        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-4">
                             <span className="block">Karmaya</span>
-                            <span className="block bg-gradient-to-r from-yellow-300 via-secondary to-yellow-400 bg-clip-text text-transparent">
+                            <span className="block bg-gradient-to-r from-blue-200 via-white to-blue-200 bg-clip-text text-transparent">
                                 MicroClinics
                             </span>
                         </h1>
 
-                        <h2 className="text-2xl sm:text-3xl font-light text-white/90 mb-6 leading-relaxed">
-                            <span className="text-secondary font-semibold">K</span>indness ·
-                            <span className="text-secondary font-semibold"> A</span>ection ·
-                            <span className="text-secondary font-semibold"> R</span>esilience ·
-                            <span className="text-secondary font-semibold"> M</span>otivation ·
-                            <span className="text-secondary font-semibold"> A</span>ffection ·
-                            <span className="text-secondary font-semibold"> Y</span>outhfulness ·
-                            <span className="text-secondary font-semibold"> A</span>ppreciation
+                        {/* MicroClinic Definition */}
+                        <p className="text-lg md:text-xl text-blue-100 mb-8 font-medium max-w-2xl border-l-4 border-action pl-4 italic">
+                            "A small-scale, personalized healthcare model, a holistic primary care partner focused on proactive prevention and supporting patients through a sustainable journey toward better health."
+                        </p>
+
+                        <h2 className="text-2xl sm:text-3xl font-light text-white/90 mb-6 leading-relaxed hidden md:block">
+                            <span className="text-action font-semibold">K</span>indness ·
+                            <span className="text-action font-semibold"> A</span>ction ·
+                            <span className="text-action font-semibold"> R</span>esilience ·
+                            <span className="text-action font-semibold"> M</span>otivation ·
+                            <span className="text-action font-semibold"> A</span>ffection ·
+                            <span className="text-action font-semibold"> Y</span>outhfulness ·
+                            <span className="text-action font-semibold"> A</span>ppreciation
                         </h2>
 
-                        <p className="text-xl text-white/80 mb-10 leading-relaxed">
-                            Bringing holistic, accessible healthcare to underserved communities through sustainable micro-clinics.
-                        </p>
+                        {/* Philosophy Quote */}
+                        <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 mb-10 border border-white/20">
+                            <p className="text-lg text-white italic">
+                                "We are guided by the belief that primary care should be a supportive path to prevention, not just a response to illness."
+                            </p>
+                        </div>
 
                         <div className="flex flex-wrap gap-4 mb-12">
                             <a
                                 href="#mission"
-                                className="group px-8 py-4 bg-white text-primary rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 flex items-center gap-2"
+                                className="group px-8 py-4 bg-action text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 flex items-center gap-2"
                             >
                                 Our Mission
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </a>
                             <a
                                 href="#contact"
-                                className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white hover:text-primary transition-all transform hover:scale-105"
+                                className="px-8 py-4 bg-white text-primary-dark border-2 border-white rounded-full font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105"
                             >
                                 Get Involved
                             </a>
@@ -90,10 +98,10 @@ const Hero = () => {
                                 className="text-center"
                             >
                                 <div className="flex items-center justify-center mb-2">
-                                    <Heart className="w-6 h-6 text-secondary" />
+                                    <Heart className="w-6 h-6 text-action" />
                                 </div>
                                 <div className="text-3xl font-bold text-white mb-1">1,000+</div>
-                                <div className="text-sm text-white/70">Lives Impacted</div>
+                                <div className="text-sm text-blue-100">Lives Impacted</div>
                             </motion.div>
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
@@ -102,10 +110,10 @@ const Hero = () => {
                                 className="text-center"
                             >
                                 <div className="flex items-center justify-center mb-2">
-                                    <Users className="w-6 h-6 text-secondary" />
+                                    <Users className="w-6 h-6 text-action" />
                                 </div>
                                 <div className="text-3xl font-bold text-white mb-1">9</div>
-                                <div className="text-sm text-white/70">Pillars of Care</div>
+                                <div className="text-sm text-blue-100">Pillars of Care</div>
                             </motion.div>
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
@@ -114,10 +122,10 @@ const Hero = () => {
                                 className="text-center"
                             >
                                 <div className="flex items-center justify-center mb-2">
-                                    <Globe className="w-6 h-6 text-secondary" />
+                                    <Globe className="w-6 h-6 text-action" />
                                 </div>
                                 <div className="text-3xl font-bold text-white mb-1">2</div>
-                                <div className="text-sm text-white/70">Active Clinics</div>
+                                <div className="text-sm text-blue-100">Active Clinics</div>
                             </motion.div>
                         </div>
                     </motion.div>
