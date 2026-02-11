@@ -44,9 +44,9 @@ const Hero = () => {
                             </span>
                         </motion.div>
 
-                        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-4">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4 tracking-tight">
                             <span className="block">Karmaya</span>
-                            <span className="block bg-gradient-to-r from-blue-200 via-white to-blue-200 bg-clip-text text-transparent">
+                            <span className="block bg-gradient-to-r from-blue-200 via-white to-blue-200 bg-clip-text text-transparent transform origin-left">
                                 MicroClinics
                             </span>
                         </h1>
