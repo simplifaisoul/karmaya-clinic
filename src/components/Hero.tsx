@@ -46,7 +46,7 @@ const Hero = () => {
 
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4 tracking-tight">
                             <span className="block">Karmaya</span>
-                            <span className="block bg-gradient-to-r from-blue-200 via-white to-blue-200 bg-clip-text text-transparent transform origin-left">
+                            <span className="block text-white drop-shadow-[0_2px_10px_rgba(255,127,80,0.5)]" style={{ textShadow: '0 0 30px rgba(255,127,80,0.4)' }}>
                                 MicroClinics
                             </span>
                         </h1>
