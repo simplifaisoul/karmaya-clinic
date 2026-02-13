@@ -1,26 +1,38 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import Layout from "./components/Layout";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Pillars from "./components/Pillars";
-import Innovation from "./components/Innovation";
-import Gallery from "./components/Gallery";
-import Contact from "./components/Contact";
+import Home from "./pages/Home";
 import Resources from "./pages/Resources";
 import WhatsAppWidget from "./components/WhatsAppWidget";
 
-const Home = () => (
-  <>
-    <Hero />
-    <About />
-    <Pillars />
-    <Innovation />
-    <Gallery />
-    <Contact />
-  </>
-);
-
 function App() {
+  const location = useLocation();
+
+  // Handle scroll to section from URL query param (e.g. /?section=mission)
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const section = params.get('section');
+    if (section) {
+      // Small timeout to ensure DOM is ready and layout is stable
+      setTimeout(() => {
+        const element = document.getElementById(section);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else if (location.hash) {
+      // Fallback for standard hash
+      const id = location.hash.replace('#', '');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+    // Check for scrollTo state if passed
+  }, [location]);
+
   return (
     <Layout>
       <Routes>

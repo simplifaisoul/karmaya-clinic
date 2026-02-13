@@ -78,6 +78,10 @@ html {
   display: none !important;
 }
 
+.goog-te-gadget-icon {
+  display: none !important;
+}
+
 .goog-te-gadget .goog-te-combo {
   margin: 0 !important;
   padding: 8px 12px !important;

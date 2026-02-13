@@ -1,179 +1,124 @@
-
 import { motion } from 'framer-motion';
-import { ArrowRight, Heart, Users, Globe } from 'lucide-react';
+import { ArrowRight, Heart } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-600 via-blue-500 to-sky-400">
-            {/* Animated Background Pattern */}
-            <div className="absolute inset-0 opacity-10">
-                <div className="absolute inset-0" style={{
-                    backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-                    backgroundSize: '40px 40px'
-                }}></div>
+        <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-primary font-sans">
+            {/* Animated Background Gradients - The "Sick" vibe */}
+            <div className="absolute inset-0 z-0">
+                <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-blue-400 rounded-full blur-[120px] opacity-30 animate-float" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-action rounded-full blur-[100px] opacity-20 animate-float" style={{ animationDelay: '2s' }} />
+                <div className="absolute top-[40%] left-[40%] w-[30%] h-[30%] bg-white rounded-full blur-[80px] opacity-10 animate-pulse-glow" />
+                {/* Grid Pattern Overlay */}
+                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 bg-repeat mix-blend-overlay"></div>
             </div>
 
-            {/* Floating Orbs */}
-            <motion.div
-                className="absolute top-20 left-10 w-72 h-72 bg-secondary/20 rounded-full blur-3xl"
-                animate={{ y: [0, -30, 0], x: [0, 20, 0] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <motion.div
-                className="absolute bottom-20 right-10 w-96 h-96 bg-primary/20 rounded-full blur-3xl"
-                animate={{ y: [0, 40, 0], x: [0, -30, 0] }}
-                transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-            />
-
-            <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    {/* Left Content */}
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col md:flex-row items-center">
+                {/* Text Content */}
+                <div className="w-full md:w-1/2 text-left pt-20 md:pt-0">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
                     >
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2 }}
-                            className="inline-block mb-6"
+                            transition={{ delay: 0.2, duration: 0.6 }}
+                            className="inline-block mb-4 px-4 py-1 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-blue-50 text-sm font-bold tracking-wider uppercase"
                         >
-                            <span className="px-4 py-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full text-white font-semibold text-sm">
-                                🌟 Transforming Communities Since 2024
-                            </span>
+                            🌟 Transforming Communities Since 2024
                         </motion.div>
 
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4 tracking-tight">
+                        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-6 tracking-tight">
                             <span className="block">Karmaya</span>
-                            <span className="block text-white drop-shadow-[0_2px_10px_rgba(255,127,80,0.5)]" style={{ textShadow: '0 0 30px rgba(255,127,80,0.4)' }}>
+                            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-white to-blue-200 bg-300% animate-shimmer">
                                 MicroClinics
                             </span>
                         </h1>
 
-                        {/* MicroClinic Definition */}
-                        <div className="mb-10 pl-6 border-l-8 border-action/80 max-w-4xl">
-                            <p className="text-2xl md:text-3xl lg:text-4xl text-white font-medium leading-relaxed italic shadow-black/10 drop-shadow-md">
-                                "A small-scale, personalized healthcare model, a holistic primary care partner focused on proactive prevention and supporting patients through a sustainable journey toward better health."
+                        <div className="mb-10 pl-6 border-l-4 border-action/80 max-w-xl backdrop-blur-sm bg-black/5 rounded-r-xl py-4 pr-4">
+                            <p className="text-xl md:text-2xl text-blue-50 font-medium leading-relaxed italic shadow-black/5">
+                                "A small-scale, personalized healthcare model... focused on proactive prevention and supporting patients through a sustainable journey toward better health."
                             </p>
                         </div>
 
-                        <h2 className="text-2xl sm:text-3xl font-light text-white/90 mb-6 leading-relaxed hidden md:block">
-                            <span className="text-action font-semibold">K</span>indness ·
-                            <span className="text-action font-semibold"> A</span>ction ·
-                            <span className="text-action font-semibold"> R</span>esilience ·
-                            <span className="text-action font-semibold"> M</span>otivation ·
-                            <span className="text-action font-semibold"> A</span>ffection ·
-                            <span className="text-action font-semibold"> Y</span>outhfulness ·
-                            <span className="text-action font-semibold"> A</span>ppreciation
-                        </h2>
-
-                        {/* Philosophy Quote */}
-                        <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 mb-10 border border-white/20">
-                            <p className="text-lg text-white italic">
-                                "We are guided by the belief that primary care should be a supportive path to prevention, not just a response to illness."
-                            </p>
-                        </div>
-
-                        <div className="flex flex-wrap gap-4 mb-12">
-                            <a
-                                href="#mission"
-                                className="group px-8 py-4 bg-action text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 flex items-center gap-2"
-                            >
-                                Our Mission
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </a>
-                            <a
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <motion.a
                                 href="#contact"
-                                className="px-8 py-4 bg-white text-primary-dark border-2 border-white rounded-full font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105"
+                                whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255,255,255,0.4)" }}
+                                whileTap={{ scale: 0.95 }}
+                                className="px-8 py-4 bg-action text-white rounded-full font-bold text-lg shadow-lg shadow-action/30 transition-all text-center flex items-center justify-center gap-2"
                             >
-                                Get Involved
-                            </a>
+                                Join Our Mission
+                                <ArrowRight className="w-5 h-5" />
+                            </motion.a>
+                            <motion.a
+                                href="#pillars"
+                                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.2)" }}
+                                whileTap={{ scale: 0.95 }}
+                                className="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white rounded-full font-bold text-lg hover:bg-white/20 transition-all text-center"
+                            >
+                                Explore Our Work
+                            </motion.a>
                         </div>
+                    </motion.div>
+                </div>
 
-                        {/* Stats */}
-                        <div className="grid grid-cols-3 gap-6">
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.6 }}
-                                className="text-center"
-                            >
-                                <div className="flex items-center justify-center mb-2">
-                                    <Heart className="w-6 h-6 text-action" />
-                                </div>
-                                <div className="text-3xl font-bold text-white mb-1">1,000+</div>
-                                <div className="text-sm text-blue-100">Lives Impacted</div>
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.7 }}
-                                className="text-center"
-                            >
-                                <div className="flex items-center justify-center mb-2">
-                                    <Users className="w-6 h-6 text-action" />
-                                </div>
-                                <div className="text-3xl font-bold text-white mb-1">9</div>
-                                <div className="text-sm text-blue-100">Pillars of Care</div>
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.8 }}
-                                className="text-center"
-                            >
-                                <div className="flex items-center justify-center mb-2">
-                                    <Globe className="w-6 h-6 text-action" />
-                                </div>
-                                <div className="text-3xl font-bold text-white mb-1">2</div>
-                                <div className="text-sm text-blue-100">Active Clinics</div>
-                            </motion.div>
+                {/* Hero Image / Visual */}
+                <div className="w-full md:w-1/2 mt-12 md:mt-0 relative hidden md:block">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+                        animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                        transition={{ duration: 1, delay: 0.4, type: "spring" }}
+                        className="relative z-10"
+                    >
+                        {/* Image Container */}
+                        <div className="relative w-full aspect-square max-w-lg mx-auto">
+                            <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent rounded-[2rem] backdrop-blur-3xl border border-white/10 animate-pulse-slow"></div>
+                            <img
+                                src="/images/hero_clinic_team.png"
+                                alt="Karmaya Team"
+                                className="rounded-[2rem] shadow-2xl border-4 border-white/20 object-cover w-full h-full transform hover:rotate-1 transition-transform duration-500"
+                                onError={(e) => {
+                                    // Fallback if image missing
+                                    e.currentTarget.style.display = 'none';
+                                }}
+                            />
                         </div>
                     </motion.div>
 
-                    {/* Right Image */}
+                    {/* Floating Stats Card */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.3 }}
-                        className="relative"
+                        transition={{ delay: 1.2 }}
+                        className="absolute bottom-10 -left-10 bg-white/10 backdrop-blur-xl border border-white/20 p-6 rounded-2xl shadow-xl max-w-xs"
                     >
-                        <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 animate-pulse-glow">
-                            <img
-                                src="/images/clinic_team_outside.jpg"
-                                alt="Karmaya Clinic Team"
-                                className="w-full h-auto"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-teal-900/50 to-transparent"></div>
-                        </div>
-
-                        {/* Floating Badge */}
-                        <motion.div
-                            className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-2xl"
-                            animate={{ y: [0, -10, 0] }}
-                            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                        >
-                            <div className="flex items-center gap-3">
-                                <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center">
-                                    <Globe className="w-6 h-6 text-white" />
-                                </div>
-                                <div>
-                                    <div className="text-sm text-neutral-600">Expanding to</div>
-                                    <div className="font-bold text-neutral-900">Cebu, Philippines</div>
-                                </div>
+                        <div className="flex items-center gap-4">
+                            <div className="bg-action p-3 rounded-full">
+                                <Heart className="w-6 h-6 text-white fill-current" />
                             </div>
-                        </motion.div>
+                            <div>
+                                <p className="text-3xl font-bold text-white">1,000+</p>
+                                <p className="text-blue-100 text-sm">Lives Impacted</p>
+                            </div>
+                        </div>
                     </motion.div>
                 </div>
             </div>
 
-            {/* Decorative Wave */}
-            <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10">
-                <svg className="relative block w-full h-[100px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#F9FAFB"></path>
-                </svg>
-            </div>
+            {/* Scroll Indicator */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, y: [0, 10, 0] }}
+                transition={{ delay: 2, duration: 2, repeat: Infinity }}
+                className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            >
+                <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
+                    <div className="w-1 h-2 bg-white rounded-full animate-bounce"></div>
+                </div>
+            </motion.div>
         </section>
     );
 };
