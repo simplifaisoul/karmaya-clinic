@@ -60,7 +60,7 @@ const Innovation = () => {
                         <div className="absolute inset-0 bg-gradient-to-tr from-primary-dark to-neutral-800 rounded-3xl opacity-50 z-0"></div>
                         {/* Placeholder for Sustainability Diagram or Image */}
                         <div className="bg-neutral-800 rounded-3xl h-full w-full flex items-center justify-center border border-neutral-700 relative z-10 overflow-hidden group">
-                            <div className="absolute inset-0 bg-[url('/images/innovation.jpg')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-700"></div>
+                            <div className="absolute inset-0 bg-[url('/images/hero.jpg')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-700"></div>
                             <div className="text-center p-8 relative z-20">
                                 <RefreshCw className="w-16 h-16 text-white mx-auto mb-4 animate-spin-slow" />
                                 <h5 className="text-2xl font-bold text-white">Circular Economy</h5>

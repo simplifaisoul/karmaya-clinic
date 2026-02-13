@@ -25,20 +25,20 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2, duration: 0.6 }}
-                            className="inline-block mb-4 px-4 py-1 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-blue-50 text-sm font-bold tracking-wider uppercase"
+                            className="inline-block mb-4 px-4 py-1 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-white text-sm font-bold tracking-wider uppercase shadow-sm"
                         >
                             🌟 Transforming Communities Since 2024
                         </motion.div>
 
-                        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-6 tracking-tight">
+                        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-6 tracking-tight drop-shadow-md">
                             <span className="block">Karmaya</span>
-                            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-white to-blue-200 bg-300% animate-shimmer">
+                            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-100 via-white to-blue-100 animate-pulse-slow pb-2">
                                 MicroClinics
                             </span>
                         </h1>
 
-                        <div className="mb-10 pl-6 border-l-4 border-action/80 max-w-xl backdrop-blur-sm bg-black/5 rounded-r-xl py-4 pr-4">
-                            <p className="text-xl md:text-2xl text-blue-50 font-medium leading-relaxed italic shadow-black/5">
+                        <div className="mb-10 pl-6 border-l-4 border-action/80 max-w-xl backdrop-blur-sm bg-black/10 rounded-r-xl py-4 pr-4">
+                            <p className="text-xl md:text-2xl text-white font-medium leading-relaxed italic drop-shadow-sm">
                                 "A small-scale, personalized healthcare model... focused on proactive prevention and supporting patients through a sustainable journey toward better health."
                             </p>
                         </div>
@@ -77,7 +77,7 @@ const Hero = () => {
                         <div className="relative w-full aspect-square max-w-lg mx-auto">
                             <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent rounded-[2rem] backdrop-blur-3xl border border-white/10 animate-pulse-slow"></div>
                             <img
-                                src="/images/hero_clinic_team.png"
+                                src="/images/clinic_team_outside.jpg"
                                 alt="Karmaya Team"
                                 className="rounded-[2rem] shadow-2xl border-4 border-white/20 object-cover w-full h-full transform hover:rotate-1 transition-transform duration-500"
                                 onError={(e) => {

@@ -76,28 +76,35 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="bg-gradient-to-br from-primary to-primary-dark rounded-3xl p-12 md:p-16 text-white shadow-2xl relative overflow-hidden"
+                    className="relative rounded-3xl p-12 md:p-16 text-white shadow-2xl overflow-hidden group"
                 >
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"></div>
+                    {/* Background Image with Overlay */}
+                    <div className="absolute inset-0 z-0">
+                        <img
+                            src="/images/patient_consultation.jpg"
+                            alt="Doctor consulting with patient"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/90 to-primary/80 mix-blend-multiply"></div>
+                    </div>
 
                     <div className="relative z-10">
-                        <h3 className="text-3xl md:text-4xl font-bold mb-6 text-center">Our Mission</h3>
-                        <p className="text-xl md:text-2xl leading-relaxed text-center max-w-4xl mx-auto font-light">
+                        <h3 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white drop-shadow-md">Our Mission</h3>
+                        <p className="text-xl md:text-2xl leading-relaxed text-center max-w-4xl mx-auto font-light text-white drop-shadow-sm">
                             To provide <span className="font-bold text-secondary">accessible, holistic primary healthcare</span> to underserved communities through a sustainable micro-clinic model that empowers local populations and creates lasting positive change.
                         </p>
                         <div className="mt-10 flex flex-wrap justify-center gap-6">
                             <div className="text-center">
-                                <div className="text-4xl font-bold text-secondary mb-2">100%</div>
-                                <div className="text-white/80">Community-Driven</div>
+                                <div className="text-4xl font-bold text-secondary mb-2 drop-shadow-md">100%</div>
+                                <div className="text-white font-medium">Community-Driven</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl font-bold text-secondary mb-2">9</div>
-                                <div className="text-white/80">Service Pillars</div>
+                                <div className="text-4xl font-bold text-secondary mb-2 drop-shadow-md">9</div>
+                                <div className="text-white font-medium">Service Pillars</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl font-bold text-secondary mb-2">∞</div>
-                                <div className="text-white/80">Impact Potential</div>
+                                <div className="text-4xl font-bold text-secondary mb-2 drop-shadow-md">∞</div>
+                                <div className="text-white font-medium">Impact Potential</div>
                             </div>
                         </div>
                     </div>
