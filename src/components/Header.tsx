@@ -51,7 +51,7 @@ const Header = () => {
                             )
                         ))}
                         <div className="scale-90 origin-right">
-                            <GoogleTranslate />
+                            <GoogleTranslate isMobile={false} />
                         </div>
                         <HashLink smooth to="/#contact" className="bg-action hover:bg-neutral-800 text-white px-6 py-2.5 rounded-full font-bold transition-all transform hover:scale-105 shadow-md hover:shadow-lg uppercase tracking-wide text-sm whitespace-nowrap">
                             Contact Us
@@ -60,7 +60,7 @@ const Header = () => {
 
                     <div className="-mr-2 flex md:hidden items-center gap-4">
                         <div className="scale-75 origin-right">
-                            <GoogleTranslate />
+                            <GoogleTranslate isMobile={true} />
                         </div>
                         <button
                             onClick={() => setIsOpen(!isOpen)}
