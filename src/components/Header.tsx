@@ -1,48 +1,61 @@
 import { useState } from 'react';
 import { Menu, X, Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 import GoogleTranslate from './GoogleTranslate';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const navLinks = [
-        { name: 'Mission', href: '/#mission' },
-        { name: 'Our Work', href: '/#pillars' },
-        { name: 'Impact', href: '/#gallery' },
-        { name: 'Partners', href: '/#innovation' },
-        { name: 'Resources', href: '/resources' },
+        { name: 'Mission', to: '/#mission' },
+        { name: 'Our Work', to: '/#pillars' },
+        { name: 'Impact', to: '/#gallery' },
+        { name: 'Partners', to: '/#innovation' },
+        { name: 'Resources', to: '/resources', isPage: true },
     ];
 
     return (
-        <nav className="fixed w-full z-50 bg-white shadow-md border-b border-neutral-100">
+        <nav className="fixed w-full z-50 bg-white shadow-md border-b border-neutral-100 font-sans">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     <div className="flex-shrink-0 flex items-center gap-2">
-                        <a href="/" className="flex items-center gap-2">
+                        <Link to="/" className="flex items-center gap-2">
                             <Heart className="h-8 w-8 text-action fill-current" />
                             <span className="font-heading font-bold text-2xl text-secondary tracking-tight">
                                 Karmaya<span className="text-primary">Clinics</span>
                             </span>
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="hidden md:flex items-center space-x-6">
                         {navLinks.map((link) => (
-                            <a
-                                key={link.name}
-                                href={link.href}
-                                className="font-bold text-secondary hover:text-primary transition-colors duration-200 uppercase tracking-wide text-sm"
-                            >
-                                {link.name}
-                            </a>
+                            link.isPage ? (
+                                <Link
+                                    key={link.name}
+                                    to={link.to}
+                                    className="font-bold text-secondary hover:text-primary transition-colors duration-200 uppercase tracking-wide text-sm"
+                                >
+                                    {link.name}
+                                </Link>
+                            ) : (
+                                <HashLink
+                                    key={link.name}
+                                    smooth
+                                    to={link.to}
+                                    className="font-bold text-secondary hover:text-primary transition-colors duration-200 uppercase tracking-wide text-sm"
+                                >
+                                    {link.name}
+                                </HashLink>
+                            )
                         ))}
                         <div className="scale-90 origin-right">
                             <GoogleTranslate />
                         </div>
-                        <a href="/#contact" className="bg-action hover:bg-neutral-800 text-white px-6 py-2.5 rounded-full font-bold transition-all transform hover:scale-105 shadow-md hover:shadow-lg uppercase tracking-wide text-sm whitespace-nowrap">
+                        <HashLink smooth to="/#contact" className="bg-action hover:bg-neutral-800 text-white px-6 py-2.5 rounded-full font-bold transition-all transform hover:scale-105 shadow-md hover:shadow-lg uppercase tracking-wide text-sm whitespace-nowrap">
                             Contact Us
-                        </a>
+                        </HashLink>
                     </div>
 
                     <div className="-mr-2 flex md:hidden items-center gap-4">
@@ -70,22 +83,35 @@ const Header = () => {
                     >
                         <div className="flex flex-col p-4 space-y-1">
                             {navLinks.map((link) => (
-                                <a
-                                    key={link.name}
-                                    href={link.href}
-                                    className="block px-4 py-4 text-lg font-bold border-b border-white/10 hover:bg-white/10 transition-colors uppercase tracking-wide"
-                                    onClick={() => setIsOpen(false)}
-                                >
-                                    {link.name}
-                                </a>
+                                link.isPage ? (
+                                    <Link
+                                        key={link.name}
+                                        to={link.to}
+                                        className="block px-4 py-4 text-lg font-bold border-b border-white/10 hover:bg-white/10 transition-colors uppercase tracking-wide"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                ) : (
+                                    <HashLink
+                                        key={link.name}
+                                        smooth
+                                        to={link.to}
+                                        className="block px-4 py-4 text-lg font-bold border-b border-white/10 hover:bg-white/10 transition-colors uppercase tracking-wide"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        {link.name}
+                                    </HashLink>
+                                )
                             ))}
-                            <a
-                                href="/#contact"
+                            <HashLink
+                                smooth
+                                to="/#contact"
                                 className="block px-4 py-4 text-lg font-bold text-action bg-white mt-4 text-center uppercase tracking-wide rounded-sm"
                                 onClick={() => setIsOpen(false)}
                             >
                                 Contact Us
-                            </a>
+                            </HashLink>
                         </div>
                     </motion.div>
                 )}

@@ -1,9 +1,10 @@
 
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+import { HashLink } from 'react-router-hash-link';
 
 const Footer = () => {
     return (
-        <footer id="contact" className="bg-neutral-900 text-white pt-16 pb-8">
+        <footer className="bg-neutral-900 text-white pt-16 pb-8 font-sans">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
 
@@ -32,10 +33,10 @@ const Footer = () => {
                     <div>
                         <h3 className="text-lg font-bold mb-4 border-b border-neutral-700 pb-2 inline-block">Quick Links</h3>
                         <ul className="space-y-3">
-                            <li><a href="#mission" className="text-neutral-400 hover:text-white transition-colors">Our Mission</a></li>
-                            <li><a href="#pillars" className="text-neutral-400 hover:text-white transition-colors">Our Work</a></li>
-                            <li><a href="#innovation" className="text-neutral-400 hover:text-white transition-colors">Partners</a></li>
-                            <li><a href="#gallery" className="text-neutral-400 hover:text-white transition-colors">Impact</a></li>
+                            <li><HashLink smooth to="/#mission" className="text-neutral-400 hover:text-white transition-colors">Our Mission</HashLink></li>
+                            <li><HashLink smooth to="/#pillars" className="text-neutral-400 hover:text-white transition-colors">Our Work</HashLink></li>
+                            <li><HashLink smooth to="/#innovation" className="text-neutral-400 hover:text-white transition-colors">Partners</HashLink></li>
+                            <li><HashLink smooth to="/#gallery" className="text-neutral-400 hover:text-white transition-colors">Impact</HashLink></li>
                         </ul>
                     </div>
 
