@@ -4,7 +4,7 @@ import { ArrowRight, Heart, Users, Globe } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-900">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-600 via-blue-500 to-sky-400">
             {/* Animated Background Pattern */}
             <div className="absolute inset-0 opacity-10">
                 <div className="absolute inset-0" style={{
@@ -52,9 +52,11 @@ const Hero = () => {
                         </h1>
 
                         {/* MicroClinic Definition */}
-                        <p className="text-lg md:text-xl text-blue-100 mb-8 font-medium max-w-2xl border-l-4 border-action pl-4 italic">
-                            "A small-scale, personalized healthcare model, a holistic primary care partner focused on proactive prevention and supporting patients through a sustainable journey toward better health."
-                        </p>
+                        <div className="mb-10 pl-6 border-l-8 border-action/80 max-w-4xl">
+                            <p className="text-2xl md:text-3xl lg:text-4xl text-white font-medium leading-relaxed italic shadow-black/10 drop-shadow-md">
+                                "A small-scale, personalized healthcare model, a holistic primary care partner focused on proactive prevention and supporting patients through a sustainable journey toward better health."
+                            </p>
+                        </div>
 
                         <h2 className="text-2xl sm:text-3xl font-light text-white/90 mb-6 leading-relaxed hidden md:block">
                             <span className="text-action font-semibold">K</span>indness ·

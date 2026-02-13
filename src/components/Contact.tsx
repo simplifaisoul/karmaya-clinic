@@ -68,10 +68,11 @@ const Contact = () => {
                             <div>
                                 <label htmlFor="subject" className="block text-sm font-medium text-neutral-700 mb-1">Subject</label>
                                 <select id="subject" className="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all">
-                                    <option>General Inquiry</option>
+                                    <option>MicroClinic Inquiry</option>
                                     <option>Volunteering</option>
                                     <option>Donation</option>
                                     <option>Partnership</option>
+                                    <option>General Inquiry</option>
                                 </select>
                             </div>
 
