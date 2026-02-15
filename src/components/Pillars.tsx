@@ -26,7 +26,7 @@ const Pillars = () => {
     ];
 
     return (
-        <section id="pillars" className="py-24 bg-white relative overflow-hidden">
+        <section id="pillars" className="py-12 md:py-24 bg-white relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-primary/5 blur-3xl" />
             <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-secondary/10 blur-3xl" />
@@ -40,7 +40,7 @@ const Pillars = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {pillars.map((pillar, index) => (
                         <motion.div
                             key={pillar.title}
@@ -49,7 +49,7 @@ const Pillars = () => {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 0.5 }}
                             whileHover={{ y: -5, boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}
-                            className="bg-white rounded-2xl p-8 border border-neutral-100 shadow-sm transition-all duration-300"
+                            className="bg-white rounded-2xl p-6 md:p-8 border border-neutral-100 shadow-sm transition-all duration-300"
                         >
                             <div className={`w-14 h-14 rounded-full flex items-center justify-center mb-6 ${pillar.color}`}>
                                 <pillar.icon className="w-7 h-7" />

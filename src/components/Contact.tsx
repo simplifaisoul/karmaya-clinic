@@ -14,8 +14,8 @@ const Contact = () => {
                     {/* Contact Info */}
                     <div>
                         <h2 className="text-secondary font-bold tracking-wide uppercase mb-2">Get Involved</h2>
-                        <h3 className="text-4xl font-heading font-bold text-neutral-900 mb-6">Join Our Mission</h3>
-                        <p className="text-neutral-600 text-lg mb-8">
+                        <h3 className="text-4xl font-heading font-bold text-white mb-6">Join Our Mission</h3>
+                        <p className="text-neutral-300 text-lg mb-8">
                             Whether you want to volunteer, donate, or partner with us, we'd love to hear from you.
                             Together, we can expand our reach to more underserved communities.
                         </p>
@@ -23,33 +23,33 @@ const Contact = () => {
                         <div className="space-y-6">
                             <div className="flex items-start">
                                 <div className="bg-primary/10 p-3 rounded-lg mr-4">
-                                    <MapPin className="w-6 h-6 text-primary" />
+                                    <MapPin className="w-6 h-6 text-action" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-neutral-900">Locations</h4>
-                                    <p className="text-neutral-600">Pilot Clinic: Philippines</p>
-                                    <p className="text-neutral-600">Upcoming: Cebu Expansion</p>
+                                    <h4 className="font-bold text-white">Locations</h4>
+                                    <p className="text-neutral-400">Pilot Clinic: Philippines</p>
+                                    <p className="text-neutral-400">Upcoming: Cebu Expansion</p>
                                 </div>
                             </div>
 
                             <div className="flex items-start">
                                 <div className="bg-primary/10 p-3 rounded-lg mr-4">
-                                    <Mail className="w-6 h-6 text-primary" />
+                                    <Mail className="w-6 h-6 text-action" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-neutral-900">Email Us</h4>
-                                    <p className="text-neutral-600">info@karmayaclinics.org</p>
-                                    <p className="text-neutral-600">partnerships@karmayaclinics.org</p>
+                                    <h4 className="font-bold text-white">Email Us</h4>
+                                    <p className="text-neutral-400">info@karmayaclinics.org</p>
+                                    <p className="text-neutral-400">partnerships@karmayaclinics.org</p>
                                 </div>
                             </div>
 
                             <div className="flex items-start">
                                 <div className="bg-primary/10 p-3 rounded-lg mr-4">
-                                    <Phone className="w-6 h-6 text-primary" />
+                                    <Phone className="w-6 h-6 text-action" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-neutral-900">Phone</h4>
-                                    <p className="text-neutral-600">+1 (555) 123-4567</p>
+                                    <h4 className="font-bold text-white">Phone</h4>
+                                    <p className="text-neutral-400">+1 (555) 123-4567</p>
                                 </div>
                             </div>
                         </div>
