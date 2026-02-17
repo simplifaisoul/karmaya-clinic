@@ -4,6 +4,7 @@ import Pillars from "../components/Pillars";
 import Innovation from "../components/Innovation";
 import Gallery from "../components/Gallery";
 import Contact from "../components/Contact";
+import JoinHub from "../components/JoinHub";
 import { ScrollReveal } from "../components/ScrollReveal";
 
 const Home = () => {
@@ -35,6 +36,10 @@ const Home = () => {
 
             <ScrollReveal width="100%">
                 <Gallery />
+            </ScrollReveal>
+
+            <ScrollReveal width="100%">
+                <JoinHub />
             </ScrollReveal>
 
             <ScrollReveal width="100%" direction="up">
