@@ -29,7 +29,7 @@ const Hero = () => {
                             🌟 Transforming Communities Since 2024
                         </motion.div>
 
-                        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-neutral-900 leading-tight mb-6 tracking-tight">
+                        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-neutral-900 leading-tight mb-6 tracking-tight break-words hyphens-auto">
                             <span className="block">Karmaya</span>
                             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 animate-pulse-slow pb-2">
                                 MicroClinics

@@ -19,7 +19,7 @@
   h4,
   h5,
   h6 {
-    @apply font-heading font-bold text-primary-dark;
+    @apply font-heading font-bold text-primary-dark break-words hyphens-auto;
   }
 }
 
