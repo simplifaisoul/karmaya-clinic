@@ -18,7 +18,7 @@ const Home = () => {
     // I should add it here.
 
     return (
-        <main className="w-full max-w-[100vw] overflow-x-hidden relative">
+        <main className="w-full overflow-x-hidden relative">
             {/* Hero handles its own initial animations */}
             <Hero />
 
