@@ -27,14 +27,14 @@ const Pillars = () => {
 
     return (
         <section id="pillars" className="py-12 md:py-24 bg-white relative overflow-hidden">
-            {/* Background decoration */}
-            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-primary/5 blur-3xl" />
-            <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-secondary/10 blur-3xl" />
+            {/* Background decoration - Adjusted for mobile safety */}
+            <div className="absolute top-0 right-0 w-64 h-64 md:w-80 md:h-80 translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 md:w-80 md:h-80 -translate-x-1/2 translate-y-1/2 rounded-full bg-secondary/10 blur-3xl pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-secondary font-bold tracking-wide uppercase mb-2">Service Delivery</h2>
-                    <h3 className="text-4xl font-heading font-bold text-neutral-900">The 9 Pillars of Health</h3>
+                    <h2 className="text-secondary font-bold tracking-wide uppercase mb-2 text-sm md:text-base">Service Delivery</h2>
+                    <h3 className="text-3xl md:text-4xl font-heading font-bold text-neutral-900 px-4">The 9 Pillars of Health</h3>
                     <p className="mt-4 text-neutral-600 max-w-2xl mx-auto">
                         A complete approach moving beyond traditional medication to address biological and societal aspects of illness.
                     </p>

@@ -4,7 +4,7 @@ import { RefreshCw, Zap, Globe, ArrowRightLeft } from 'lucide-react';
 
 const Innovation = () => {
     return (
-        <section id="innovation" className="py-24 bg-white text-neutral-900 overflow-hidden relative">
+        <section id="innovation" className="py-12 md:py-24 bg-white text-neutral-900 overflow-hidden relative">
             {/* Background blobs */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50 z-0"></div>
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-50 rounded-full blur-3xl opacity-50 z-0"></div>

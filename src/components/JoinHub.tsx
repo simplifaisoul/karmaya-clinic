@@ -19,7 +19,7 @@ const JoinHub = () => {
     };
 
     return (
-        <section id="join-hub" className="py-24 bg-white relative overflow-hidden">
+        <section id="join-hub" className="py-12 md:py-24 bg-white relative overflow-hidden">
             {/* Background Decoration */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl">
                 <div className="absolute top-20 right-0 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50 mix-blend-multiply" />
@@ -106,7 +106,7 @@ const JoinHub = () => {
                                     <span className="text-xl font-bold text-neutral-500">×</span>
                                 </button>
 
-                                <div className="p-8 md:p-12">
+                                <div className="p-6 md:p-12">
                                     {submitted ? (
                                         <div className="text-center py-12">
                                             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">

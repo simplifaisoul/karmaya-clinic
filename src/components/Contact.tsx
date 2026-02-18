@@ -2,7 +2,7 @@ import { Send, MapPin, Mail, Phone } from 'lucide-react';
 
 const Contact = () => {
     return (
-        <section id="contact" className="py-24 bg-neutral-50 text-neutral-900 relative overflow-hidden">
+        <section id="contact" className="py-12 md:py-24 bg-neutral-50 text-neutral-900 relative overflow-hidden">
             {/* Background elements */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
                 <div className="absolute top-20 left-20 w-72 h-72 bg-blue-100/50 rounded-full blur-3xl opacity-60"></div>

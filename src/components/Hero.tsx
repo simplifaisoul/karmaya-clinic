@@ -3,7 +3,7 @@ import { ArrowRight, Heart } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-white font-sans">
+        <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-white font-sans">
             {/* Animated Background Gradients - Light & clean for White theme */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute top-[-20%] right-[-10%] w-[50%] h-[50%] bg-blue-100 rounded-full blur-[100px] opacity-60 animate-float" />
@@ -29,15 +29,15 @@ const Hero = () => {
                             🌟 Transforming Communities Since 2024
                         </motion.div>
 
-                        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-neutral-900 leading-tight mb-6 tracking-tight">
+                        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-neutral-900 leading-tight mb-6 tracking-tight">
                             <span className="block">Karmaya</span>
                             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 animate-pulse-slow pb-2">
                                 MicroClinics
                             </span>
                         </h1>
 
-                        <div className="mb-12 pl-6 border-l-4 border-blue-600 max-w-2xl py-2">
-                            <p className="text-3xl md:text-4xl text-neutral-600 font-medium leading-tight font-heading tracking-tight italic">
+                        <div className="mb-8 md:mb-12 pl-6 border-l-4 border-blue-600 max-w-2xl py-2">
+                            <p className="text-2xl md:text-4xl text-neutral-600 font-medium leading-tight font-heading tracking-tight italic">
                                 "A small-scale, personalized healthcare model... focused on proactive prevention and supporting patients through a sustainable journey toward better health."
                             </p>
                         </div>

@@ -79,15 +79,15 @@ const Header = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-secondary text-white absolute w-full top-20 left-0 shadow-xl overflow-hidden"
+                        className="md:hidden bg-white/95 backdrop-blur-xl text-neutral-900 absolute w-full top-20 left-0 shadow-2xl border-t border-neutral-100 overflow-hidden"
                     >
-                        <div className="flex flex-col p-4 space-y-1">
+                        <div className="flex flex-col p-6 space-y-2">
                             {navLinks.map((link) => (
                                 link.isPage ? (
                                     <Link
                                         key={link.name}
                                         to={link.to}
-                                        className="block px-4 py-4 text-lg font-bold border-b border-white/10 hover:bg-white/10 transition-colors uppercase tracking-wide"
+                                        className="block px-4 py-4 text-xl font-bold border-b border-neutral-100 hover:bg-neutral-50 transition-colors uppercase tracking-wide text-neutral-800"
                                         onClick={() => setIsOpen(false)}
                                     >
                                         {link.name}
@@ -97,7 +97,7 @@ const Header = () => {
                                         key={link.name}
                                         smooth
                                         to={link.to}
-                                        className="block px-4 py-4 text-lg font-bold border-b border-white/10 hover:bg-white/10 transition-colors uppercase tracking-wide"
+                                        className="block px-4 py-4 text-xl font-bold border-b border-neutral-100 hover:bg-neutral-50 transition-colors uppercase tracking-wide text-neutral-800"
                                         onClick={() => setIsOpen(false)}
                                     >
                                         {link.name}
@@ -107,7 +107,7 @@ const Header = () => {
                             <HashLink
                                 smooth
                                 to="/#contact"
-                                className="block px-4 py-4 text-lg font-bold text-action bg-white mt-4 text-center uppercase tracking-wide rounded-sm"
+                                className="block px-4 py-4 text-xl font-bold text-white bg-blue-600 hover:bg-blue-700 mt-6 text-center uppercase tracking-wide rounded-xl shadow-lg shadow-blue-600/20 transition-all"
                                 onClick={() => setIsOpen(false)}
                             >
                                 Contact Us
