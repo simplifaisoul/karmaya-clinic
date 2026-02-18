@@ -6,7 +6,9 @@
 
   html,
   body {
-    @apply overflow-x-hidden w-full relative;
+    @apply overflow-x-hidden relative;
+    width: 100%;
+    max-width: 100vw;
   }
 
   body {

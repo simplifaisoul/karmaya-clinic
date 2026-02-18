@@ -53,7 +53,7 @@ export const ScrollReveal = ({
     };
 
     return (
-        <div ref={ref} style={{ position: 'relative', width }} className={className}>
+        <div ref={ref} style={{ position: 'relative', width, maxWidth: '100%' }} className={className}>
             <motion.div
                 variants={getVariants()}
                 initial="hidden"

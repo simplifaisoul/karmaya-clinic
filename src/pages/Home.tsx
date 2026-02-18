@@ -18,7 +18,7 @@ const Home = () => {
     // I should add it here.
 
     return (
-        <div className="overflow-x-hidden">
+        <main className="w-full max-w-[100vw] overflow-x-hidden relative">
             {/* Hero handles its own initial animations */}
             <Hero />
 
@@ -45,7 +45,7 @@ const Home = () => {
             <ScrollReveal width="100%" direction="up">
                 <Contact />
             </ScrollReveal>
-        </div>
+        </main>
     );
 };
 
