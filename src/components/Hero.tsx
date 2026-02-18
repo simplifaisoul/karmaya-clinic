@@ -37,8 +37,8 @@ const Hero = () => {
                         </h1>
 
                         <div className="mb-8 md:mb-12 pl-6 border-l-4 border-blue-600 max-w-2xl py-2">
-                            <p className="text-2xl md:text-4xl text-neutral-600 font-medium leading-tight font-heading tracking-tight italic">
-                                "A small-scale, personalized healthcare model... focused on proactive prevention and supporting patients through a sustainable journey toward better health."
+                            <p className="text-2xl md:text-4xl text-neutral-600 font-bold leading-tight font-heading tracking-tight">
+                                "A small-scale, personalized healthcare model... focused on proactive prevention and supporting patients through a sustainable journey toward better <span className="text-blue-600 font-extrabold">health</span>."
                             </p>
                         </div>
 
