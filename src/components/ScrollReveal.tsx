@@ -32,22 +32,21 @@ export const ScrollReveal = ({
     }, [isInView, mainControls]);
 
     const getVariants = (): { hidden: Variant, visible: Variant } => {
-        let hidden: any = { opacity: 0, scale: 0.95 };
+        let hidden: any = { opacity: 0 };
         const visible: any = {
             opacity: 1,
-            scale: 1,
             transition: {
                 duration,
                 delay,
-                ease: "easeOut",
+                ease: [0.16, 1, 0.3, 1],
                 staggerChildren: staggerChildren
             }
         };
 
-        if (direction === "up") hidden = { ...hidden, y: 50 };
-        if (direction === "down") hidden = { ...hidden, y: -50 };
-        if (direction === "left") hidden = { ...hidden, x: 50 };
-        if (direction === "right") hidden = { ...hidden, x: -50 };
+        if (direction === "up") hidden = { ...hidden, y: 30 };
+        if (direction === "down") hidden = { ...hidden, y: -30 };
+        if (direction === "left") hidden = { ...hidden, x: 20 };
+        if (direction === "right") hidden = { ...hidden, x: -20 };
 
         return { hidden, visible };
     };

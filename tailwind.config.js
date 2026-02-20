@@ -21,15 +21,16 @@ export default {
                     DEFAULT: '#FF7F50', // Coral (Warm accent, readable against blue)
                 },
                 neutral: {
-                    50: '#F0F8FF', // Alice Blue (Very light blue tint for backgrounds)
-                    100: '#E6F3FF',
+                    50: '#fafafa',
+                    100: '#f5f5f5',
+                    200: '#e5e5e5',
                     800: '#1e293b',
                     900: '#0f172a',
                 }
             },
             fontFamily: {
-                sans: ['Calibri', 'Open Sans', 'sans-serif'],
-                heading: ['Calibri', 'Open Sans', 'sans-serif'], // User requested Calibri for everything
+                sans: ['Inter', 'system-ui', 'sans-serif'],
+                heading: ['Inter', 'system-ui', 'sans-serif'],
             },
         },
     },

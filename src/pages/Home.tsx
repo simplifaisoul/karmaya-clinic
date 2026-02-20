@@ -26,11 +26,11 @@ const Home = () => {
                 <About />
             </ScrollReveal>
 
-            <ScrollReveal width="100%" direction="right">
+            <ScrollReveal width="100%">
                 <Pillars />
             </ScrollReveal>
 
-            <ScrollReveal width="100%" direction="left">
+            <ScrollReveal width="100%">
                 <Innovation />
             </ScrollReveal>
 

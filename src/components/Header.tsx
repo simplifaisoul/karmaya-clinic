@@ -17,43 +17,45 @@ const Header = () => {
     ];
 
     return (
-        <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-white/20 font-sans transition-all duration-300">
+        <nav className="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-white/20 transition-all duration-300 supports-[backdrop-filter]:bg-white/60">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-20">
+                <div className="flex items-center justify-between h-16">
                     <div className="flex-shrink-0 flex items-center gap-2">
-                        <Link to="/" className="flex items-center gap-2">
-                            <Heart className="h-8 w-8 text-action fill-current" />
-                            <span className="font-heading font-bold text-2xl text-secondary tracking-tight">
-                                Karmaya<span className="text-primary">Clinics</span>
+                        <Link to="/" className="flex items-center gap-2 group">
+                            <Heart className="h-8 w-8 text-blue-600 fill-current group-hover:scale-110 transition-transform" />
+                            <span className="font-heading font-bold text-2xl text-neutral-900 tracking-tight">
+                                Karmaya<span className="text-blue-600">Clinics</span>
                             </span>
                         </Link>
                     </div>
 
-                    <div className="hidden md:flex items-center space-x-6">
+                    <div className="hidden md:flex items-center space-x-8">
                         {navLinks.map((link) => (
                             link.isPage ? (
                                 <Link
                                     key={link.name}
                                     to={link.to}
-                                    className="font-bold text-secondary hover:text-primary transition-colors duration-200 uppercase tracking-wide text-sm"
+                                    className="font-medium text-neutral-500 hover:text-neutral-900 transition-colors duration-200 text-sm relative group"
                                 >
                                     {link.name}
+                                    <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
                                 </Link>
                             ) : (
                                 <HashLink
                                     key={link.name}
                                     smooth
                                     to={link.to}
-                                    className="font-bold text-secondary hover:text-primary transition-colors duration-200 uppercase tracking-wide text-sm"
+                                    className="font-medium text-neutral-500 hover:text-neutral-900 transition-colors duration-200 text-sm relative group"
                                 >
                                     {link.name}
+                                    <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
                                 </HashLink>
                             )
                         ))}
                         <div className="scale-90 origin-right">
                             <GoogleTranslate isMobile={false} />
                         </div>
-                        <HashLink smooth to="/#contact" className="bg-action hover:bg-neutral-800 text-white px-6 py-2.5 rounded-full font-bold transition-all transform hover:scale-105 shadow-md hover:shadow-lg uppercase tracking-wide text-sm whitespace-nowrap">
+                        <HashLink smooth to="/#contact" className="bg-neutral-900 hover:bg-neutral-800 text-white px-6 py-2 rounded-full font-semibold transition-all shadow-sm hover:shadow-md text-sm whitespace-nowrap">
                             Contact Us
                         </HashLink>
                     </div>
@@ -64,7 +66,7 @@ const Header = () => {
                         </div>
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="inline-flex items-center justify-center p-2 rounded-md text-secondary hover:text-primary focus:outline-none"
+                            className="inline-flex items-center justify-center p-2 rounded-md text-neutral-900 hover:bg-neutral-100 focus:outline-none transition-colors"
                         >
                             <span className="sr-only">Open main menu</span>
                             {isOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
@@ -79,7 +81,7 @@ const Header = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-white/95 backdrop-blur-xl text-neutral-900 absolute w-full top-20 left-0 shadow-2xl border-t border-neutral-100 overflow-hidden"
+                        className="md:hidden bg-white border-t border-neutral-100 overflow-hidden shadow-xl"
                     >
                         <div className="flex flex-col p-6 space-y-2">
                             {navLinks.map((link) => (
@@ -87,7 +89,7 @@ const Header = () => {
                                     <Link
                                         key={link.name}
                                         to={link.to}
-                                        className="block px-4 py-4 text-xl font-bold border-b border-neutral-100 hover:bg-neutral-50 transition-colors uppercase tracking-wide text-neutral-800"
+                                        className="block px-4 py-4 text-lg font-bold text-neutral-800 hover:bg-neutral-50 rounded-xl transition-colors"
                                         onClick={() => setIsOpen(false)}
                                     >
                                         {link.name}
@@ -97,7 +99,7 @@ const Header = () => {
                                         key={link.name}
                                         smooth
                                         to={link.to}
-                                        className="block px-4 py-4 text-xl font-bold border-b border-neutral-100 hover:bg-neutral-50 transition-colors uppercase tracking-wide text-neutral-800"
+                                        className="block px-4 py-4 text-lg font-bold text-neutral-800 hover:bg-neutral-50 rounded-xl transition-colors"
                                         onClick={() => setIsOpen(false)}
                                     >
                                         {link.name}
@@ -107,7 +109,7 @@ const Header = () => {
                             <HashLink
                                 smooth
                                 to="/#contact"
-                                className="block px-4 py-4 text-xl font-bold text-white bg-blue-600 hover:bg-blue-700 mt-6 text-center uppercase tracking-wide rounded-xl shadow-lg shadow-blue-600/20 transition-all"
+                                className="block px-4 py-4 text-base font-semibold text-white bg-neutral-900 hover:bg-neutral-800 mt-4 text-center rounded-xl shadow-sm transition-all"
                                 onClick={() => setIsOpen(false)}
                             >
                                 Contact Us
