@@ -1,32 +1,28 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowRight, PlayCircle, Star } from 'lucide-react';
 
 const Hero = () => {
-    const { scrollY } = useScroll();
-    const y1 = useTransform(scrollY, [0, 500], [0, 150]);
-    const y2 = useTransform(scrollY, [0, 500], [0, -100]);
-    const opacity = useTransform(scrollY, [0, 400], [1, 0]);
-
     return (
         <section className="relative min-h-screen flex items-center overflow-hidden bg-white pt-20">
             {/* AG-Style Gradient Mesh Background */}
             <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
                 <motion.div
-                    style={{ y: y1 }}
-                    className="absolute -top-[20%] -right-[10%] w-[60vw] h-[60vw] bg-gradient-to-br from-blue-50 via-indigo-50 to-transparent rounded-full blur-[100px] opacity-50"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 0.5 }}
+                    transition={{ duration: 1.5 }}
+                    className="absolute -top-[20%] -right-[10%] w-[60vw] h-[60vw] bg-gradient-to-br from-blue-50 via-indigo-50 to-transparent rounded-full blur-[100px]"
                 />
                 <motion.div
-                    style={{ y: y2 }}
-                    className="absolute top-[30%] -left-[15%] w-[50vw] h-[50vw] bg-gradient-to-tr from-blue-50/80 to-transparent rounded-full blur-[80px] opacity-40"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 0.4 }}
+                    transition={{ duration: 1.5, delay: 0.5 }}
+                    className="absolute top-[30%] -left-[15%] w-[50vw] h-[50vw] bg-gradient-to-tr from-blue-50/80 to-transparent rounded-full blur-[80px]"
                 />
                 {/* Subtle grid pattern */}
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,black_70%,transparent_110%)]" />
             </div>
 
-            <motion.div
-                style={{ opacity }}
-                className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
-            >
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                 {/* Left Column: Typography & Content */}
                 <div className="flex flex-col gap-6 order-2 lg:order-1 pb-16 lg:pb-0">
                     <motion.div
@@ -127,7 +123,7 @@ const Hero = () => {
                         <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-200/60 rounded-full blur-xl animate-float" style={{ animationDelay: '2s' }} />
                     </div>
                 </motion.div>
-            </motion.div>
+            </div>
         </section>
     );
 };
