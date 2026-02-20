@@ -6,12 +6,18 @@ const Gallery = () => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     const images = [
-        { src: '/images/clinic_team_outside.jpg', alt: 'Karmaya Team', span: 'sm:col-span-2 sm:row-span-2' },
-        { src: '/images/patient_consultation.jpg', alt: 'Patient Consultation', span: '' },
-        { src: '/images/clinic_team_outside.jpg', alt: 'Community Outreach', span: '' },
-        { src: '/images/patient_consultation.jpg', alt: 'Health Education', span: 'sm:col-span-2' },
-        { src: '/images/clinic_team_outside.jpg', alt: 'Volunteers at Work', span: '' },
-        { src: '/images/patient_consultation.jpg', alt: 'Medical Services', span: '' },
+        { src: '/images/gallery/Karmaya Clinic Big and nice photo everyone outside with Mac.jpeg', alt: 'Karmaya Clinic Team Outside', span: 'sm:col-span-2 sm:row-span-2' },
+        { src: '/images/gallery/Checking Vitals.jpeg', alt: 'Checking Vitals', span: '' },
+        { src: '/images/gallery/Child mouth check.jpeg', alt: 'Child Health Check', span: '' },
+        { src: '/images/gallery/Doctor Eyesight test Older man.jpeg', alt: 'Vision Test', span: 'sm:col-span-2' },
+        { src: '/images/gallery/Inside the Clinic.jpeg', alt: 'Inside the Clinic', span: '' },
+        { src: '/images/gallery/Temparature check.jpeg', alt: 'Temperature Check', span: '' },
+        { src: '/images/gallery/Group outside assesment.jpeg', alt: 'Group Assessment Outside', span: 'sm:col-span-2 sm:row-span-2' },
+        { src: '/images/gallery/Lung check Older lady.jpeg', alt: 'Lung Check', span: '' },
+        { src: '/images/gallery/Kid getting treatment senstive photo.jpeg', alt: 'Child Treatment', span: '' },
+        { src: '/images/gallery/Group sitting eyesight.jpeg', alt: 'Group Vision Assessment', span: 'sm:col-span-2' },
+        { src: '/images/gallery/Group girls assesment indoor.jpeg', alt: 'Indoor Group Assessment', span: '' },
+        { src: '/images/gallery/Karmaya Group Photo with Mac.jpeg', alt: 'Karmaya Team Group Photo', span: 'sm:col-span-3 sm:row-span-2' },
     ];
 
     return (
