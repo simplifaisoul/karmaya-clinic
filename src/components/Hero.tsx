@@ -50,8 +50,8 @@ const Hero = () => {
                         transition={{ delay: 0.2, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                         className="text-base md:text-lg text-blue-50 leading-relaxed max-w-xl mb-8"
                     >
-                        Karmaya Clinics provide <span className="text-white font-semibold">holistic primary healthcare</span> through
-                        9 interconnected pillars — serving underserved communities in the Philippines with a sustainable,
+                        Karmaya Clinics provide <span className="text-white font-semibold">holistic healthcare</span> through
+                        9 essential steps—serving underserved communities in the Philippines with a sustainable,
                         community-powered micro-clinic model.
                     </motion.p>
 
