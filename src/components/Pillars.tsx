@@ -31,7 +31,7 @@ const Pillars = () => {
                         Holistic Care
                     </span>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 tracking-tight">
-                        The 9 Pillars of Health
+                        The 9 Steps to Wellness
                     </h2>
                     <p className="text-base md:text-lg text-neutral-500 max-w-2xl mx-auto leading-relaxed">
                         A complete approach moving beyond traditional medication to address biological and societal wellness.
