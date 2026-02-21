@@ -306,16 +306,17 @@ html {
 
 .goog-te-gadget .goog-te-combo {
   margin: 0 !important;
-  padding: 8px 12px !important;
+  padding: 6px 10px !important;
   color: #0f172a !important;
-  background-color: #fafafa !important;
-  border: 1px solid #e5e5e5 !important;
+  background-color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
   border-radius: 9999px !important;
-  font-size: 13px !important;
+  font-size: 12px !important;
   font-weight: 500 !important;
   cursor: pointer !important;
   outline: none !important;
   transition: all 0.2s ease-in-out !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) !important;
 }
 
 .goog-te-gadget .goog-te-combo:hover {
