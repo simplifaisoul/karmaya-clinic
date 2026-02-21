@@ -1,63 +1,112 @@
-
-import { Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Heart, Mail, MapPin, Facebook, Instagram, Twitter, ArrowRight } from 'lucide-react';
 import { HashLink } from 'react-router-hash-link';
 
 const Footer = () => {
     return (
-        <footer className="bg-neutral-900 text-white pt-16 pb-8 font-sans">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+        <footer className="bg-neutral-900 text-white relative overflow-hidden">
+            {/* CTA Banner */}
+            <div className="relative z-10 border-b border-neutral-800">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                        <div>
+                            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 tracking-tight">
+                                Ready to make a difference?
+                            </h3>
+                            <p className="text-neutral-400 text-sm md:text-base">
+                                Join 1,000+ community members building a healthier world together.
+                            </p>
+                        </div>
+                        <a
+                            href="#join-hub"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                document.getElementById('join-hub')?.scrollIntoView({ behavior: 'smooth' });
+                            }}
+                            className="px-8 py-3.5 bg-white text-neutral-900 rounded-full font-semibold text-sm hover:bg-neutral-100 transition-all flex items-center gap-2 group shadow-lg whitespace-nowrap"
+                        >
+                            Join Our Mission
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </a>
+                    </div>
+                </div>
+            </div>
 
+            {/* Main Footer */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     {/* Brand */}
-                    <div className="col-span-1 md:col-span-2">
-                        <h2 className="text-2xl font-bold mb-4 text-white tracking-tight">
-                            Karmaya<span className="text-blue-400">Clinics</span>
-                        </h2>
-                        <p className="text-neutral-400 max-w-sm mb-6">
-                            "People helping people" through positive energy and tangible action. Providing holistic primary care to underserved communities worldwide.
+                    <div className="md:col-span-2">
+                        <div className="flex items-center gap-2 mb-4">
+                            <Heart className="h-6 w-6 text-blue-400 fill-current" />
+                            <span className="font-bold text-xl text-white tracking-tight">
+                                Karmaya<span className="text-blue-400">Clinics</span>
+                            </span>
+                        </div>
+                        <p className="text-neutral-400 text-sm max-w-sm mb-5 leading-relaxed">
+                            "People helping people" through positive energy and tangible action.
+                            Holistic primary care for underserved communities across the Philippines.
                         </p>
-                        <div className="flex space-x-4">
-                            <a href="#" className="bg-neutral-800 p-2.5 rounded-full hover:bg-neutral-700 transition-colors">
-                                <Facebook className="h-5 w-5" />
-                            </a>
-                            <a href="#" className="bg-neutral-800 p-2.5 rounded-full hover:bg-neutral-700 transition-colors">
-                                <Instagram className="h-5 w-5" />
-                            </a>
-                            <a href="#" className="bg-neutral-800 p-2.5 rounded-full hover:bg-neutral-700 transition-colors">
-                                <Twitter className="h-5 w-5" />
-                            </a>
+                        <div className="flex gap-3">
+                            {[
+                                { icon: Facebook, label: 'Facebook' },
+                                { icon: Instagram, label: 'Instagram' },
+                                { icon: Twitter, label: 'Twitter' }
+                            ].map(({ icon: Icon, label }) => (
+                                <a key={label} href="#" aria-label={label} className="bg-neutral-800 p-2.5 rounded-lg hover:bg-neutral-700 hover:text-blue-400 transition-all">
+                                    <Icon className="h-4 w-4" />
+                                </a>
+                            ))}
                         </div>
                     </div>
 
                     {/* Quick Links */}
                     <div>
-                        <h3 className="text-lg font-bold mb-4 border-b border-neutral-700 pb-2 inline-block">Quick Links</h3>
-                        <ul className="space-y-3">
-                            <li><HashLink smooth to="/#mission" className="text-neutral-400 hover:text-white transition-colors">Our Mission</HashLink></li>
-                            <li><HashLink smooth to="/#pillars" className="text-neutral-400 hover:text-white transition-colors">Our Work</HashLink></li>
-                            <li><HashLink smooth to="/#innovation" className="text-neutral-400 hover:text-white transition-colors">Partners</HashLink></li>
-                            <li><HashLink smooth to="/#gallery" className="text-neutral-400 hover:text-white transition-colors">Impact</HashLink></li>
+                        <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Navigate</h4>
+                        <ul className="space-y-2.5">
+                            {[
+                                { name: 'Our Mission', to: '/#mission' },
+                                { name: 'Our Work', to: '/#pillars' },
+                                { name: 'Impact Gallery', to: '/#gallery' },
+                                { name: 'Service Exchange', to: '/#join-hub' },
+                                { name: 'Resources', to: '/resources' }
+                            ].map(link => (
+                                <li key={link.name}>
+                                    <HashLink smooth to={link.to} className="text-neutral-400 hover:text-white text-sm transition-colors">
+                                        {link.name}
+                                    </HashLink>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
                     {/* Contact */}
                     <div>
-                        <h3 className="text-lg font-bold mb-4 border-b border-neutral-700 pb-2 inline-block">Get in Touch</h3>
-                        <ul className="space-y-4">
-                            <li className="flex items-start">
-                                <MapPin className="h-5 w-5 text-blue-500 mr-3 mt-1 flex-shrink-0" />
-                                <span className="text-neutral-400">Philippines (Pilot) | Cebu (Upcoming)</span>
+                        <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Contact</h4>
+                        <ul className="space-y-3">
+                            <li className="flex items-start gap-2.5">
+                                <MapPin className="h-4 w-4 text-blue-400 mt-0.5 flex-shrink-0" />
+                                <span className="text-neutral-400 text-sm">Philippines (Pilot)<br />Cebu (Upcoming)</span>
                             </li>
-                            <li className="flex items-center">
-                                <Mail className="h-5 w-5 text-blue-500 mr-3 flex-shrink-0" />
-                                <a href="mailto:info@karmayaclinics.org" className="text-neutral-400 hover:text-white transition-colors">info@karmayaclinics.org</a>
+                            <li className="flex items-center gap-2.5">
+                                <Mail className="h-4 w-4 text-blue-400 flex-shrink-0" />
+                                <a href="mailto:info@karmayaclinics.org" className="text-neutral-400 hover:text-white text-sm transition-colors">
+                                    info@karmayaclinics.org
+                                </a>
                             </li>
                         </ul>
                     </div>
                 </div>
+            </div>
 
-                <div className="border-t border-neutral-800 mt-12 pt-8 text-center text-neutral-500 text-sm">
-                    <p>&copy; {new Date().getFullYear()} Karmaya MicroClinics. All rights reserved.</p>
+            {/* Bottom bar */}
+            <div className="border-t border-neutral-800">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
+                    <p className="text-neutral-500 text-xs">
+                        &copy; {new Date().getFullYear()} Karmaya Clinics. All rights reserved.
+                    </p>
+                    <p className="text-neutral-600 text-xs">
+                        Built with ❤️ for humanity
+                    </p>
                 </div>
             </div>
         </footer>
