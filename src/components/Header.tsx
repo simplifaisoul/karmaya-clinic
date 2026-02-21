@@ -31,15 +31,15 @@ const Header = () => {
     return (
         <>
             <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled
-                    ? 'bg-white/90 backdrop-blur-xl border-b border-neutral-200/50 shadow-sm'
-                    : 'bg-transparent'
+                ? 'bg-white/90 backdrop-blur-xl border-b border-neutral-200/50 shadow-sm'
+                : 'bg-transparent'
                 }`}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
                         <Link to="/" className="flex items-center gap-2 group relative z-50">
                             <Heart className={`h-7 w-7 fill-current transition-colors ${scrolled ? 'text-blue-600' : 'text-white'}`} />
                             <span className={`font-bold text-xl tracking-tight transition-colors ${scrolled ? 'text-neutral-900' : 'text-white'}`}>
-                                Karmaya<span className="text-blue-500">Clinics</span>
+                                Karmaya<span className={`transition-colors ${scrolled ? 'text-blue-500' : 'text-blue-100'}`}>Clinics</span>
                             </span>
                         </Link>
 
@@ -73,8 +73,8 @@ const Header = () => {
                                 smooth
                                 to="/#contact"
                                 className={`px-5 py-2 rounded-full font-semibold text-sm transition-all ${scrolled
-                                        ? 'bg-neutral-900 text-white hover:bg-neutral-800 shadow-sm'
-                                        : 'bg-white text-neutral-900 hover:bg-neutral-100 shadow-lg'
+                                    ? 'bg-neutral-900 text-white hover:bg-neutral-800 shadow-sm'
+                                    : 'bg-white text-neutral-900 hover:bg-neutral-100 shadow-lg'
                                     }`}
                             >
                                 Contact Us
