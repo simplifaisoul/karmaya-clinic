@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { RefreshCw, Zap, Globe, ArrowRightLeft } from 'lucide-react';
 
 const Innovation = () => {
@@ -27,82 +26,59 @@ const Innovation = () => {
     ];
 
     return (
-        <section id="innovation" className="py-20 md:py-28 bg-white relative overflow-hidden">
+        <section id="innovation" className="py-16 md:py-24 bg-white relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
                     {/* Left: Text Content */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                    >
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-neutral-100 text-neutral-600 font-semibold text-xs tracking-wider uppercase mb-5">
+                    <div>
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-neutral-100 text-neutral-600 font-semibold text-xs tracking-wider uppercase mb-4">
                             Strategic Innovation
                         </span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-5 tracking-tight">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 tracking-tight">
                             The Sustainability Plan
                         </h2>
-                        <p className="text-lg text-neutral-500 mb-10 leading-relaxed">
+                        <p className="text-base md:text-lg text-neutral-500 mb-8 leading-relaxed">
                             Moving beyond traditional donor-funding. We implement innovative economic models that empower communities to fund their own healthcare.
                         </p>
 
-                        <div className="space-y-8">
-                            {features.map((feature, index) => (
-                                <motion.div
-                                    key={feature.title}
-                                    initial={{ opacity: 0, y: 15 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1, duration: 0.5 }}
-                                    className="flex gap-4"
-                                >
+                        <div className="space-y-6">
+                            {features.map((feature) => (
+                                <div key={feature.title} className="flex gap-4">
                                     <div className={`${feature.bg} p-3 rounded-xl h-fit flex-shrink-0`}>
                                         <feature.icon className={`w-5 h-5 ${feature.color}`} />
                                     </div>
                                     <div>
-                                        <h4 className="text-base font-bold text-neutral-900 mb-1">{feature.title}</h4>
+                                        <h4 className="text-sm font-bold text-neutral-900 mb-1">{feature.title}</h4>
                                         <p className="text-neutral-500 text-sm leading-relaxed">{feature.desc}</p>
                                     </div>
-                                </motion.div>
+                                </div>
                             ))}
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Right: Visual */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2, duration: 0.6 }}
-                        className="relative"
-                    >
-                        <div className="bg-neutral-50 rounded-3xl p-8 md:p-12 border border-neutral-100 text-center min-h-[350px] flex flex-col items-center justify-center relative overflow-hidden">
-                            <div className="absolute inset-0 bg-[url('/images/hero.jpg')] bg-cover bg-center opacity-[0.04]"></div>
+                    <div className="relative">
+                        <div className="bg-neutral-50 rounded-2xl p-8 md:p-10 border border-neutral-100 text-center min-h-[300px] flex flex-col items-center justify-center relative overflow-hidden">
                             <div className="relative z-10">
-                                <div className="w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                                    <RefreshCw className="w-10 h-10 text-blue-500" />
+                                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                                    <RefreshCw className="w-8 h-8 text-blue-500" />
                                 </div>
-                                <h5 className="text-2xl font-bold text-neutral-900 mb-2">Circular Economy</h5>
-                                <p className="text-neutral-500">Turning Waste into Wellness</p>
+                                <h5 className="text-xl font-bold text-neutral-900 mb-2">Circular Economy</h5>
+                                <p className="text-neutral-500 text-sm">Turning Waste into Wellness</p>
                             </div>
                         </div>
 
                         {/* Floating card */}
-                        <motion.div
-                            animate={{ y: [0, -8, 0] }}
-                            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                            className="absolute -bottom-6 -left-4 bg-white p-5 rounded-xl shadow-premium-hover max-w-[200px] hidden sm:block z-30 border border-neutral-100"
-                        >
+                        <div className="absolute -bottom-4 -left-2 bg-white p-4 rounded-xl shadow-premium-hover max-w-[180px] hidden sm:block z-30 border border-neutral-100">
                             <div className="flex items-center gap-2 mb-1">
                                 <div className="w-2 h-2 rounded-full bg-green-500"></div>
                                 <span className="font-bold text-xs text-neutral-600">Impact Tracker</span>
                             </div>
-                            <div className="text-2xl font-extrabold text-neutral-900">1,000+</div>
+                            <div className="text-xl font-extrabold text-neutral-900">1,000+</div>
                             <p className="text-xs text-neutral-500">Members served per clinic</p>
-                        </motion.div>
-                    </motion.div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

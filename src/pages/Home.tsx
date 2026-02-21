@@ -8,18 +8,8 @@ import JoinHub from "../components/JoinHub";
 import { ScrollReveal } from "../components/ScrollReveal";
 
 const Home = () => {
-    // Check for hash in URL to scroll to section after render
-    // This is handled nicely by the browser naturally if elements exist, 
-    // but with React usually we need useEffect. 
-    // However, since we are not using lazy loading here, it might just work.
-    // Let's rely on the Header's Link to="/?section=x" logic if I implemented it,
-    // or the browser's default hash handling if I used simple IDs.
-    // I previously implemented the params check in a thought but didn't write it to Home.
-    // I should add it here.
-
     return (
-        <main className="w-full overflow-x-hidden relative">
-            {/* Hero handles its own initial animations */}
+        <main className="w-full relative">
             <Hero />
 
             <ScrollReveal width="100%">

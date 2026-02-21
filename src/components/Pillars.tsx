@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import {
     HeartPulse,
     BrainCircuit,
@@ -25,44 +24,34 @@ const Pillars = () => {
     ];
 
     return (
-        <section id="pillars" className="py-20 md:py-28 bg-white relative">
+        <section id="pillars" className="py-16 md:py-24 bg-white relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-center mb-16 md:mb-20"
-                >
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-neutral-100 text-neutral-600 font-semibold text-xs tracking-wider uppercase mb-5">
+                <div className="text-center mb-12 md:mb-16">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-neutral-100 text-neutral-600 font-semibold text-xs tracking-wider uppercase mb-4">
                         Holistic Care
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-5 tracking-tight">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 tracking-tight">
                         The 9 Pillars of Health
                     </h2>
-                    <p className="text-lg text-neutral-500 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-base md:text-lg text-neutral-500 max-w-2xl mx-auto leading-relaxed">
                         A complete approach moving beyond traditional medication to address biological and societal wellness.
                     </p>
-                </motion.div>
+                </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                    {pillars.map((pillar, index) => (
-                        <motion.div
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+                    {pillars.map((pillar) => (
+                        <div
                             key={pillar.title}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-40px" }}
-                            transition={{ delay: index * 0.04, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                            className={`bg-white rounded-2xl p-6 md:p-7 shadow-premium hover:shadow-premium-hover transition-all duration-300 border ${pillar.border} group cursor-default`}
+                            className={`bg-white rounded-xl p-5 md:p-6 shadow-premium hover:shadow-premium-hover transition-all duration-300 border ${pillar.border} group cursor-default`}
                         >
-                            <div className={`w-12 h-12 rounded-xl ${pillar.bg} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
-                                <pillar.icon className={`w-6 h-6 ${pillar.color}`} />
+                            <div className={`w-10 h-10 rounded-lg ${pillar.bg} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                                <pillar.icon className={`w-5 h-5 ${pillar.color}`} />
                             </div>
-                            <h3 className="text-lg font-bold text-neutral-900 mb-2">{pillar.title}</h3>
+                            <h3 className="text-base font-bold text-neutral-900 mb-1.5">{pillar.title}</h3>
                             <p className="text-neutral-500 leading-relaxed text-sm">
                                 {pillar.desc}
                             </p>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

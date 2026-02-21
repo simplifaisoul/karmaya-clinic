@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Heart, Target, Users, Sparkles } from 'lucide-react';
 
 const About = () => {
@@ -13,91 +12,71 @@ const About = () => {
     ];
 
     return (
-        <section id="mission" className="py-20 md:py-28 bg-neutral-50 relative overflow-hidden">
+        <section id="mission" className="py-16 md:py-24 bg-neutral-50 relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-center mb-16"
-                >
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white border border-neutral-200 text-neutral-600 font-semibold text-xs tracking-wider uppercase mb-5 shadow-sm">
+                <div className="text-center mb-12 md:mb-16">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white border border-neutral-200 text-neutral-600 font-semibold text-xs tracking-wider uppercase mb-4 shadow-sm">
                         Our Foundation
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-5 tracking-tight">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 tracking-tight">
                         The <span className="gradient-text">K.A.R.M.A.Y.A</span> Philosophy
                     </h2>
-                    <p className="text-lg text-neutral-500 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-base md:text-lg text-neutral-500 max-w-3xl mx-auto leading-relaxed">
                         More than an acronym — it's a <span className="text-neutral-900 font-semibold">way of life</span> that guides every interaction, every treatment, and every relationship we build.
                     </p>
-                </motion.div>
+                </div>
 
                 {/* Values Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5 mb-16">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 mb-12 md:mb-16">
                     {values.map((value, index) => {
                         const Icon = value.icon;
                         return (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
-                                className="group"
-                            >
-                                <div className="bg-white p-5 md:p-6 rounded-2xl shadow-premium hover:shadow-premium-hover transition-all duration-300 border border-neutral-100">
-                                    <div className={`w-10 h-10 ${value.bg} rounded-xl flex items-center justify-center mb-3`}>
-                                        <Icon className={`w-5 h-5 ${value.color}`} />
-                                    </div>
-                                    <div className={`text-3xl md:text-4xl font-extrabold ${value.color} mb-1 tracking-tight`}>
-                                        {value.letter}
-                                    </div>
-                                    <h3 className="text-sm md:text-base font-bold text-neutral-900">{value.word}</h3>
+                            <div key={index} className="bg-white p-4 md:p-5 rounded-xl shadow-premium hover:shadow-premium-hover transition-all duration-300 border border-neutral-100">
+                                <div className={`w-9 h-9 ${value.bg} rounded-lg flex items-center justify-center mb-2.5`}>
+                                    <Icon className={`w-4 h-4 ${value.color}`} />
                                 </div>
-                            </motion.div>
+                                <div className={`text-2xl md:text-3xl font-extrabold ${value.color} mb-0.5 tracking-tight`}>
+                                    {value.letter}
+                                </div>
+                                <h3 className="text-sm font-bold text-neutral-900">{value.word}</h3>
+                            </div>
                         );
                     })}
                 </div>
 
                 {/* Mission Statement */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="relative rounded-3xl p-10 md:p-16 text-white overflow-hidden group"
-                >
+                <div className="relative rounded-2xl p-8 md:p-14 text-white overflow-hidden group">
                     <div className="absolute inset-0 z-0">
                         <img
-                            src="/images/patient_consultation.jpg"
-                            alt="Doctor consulting with patient"
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="/images/gallery/Group outside assesment.jpeg"
+                            alt="Community health outreach"
+                            className="w-full h-full object-cover"
+                            loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-r from-neutral-900/90 to-neutral-900/70"></div>
                     </div>
 
                     <div className="relative z-10">
-                        <h3 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">Our Mission</h3>
-                        <p className="text-lg md:text-xl leading-relaxed text-center max-w-3xl mx-auto text-neutral-200">
+                        <h3 className="text-2xl md:text-3xl font-bold mb-5 text-center text-white">Our Mission</h3>
+                        <p className="text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto text-neutral-200">
                             To provide <span className="font-bold text-white">accessible, holistic primary healthcare</span> to underserved communities through a sustainable micro-clinic model that empowers local populations and creates lasting positive change.
                         </p>
-                        <div className="mt-10 flex flex-wrap justify-center gap-8 md:gap-12">
+                        <div className="mt-8 flex flex-wrap justify-center gap-6 md:gap-10">
                             <div className="text-center">
-                                <div className="text-3xl md:text-4xl font-extrabold text-white mb-1">100%</div>
-                                <div className="text-neutral-400 text-sm font-medium">Community-Driven</div>
+                                <div className="text-2xl md:text-3xl font-extrabold text-white mb-0.5">100%</div>
+                                <div className="text-neutral-400 text-xs font-medium">Community-Driven</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-3xl md:text-4xl font-extrabold text-white mb-1">9</div>
-                                <div className="text-neutral-400 text-sm font-medium">Service Pillars</div>
+                                <div className="text-2xl md:text-3xl font-extrabold text-white mb-0.5">9</div>
+                                <div className="text-neutral-400 text-xs font-medium">Service Pillars</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-3xl md:text-4xl font-extrabold text-white mb-1">∞</div>
-                                <div className="text-neutral-400 text-sm font-medium">Impact Potential</div>
+                                <div className="text-2xl md:text-3xl font-extrabold text-white mb-0.5">∞</div>
+                                <div className="text-neutral-400 text-xs font-medium">Impact Potential</div>
                             </div>
                         </div>
                     </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );
