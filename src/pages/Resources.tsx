@@ -1,5 +1,5 @@
 import { FileText, Download, ArrowLeft } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const resources = [
     { title: "Children's Flu Guide", file: "Karmaya_Children flu.pdf", category: "Pediatrics" },
@@ -16,62 +16,55 @@ const resources = [
 
 const Resources = () => {
     return (
-        <div className="min-h-screen bg-neutral-50 font-sans">
+        <div className="min-h-screen bg-neutral-50">
             {/* Resources Hero */}
-            <div className="relative bg-primary pt-32 pb-20 overflow-hidden">
-                <div className="absolute inset-0 bg-secondary/10 backdrop-blur-3xl"></div>
+            <div className="relative bg-neutral-900 pt-28 pb-16 md:pt-32 md:pb-20 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-indigo-600/10"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="mb-8">
-                        <a href="/" className="inline-flex items-center text-white/90 hover:text-white font-medium transition-colors bg-white/10 px-4 py-2 rounded-full backdrop-blur-md hover:bg-white/20">
-                            <ArrowLeft className="w-5 h-5 mr-2" />
+                    <div className="mb-6">
+                        <Link to="/" className="inline-flex items-center text-white/70 hover:text-white text-sm font-medium transition-colors">
+                            <ArrowLeft className="w-4 h-4 mr-1.5" />
                             Back to Home
-                        </a>
+                        </Link>
                     </div>
                     <div className="text-center max-w-3xl mx-auto">
-                        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-md tracking-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
                             Patient Knowledge Hub
                         </h1>
-                        <p className="text-xl md:text-2xl text-blue-50 leading-relaxed font-light">
+                        <p className="text-base md:text-lg text-neutral-300 leading-relaxed max-w-2xl mx-auto">
                             Empowering you with the knowledge to make informed decisions about your health.
                         </p>
                     </div>
                 </div>
-                {/* Decorative circles */}
-                <div className="absolute top-20 right-10 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-10 left-10 w-48 h-48 bg-action/10 rounded-full blur-3xl"></div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 pb-24 relative z-20">
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                     {resources.map((resource, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                            className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 group border border-neutral-100 hover:-translate-y-2"
+                            className="bg-white rounded-xl shadow-premium hover:shadow-premium-hover transition-all duration-300 p-5 md:p-6 group border border-neutral-100"
                         >
-                            <div className="flex items-start justify-between mb-6">
-                                <div className="p-4 bg-blue-50 rounded-2xl group-hover:bg-primary group-hover:text-white transition-colors duration-300 shadow-sm">
-                                    <FileText className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
+                            <div className="flex items-start justify-between mb-4">
+                                <div className="p-2.5 bg-blue-50 rounded-xl group-hover:bg-neutral-900 transition-colors duration-300">
+                                    <FileText className="w-5 h-5 text-blue-600 group-hover:text-white transition-colors" />
                                 </div>
-                                <span className="bg-neutral-100 text-neutral-600 text-xs px-3 py-1.5 rounded-full font-bold uppercase tracking-wider">
+                                <span className="bg-neutral-100 text-neutral-600 text-[10px] px-2.5 py-1 rounded-full font-semibold uppercase tracking-wider">
                                     {resource.category}
                                 </span>
                             </div>
-                            <h3 className="text-2xl font-bold text-neutral-900 mb-3 group-hover:text-primary transition-colors leading-tight">
+                            <h3 className="text-base font-bold text-neutral-900 mb-3 leading-tight">
                                 {resource.title}
                             </h3>
-                            <div className="w-12 h-1 bg-action/20 group-hover:bg-action rounded-full mb-6 transition-all duration-300"></div>
                             <a
                                 href={`resources/${resource.file}`}
                                 download
-                                className="w-full inline-flex items-center justify-center bg-neutral-50 hover:bg-action text-neutral-700 hover:text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 group-hover:shadow-md"
+                                className="w-full inline-flex items-center justify-center bg-neutral-50 hover:bg-neutral-900 text-neutral-700 hover:text-white font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 text-sm"
                             >
-                                <Download className="w-5 h-5 mr-2" />
+                                <Download className="w-4 h-4 mr-2" />
                                 Download Guide
                             </a>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>
