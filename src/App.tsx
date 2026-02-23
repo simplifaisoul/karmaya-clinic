@@ -5,17 +5,19 @@ import Home from "./pages/Home";
 import Resources from "./pages/Resources";
 import AboutUs from "./pages/AboutUs";
 import ExchangeCenter from "./pages/ExchangeCenter";
+import GalleryPage from "./pages/GalleryPage";
+import PillarsPage from "./pages/PillarsPage";
+import ContactPage from "./pages/ContactPage";
 import WhatsAppWidget from "./components/WhatsAppWidget";
 
 function App() {
   const location = useLocation();
 
-  // Handle scroll to section from URL query param (e.g. /?section=mission)
+  // Scroll to top on route change, or handle hash/query scroll
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const section = params.get('section');
     if (section) {
-      // Small timeout to ensure DOM is ready and layout is stable
       setTimeout(() => {
         const element = document.getElementById(section);
         if (element) {
@@ -23,7 +25,6 @@ function App() {
         }
       }, 100);
     } else if (location.hash) {
-      // Fallback for standard hash
       const id = location.hash.replace('#', '');
       setTimeout(() => {
         const element = document.getElementById(id);
@@ -31,8 +32,9 @@ function App() {
           element.scrollIntoView({ behavior: 'smooth' });
         }
       }, 100);
+    } else {
+      window.scrollTo(0, 0);
     }
-    // Check for scrollTo state if passed
   }, [location]);
 
   return (
@@ -41,6 +43,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/exchange" element={<ExchangeCenter />} />
+        <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/pillars" element={<PillarsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="/resources" element={<Resources />} />
       </Routes>
       <WhatsAppWidget />
