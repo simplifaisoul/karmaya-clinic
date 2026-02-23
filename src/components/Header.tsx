@@ -21,10 +21,10 @@ const Header = () => {
     }, [isOpen]);
 
     const navLinks = [
-        { name: 'Mission', to: '/#mission' },
+        { name: 'Mission', to: '/about', isPage: true },
         { name: 'Our Work', to: '/#pillars' },
         { name: 'Impact', to: '/#gallery' },
-        { name: 'Exchange', to: '/#join-hub' },
+        { name: 'Exchange', to: '/exchange', isPage: true },
         { name: 'Resources', to: '/resources', isPage: true },
     ];
 

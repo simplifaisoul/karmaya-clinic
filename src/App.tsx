@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Resources from "./pages/Resources";
+import AboutUs from "./pages/AboutUs";
+import ExchangeCenter from "./pages/ExchangeCenter";
 import WhatsAppWidget from "./components/WhatsAppWidget";
 
 function App() {
@@ -37,6 +39,8 @@ function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/exchange" element={<ExchangeCenter />} />
         <Route path="/resources" element={<Resources />} />
       </Routes>
       <WhatsAppWidget />
