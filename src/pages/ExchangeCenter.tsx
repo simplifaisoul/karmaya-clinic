@@ -1,8 +1,27 @@
 import { ArrowLeft, ArrowRightLeft, Users, Shield, Zap, CheckCircle, UserPlus } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useAuth } from '../context/AuthContext';
 import HowItWorks from '../components/HowItWorks';
 import JoinHub from '../components/JoinHub';
+
+const AuthCTA = () => {
+    const { user, loading } = useAuth();
+    if (loading) return <div className="w-32 h-12 bg-emerald-100 animate-pulse rounded-full" />;
+
+    if (user) {
+        return (
+            <Link to="/dashboard" className="inline-flex items-center gap-2 px-8 py-4 bg-emerald-600 text-white rounded-full font-bold text-base hover:bg-emerald-700 transition-colors shadow-xl shadow-emerald-600/20 group">
+                Go to Dashboard <ArrowRightLeft className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+            </Link>
+        );
+    }
+    return (
+        <Link to="/signin" className="inline-flex items-center gap-2 px-8 py-4 bg-emerald-600 text-white rounded-full font-bold text-base hover:bg-emerald-700 transition-colors shadow-xl shadow-emerald-600/20 group">
+            Create Free Account <UserPlus className="w-5 h-5 group-hover:scale-110 transition-transform" />
+        </Link>
+    );
+};
 
 const fadeUp = {
     hidden: { opacity: 0, y: 24 },
@@ -123,26 +142,31 @@ const ExchangeCenter = () => {
                 </div>
             </section>
 
-            {/* Coming Soon: Account Creation */}
+            {/* Auth CTA */}
             <section className="py-16 md:py-24">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-10 md:p-14 border border-emerald-100">
                         <div className="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
                             <UserPlus className="w-7 h-7 text-emerald-600" />
                         </div>
-                        <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4">Account Creation Coming Soon</h2>
-                        <p className="text-neutral-600 max-w-xl mx-auto mb-6 leading-relaxed">
-                            We're building a personal dashboard where you can create your profile, list your services, track exchanges, and manage your community credits.
+                        <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4">
+                            Ready to Join the Exchange?
+                        </h2>
+                        <p className="text-neutral-600 max-w-xl mx-auto mb-8 leading-relaxed">
+                            Create your personal dashboard to list your services, track your exchanges, and manage your community credits.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm">
+                        <div className="flex justify-center mb-8">
+                            <AuthCTA />
+                        </div>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm border-t border-emerald-200/60 pt-8 mt-4">
                             <div className="flex items-center gap-2 text-emerald-700">
-                                <CheckCircle className="w-4 h-4" /> Google / Gmail Sign-In
+                                <CheckCircle className="w-4 h-4" /> Free to join
                             </div>
                             <div className="flex items-center gap-2 text-emerald-700">
-                                <CheckCircle className="w-4 h-4" /> Personal Service Profile
+                                <CheckCircle className="w-4 h-4" /> Get 10 credits instantly
                             </div>
                             <div className="flex items-center gap-2 text-emerald-700">
-                                <CheckCircle className="w-4 h-4" /> Credit Tracking
+                                <CheckCircle className="w-4 h-4" /> Google / Gmail support
                             </div>
                         </div>
                     </div>
