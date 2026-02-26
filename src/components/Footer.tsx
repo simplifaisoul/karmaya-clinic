@@ -1,7 +1,10 @@
-import { Heart, Mail, MapPin, Facebook, Instagram, Twitter, ArrowRight } from 'lucide-react';
+import { Heart, Mail, MapPin, Facebook, Instagram, Twitter, ArrowRight, UserCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 const Footer = () => {
+    const { user } = useAuth();
+
     return (
         <footer className="bg-neutral-900 text-white relative overflow-hidden">
             {/* CTA Banner */}
@@ -16,13 +19,25 @@ const Footer = () => {
                                 Join 1,000+ community members building a healthier world together.
                             </p>
                         </div>
-                        <Link
-                            to="/exchange"
-                            className="px-8 py-3.5 bg-white text-neutral-900 rounded-full font-semibold text-sm hover:bg-neutral-100 transition-all flex items-center gap-2 group shadow-lg whitespace-nowrap"
-                        >
-                            Join Our Mission
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </Link>
+                        <div className="flex gap-3">
+                            {user ? (
+                                <Link
+                                    to="/dashboard"
+                                    className="px-8 py-3.5 bg-white text-neutral-900 rounded-full font-semibold text-sm hover:bg-neutral-100 transition-all flex items-center gap-2 group shadow-lg whitespace-nowrap"
+                                >
+                                    My Dashboard
+                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                </Link>
+                            ) : (
+                                <Link
+                                    to="/signin"
+                                    className="px-8 py-3.5 bg-white text-neutral-900 rounded-full font-semibold text-sm hover:bg-neutral-100 transition-all flex items-center gap-2 group shadow-lg whitespace-nowrap"
+                                >
+                                    Join Our Mission
+                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                </Link>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -65,6 +80,7 @@ const Footer = () => {
                                 { name: '9 Steps', to: '/pillars' },
                                 { name: 'Gallery', to: '/gallery' },
                                 { name: 'Exchange Center', to: '/exchange' },
+                                { name: 'Service Directory', to: '/directory' },
                                 { name: 'Resources', to: '/resources' }
                             ].map(link => (
                                 <li key={link.name}>
@@ -76,7 +92,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Contact */}
+                    {/* Contact + Account */}
                     <div>
                         <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Contact</h4>
                         <ul className="space-y-3">
@@ -91,10 +107,19 @@ const Footer = () => {
                                 </a>
                             </li>
                         </ul>
-                        <div className="mt-6">
+                        <div className="mt-6 space-y-2">
                             <Link to="/contact" className="text-blue-400 hover:text-blue-300 text-sm font-semibold transition-colors flex items-center gap-1">
                                 Contact Us <ArrowRight className="w-3 h-3" />
                             </Link>
+                            {user ? (
+                                <Link to="/dashboard" className="text-neutral-400 hover:text-white text-sm font-medium transition-colors flex items-center gap-1.5">
+                                    <UserCircle className="w-3.5 h-3.5" /> My Dashboard
+                                </Link>
+                            ) : (
+                                <Link to="/signin" className="text-neutral-400 hover:text-white text-sm font-medium transition-colors flex items-center gap-1.5">
+                                    <UserCircle className="w-3.5 h-3.5" /> Sign In / Create Account
+                                </Link>
+                            )}
                         </div>
                     </div>
                 </div>

@@ -12,6 +12,7 @@ import ContactPage from "./pages/ContactPage";
 import TeamPage from "./pages/TeamPage";
 import SignIn from "./pages/SignIn";
 import Dashboard from "./pages/Dashboard";
+import ServiceDirectory from "./pages/ServiceDirectory";
 import NotFound from "./pages/NotFound";
 import WhatsAppWidget from "./components/WhatsAppWidget";
 
@@ -51,6 +52,7 @@ function App() {
         <Route path="/resources" element={<Resources />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/directory" element={<ServiceDirectory />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <WhatsAppWidget />

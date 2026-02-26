@@ -5,20 +5,23 @@ import { useAuth } from '../context/AuthContext';
 import HowItWorks from '../components/HowItWorks';
 import JoinHub from '../components/JoinHub';
 
-const AuthCTA = () => {
+const AuthCTA = ({ hero = false }: { hero?: boolean }) => {
     const { user, loading } = useAuth();
-    if (loading) return <div className="w-32 h-12 bg-emerald-100 animate-pulse rounded-full" />;
+    if (loading) return <div className="w-32 h-12 bg-emerald-100/20 animate-pulse rounded-full" />;
+
+    const heroClass = "px-7 py-3.5 bg-white/15 text-white border border-white/25 rounded-full font-semibold text-sm hover:bg-white/25 transition-colors backdrop-blur-sm";
+    const cardClass = "inline-flex items-center gap-2 px-8 py-4 bg-emerald-600 text-white rounded-full font-bold text-base hover:bg-emerald-700 transition-colors shadow-xl shadow-emerald-600/20 group";
 
     if (user) {
         return (
-            <Link to="/dashboard" className="inline-flex items-center gap-2 px-8 py-4 bg-emerald-600 text-white rounded-full font-bold text-base hover:bg-emerald-700 transition-colors shadow-xl shadow-emerald-600/20 group">
-                Go to Dashboard <ArrowRightLeft className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+            <Link to="/dashboard" className={hero ? heroClass : cardClass}>
+                {hero ? 'My Dashboard' : <>Go to Dashboard <ArrowRightLeft className="w-5 h-5 group-hover:rotate-12 transition-transform" /></>}
             </Link>
         );
     }
     return (
-        <Link to="/signin" className="inline-flex items-center gap-2 px-8 py-4 bg-emerald-600 text-white rounded-full font-bold text-base hover:bg-emerald-700 transition-colors shadow-xl shadow-emerald-600/20 group">
-            Create Free Account <UserPlus className="w-5 h-5 group-hover:scale-110 transition-transform" />
+        <Link to="/signin" className={hero ? heroClass : cardClass}>
+            {hero ? 'Create Account' : <>Create Free Account <UserPlus className="w-5 h-5 group-hover:scale-110 transition-transform" /></>}
         </Link>
     );
 };
@@ -70,10 +73,20 @@ const ExchangeCenter = () => {
                     <motion.p
                         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1, duration: 0.6 }}
-                        className="text-lg md:text-xl text-emerald-100 max-w-3xl leading-relaxed"
+                        className="text-lg md:text-xl text-emerald-100 max-w-3xl leading-relaxed mb-8"
                     >
                         Exchange your skills for services you need. No money required — just your unique talents and our community-powered platform.
                     </motion.p>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2, duration: 0.6 }}
+                        className="flex flex-wrap gap-3"
+                    >
+                        <Link to="/directory" className="px-7 py-3.5 bg-white text-emerald-600 rounded-full font-bold text-sm shadow-lg hover:bg-emerald-50 transition-colors">
+                            Browse Services
+                        </Link>
+                        <AuthCTA hero={true} />
+                    </motion.div>
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0">

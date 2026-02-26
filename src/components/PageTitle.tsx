@@ -12,6 +12,7 @@ const pageTitles: Record<string, string> = {
     '/resources': 'Resources | Karmaya Clinics',
     '/signin': 'Sign In | Karmaya Clinics',
     '/dashboard': 'My Dashboard | Karmaya Clinics',
+    '/directory': 'Service Directory | Karmaya Clinics',
 };
 
 const PageTitle = () => {
