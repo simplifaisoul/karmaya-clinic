@@ -8,7 +8,7 @@ import {
     ArrowLeft, ArrowRightLeft, Users, Shield, Zap, UserPlus,
     Search, Heart, Stethoscope, Wrench, GraduationCap, Sprout, UtensilsCrossed,
     Car, Monitor, Baby, Palette, HandHeart, TrendingUp, MessageCircle,
-    Plus, X, Send, MapPin, Sparkles, Phone, Trash2
+    Plus, X, Send, MapPin, Sparkles, Phone, Trash2, Mail
 } from 'lucide-react';
 
 interface ServicePost {
@@ -22,6 +22,7 @@ interface ServicePost {
     description: string;
     city: string;
     phone: string;
+    email: string;
     createdAt: any;
     status: 'open' | 'matched' | 'completed';
 }
@@ -64,6 +65,7 @@ const ExchangeCenter = () => {
     const [postDescription, setPostDescription] = useState('');
     const [postCity, setPostCity] = useState('');
     const [postPhone, setPostPhone] = useState('');
+    const [postEmail, setPostEmail] = useState('');
     const [posting, setPosting] = useState(false);
 
     // Stats
@@ -79,6 +81,7 @@ const ExchangeCenter = () => {
         if (showPostForm && profile) {
             if (!postCity) setPostCity(profile.location || '');
             if (!postPhone) setPostPhone(profile.phone || '');
+            if (!postEmail) setPostEmail(profile.email || '');
         }
     }, [showPostForm, profile]);
 
@@ -101,7 +104,7 @@ const ExchangeCenter = () => {
     };
 
     const handlePost = async () => {
-        if (!user || !profile || !postTitle.trim() || !postCategory || !postCity.trim() || !postPhone.trim()) return;
+        if (!user || !profile || !postTitle.trim() || !postCategory || !postCity.trim() || !postPhone.trim() || !postEmail.trim()) return;
         setPosting(true);
         try {
             await addDoc(collection(db, 'services'), {
@@ -114,6 +117,7 @@ const ExchangeCenter = () => {
                 description: postDescription.trim(),
                 city: postCity.trim(),
                 phone: postPhone.trim(),
+                email: postEmail.trim(),
                 createdAt: serverTimestamp(),
                 status: 'open',
             });
@@ -123,6 +127,7 @@ const ExchangeCenter = () => {
             setPostCategory('');
             setPostCity('');
             setPostPhone('');
+            setPostEmail('');
             await fetchPosts();
         } catch (err) {
             console.error('Error posting service:', err);
@@ -304,8 +309,8 @@ const ExchangeCenter = () => {
                                 custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
                                 onClick={() => setFilterCategory(filterCategory === cat.name ? 'all' : cat.name)}
                                 className={`flex items-center gap-2.5 px-4 py-3.5 rounded-xl border text-sm font-semibold transition-all ${filterCategory === cat.name
-                                        ? `${cat.bg} ${cat.border} ${cat.color} shadow-sm`
-                                        : 'bg-white border-neutral-200 text-neutral-600 hover:border-neutral-300'
+                                    ? `${cat.bg} ${cat.border} ${cat.color} shadow-sm`
+                                    : 'bg-white border-neutral-200 text-neutral-600 hover:border-neutral-300'
                                     }`}
                             >
                                 <cat.icon className={`w-4 h-4 ${filterCategory === cat.name ? cat.color : 'text-neutral-400'}`} />
@@ -336,8 +341,8 @@ const ExchangeCenter = () => {
                                     key={t}
                                     onClick={() => setFilterType(t)}
                                     className={`px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors ${filterType === t
-                                            ? 'bg-emerald-600 text-white shadow-sm'
-                                            : 'bg-white text-neutral-600 border border-neutral-200 hover:bg-neutral-100'
+                                        ? 'bg-emerald-600 text-white shadow-sm'
+                                        : 'bg-white text-neutral-600 border border-neutral-200 hover:bg-neutral-100'
                                         }`}
                                 >
                                     {t === 'all' ? 'All' : t === 'offer' ? '🤲 Offers' : '🔎 Requests'}
@@ -439,8 +444,8 @@ const ExchangeCenter = () => {
                                         {/* Type Badge */}
                                         <div className="flex items-center justify-between mb-4">
                                             <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${post.type === 'offer'
-                                                    ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-                                                    : 'bg-blue-50 text-blue-700 border border-blue-200'
+                                                ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                                                : 'bg-blue-50 text-blue-700 border border-blue-200'
                                                 }`}>
                                                 {post.type === 'offer' ? '🤲 Offering' : '🔎 Looking For'}
                                             </span>
@@ -462,7 +467,7 @@ const ExchangeCenter = () => {
                                             <p className="text-sm text-neutral-500 line-clamp-2 mb-4">{post.description}</p>
                                         )}
 
-                                        {/* City & Phone */}
+                                        {/* City, Phone & Email */}
                                         <div className="flex flex-wrap gap-3 mb-4 text-xs text-neutral-500">
                                             {post.city && (
                                                 <span className="flex items-center gap-1">
@@ -472,6 +477,11 @@ const ExchangeCenter = () => {
                                             {post.phone && (
                                                 <a href={`tel:${post.phone}`} className="flex items-center gap-1 hover:text-emerald-600 transition-colors">
                                                     <Phone className="w-3 h-3 text-neutral-400" /> {post.phone}
+                                                </a>
+                                            )}
+                                            {post.email && (
+                                                <a href={`mailto:${post.email}`} className="flex items-center gap-1 hover:text-emerald-600 transition-colors">
+                                                    <Mail className="w-3 h-3 text-neutral-400" /> {post.email}
                                                 </a>
                                             )}
                                         </div>
@@ -488,13 +498,13 @@ const ExchangeCenter = () => {
                                                 </div>
                                                 <div className="text-xs font-semibold text-neutral-900">{post.userName}</div>
                                             </div>
-                                            {user && !isOwner && (
-                                                <Link
-                                                    to="/contact"
+                                            {post.phone && (
+                                                <a
+                                                    href={`tel:${post.phone}`}
                                                     className="text-xs font-bold text-emerald-600 hover:text-emerald-700 flex items-center gap-1"
                                                 >
-                                                    <MessageCircle className="w-3 h-3" /> Contact
-                                                </Link>
+                                                    <Phone className="w-3 h-3" /> Call Now
+                                                </a>
                                             )}
                                         </div>
                                     </motion.div>
@@ -594,8 +604,8 @@ const ExchangeCenter = () => {
                                         <button
                                             onClick={() => setPostType('offer')}
                                             className={`p-4 rounded-xl border-2 text-center transition-all ${postType === 'offer'
-                                                    ? 'border-emerald-500 bg-emerald-50'
-                                                    : 'border-neutral-200 hover:border-neutral-300'
+                                                ? 'border-emerald-500 bg-emerald-50'
+                                                : 'border-neutral-200 hover:border-neutral-300'
                                                 }`}
                                         >
                                             <HandHeart className={`w-6 h-6 mx-auto mb-2 ${postType === 'offer' ? 'text-emerald-600' : 'text-neutral-400'}`} />
@@ -605,8 +615,8 @@ const ExchangeCenter = () => {
                                         <button
                                             onClick={() => setPostType('request')}
                                             className={`p-4 rounded-xl border-2 text-center transition-all ${postType === 'request'
-                                                    ? 'border-blue-500 bg-blue-50'
-                                                    : 'border-neutral-200 hover:border-neutral-300'
+                                                ? 'border-blue-500 bg-blue-50'
+                                                : 'border-neutral-200 hover:border-neutral-300'
                                                 }`}
                                         >
                                             <Search className={`w-6 h-6 mx-auto mb-2 ${postType === 'request' ? 'text-blue-600' : 'text-neutral-400'}`} />
@@ -625,8 +635,8 @@ const ExchangeCenter = () => {
                                                 key={cat.name}
                                                 onClick={() => setPostCategory(cat.name)}
                                                 className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold transition-all ${postCategory === cat.name
-                                                        ? `${cat.bg} ${cat.border} border ${cat.color}`
-                                                        : 'bg-neutral-50 text-neutral-500 border border-neutral-200 hover:border-neutral-300'
+                                                    ? `${cat.bg} ${cat.border} border ${cat.color}`
+                                                    : 'bg-neutral-50 text-neutral-500 border border-neutral-200 hover:border-neutral-300'
                                                     }`}
                                             >
                                                 <cat.icon className="w-3.5 h-3.5" /> {cat.name}
@@ -656,6 +666,20 @@ const ExchangeCenter = () => {
                                         rows={3}
                                         className="w-full px-4 py-3 rounded-xl bg-neutral-50 border border-neutral-200 focus:ring-2 focus:ring-emerald-500 focus:bg-white outline-none transition-all resize-none text-sm"
                                         placeholder="Add more details about what you're offering or looking for..."
+                                    />
+                                </div>
+
+                                {/* Email */}
+                                <div>
+                                    <label className="block text-sm font-semibold text-neutral-700 mb-1.5 flex items-center gap-1">
+                                        <Mail className="w-3.5 h-3.5 text-violet-500" /> Email <span className="text-red-400">*</span>
+                                    </label>
+                                    <input
+                                        type="email"
+                                        value={postEmail}
+                                        onChange={e => setPostEmail(e.target.value)}
+                                        className="w-full px-4 py-3 rounded-xl bg-neutral-50 border border-neutral-200 focus:ring-2 focus:ring-emerald-500 focus:bg-white outline-none text-sm"
+                                        placeholder="your@email.com"
                                     />
                                 </div>
 
@@ -692,7 +716,7 @@ const ExchangeCenter = () => {
                             <div className="px-6 py-4 border-t border-neutral-100 bg-neutral-50/80">
                                 <button
                                     onClick={handlePost}
-                                    disabled={posting || !postTitle.trim() || !postCategory || !postCity.trim() || !postPhone.trim()}
+                                    disabled={posting || !postTitle.trim() || !postCategory || !postCity.trim() || !postPhone.trim() || !postEmail.trim()}
                                     className="w-full py-3 bg-emerald-600 text-white rounded-xl font-bold text-sm hover:bg-emerald-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
                                 >
                                     {posting ? (
