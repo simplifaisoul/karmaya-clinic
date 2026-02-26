@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { motion } from 'framer-motion';
 import { Heart, Mail, Lock, User, ArrowRight, AlertCircle } from 'lucide-react';
@@ -7,6 +7,8 @@ import { Heart, Mail, Lock, User, ArrowRight, AlertCircle } from 'lucide-react';
 const SignIn = () => {
     const { signInWithGoogle, signInWithEmail, signUpWithEmail, user } = useAuth();
     const navigate = useNavigate();
+    const [searchParams] = useSearchParams();
+    const redirectTo = searchParams.get('redirect') || '/exchange';
     const [isSignUp, setIsSignUp] = useState(false);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -15,10 +17,11 @@ const SignIn = () => {
     const [loading, setLoading] = useState(false);
 
     // Redirect if already logged in
-    if (user) {
-        navigate('/dashboard');
-        return null;
-    }
+    useEffect(() => {
+        if (user) navigate(redirectTo);
+    }, [user, navigate, redirectTo]);
+
+    if (user) return null;
 
     const handleEmailSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -31,7 +34,7 @@ const SignIn = () => {
             } else {
                 await signInWithEmail(email, password);
             }
-            navigate('/dashboard');
+            navigate(redirectTo);
         } catch (err: any) {
             const code = err?.code || '';
             if (code === 'auth/user-not-found') setError('No account found with this email');
@@ -39,7 +42,8 @@ const SignIn = () => {
             else if (code === 'auth/email-already-in-use') setError('An account with this email already exists');
             else if (code === 'auth/weak-password') setError('Password must be at least 6 characters');
             else if (code === 'auth/invalid-email') setError('Invalid email address');
-            else setError('Something went wrong. Please try again.');
+            else if (code === 'auth/invalid-credential') setError('Invalid email or password');
+            else setError(`Something went wrong (${code || 'unknown'}). Please try again.`);
         }
         setLoading(false);
     };
@@ -49,17 +53,24 @@ const SignIn = () => {
         setLoading(true);
         try {
             await signInWithGoogle();
-            navigate('/dashboard');
+            navigate(redirectTo);
         } catch (err: any) {
-            if (err?.code !== 'auth/popup-closed-by-user') {
-                setError('Google sign-in failed. Please try again.');
+            const code = err?.code || '';
+            if (code === 'auth/popup-closed-by-user') {
+                // User closed the popup, no error needed
+            } else if (code === 'auth/unauthorized-domain') {
+                setError('This domain is not authorized for Google Sign-In. The admin needs to add it in Firebase Console → Authentication → Settings → Authorized domains.');
+            } else if (code === 'auth/popup-blocked') {
+                setError('Popup was blocked by your browser. Trying redirect instead...');
+            } else {
+                setError(`Google sign-in failed (${code || 'unknown'}). Please try email/password or try again.`);
             }
         }
         setLoading(false);
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50 flex items-center justify-center px-4 pt-20 pb-12">
+        <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-cyan-50 flex items-center justify-center px-4 pt-20 pb-12">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -69,18 +80,18 @@ const SignIn = () => {
                 {/* Logo */}
                 <div className="text-center mb-8">
                     <Link to="/" className="inline-flex items-center gap-2">
-                        <Heart className="h-8 w-8 text-blue-600 fill-current" />
+                        <Heart className="h-8 w-8 text-emerald-600 fill-current" />
                         <span className="font-bold text-2xl text-neutral-900 tracking-tight">
-                            Karmaya<span className="text-blue-500">Clinics</span>
+                            Karmaya<span className="text-emerald-500">Clinics</span>
                         </span>
                     </Link>
                     <h1 className="text-2xl font-bold text-neutral-900 mt-6 mb-2">
-                        {isSignUp ? 'Create Your Account' : 'Welcome Back'}
+                        {isSignUp ? 'Join the Exchange' : 'Welcome Back'}
                     </h1>
                     <p className="text-neutral-500 text-sm">
                         {isSignUp
-                            ? 'Join the community and start exchanging services'
-                            : 'Sign in to access the Exchange Center'
+                            ? 'Create your account to start exchanging services with the community'
+                            : 'Sign in to post services, browse offers, and manage your credits'
                         }
                     </p>
                 </div>
@@ -91,7 +102,7 @@ const SignIn = () => {
                     <button
                         onClick={handleGoogleSignIn}
                         disabled={loading}
-                        className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-neutral-200 rounded-xl font-semibold text-sm text-neutral-700 hover:bg-neutral-50 transition-colors disabled:opacity-50"
+                        className="w-full flex items-center justify-center gap-3 px-4 py-3.5 border border-neutral-200 rounded-xl font-semibold text-sm text-neutral-700 hover:bg-neutral-50 transition-colors disabled:opacity-50"
                     >
                         <svg className="w-5 h-5" viewBox="0 0 24 24">
                             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4" />
@@ -120,7 +131,7 @@ const SignIn = () => {
                                         type="text"
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
-                                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-neutral-50 focus:bg-white text-sm"
+                                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-200 focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all bg-neutral-50 focus:bg-white text-sm"
                                         placeholder="Your full name"
                                     />
                                 </div>
@@ -136,7 +147,7 @@ const SignIn = () => {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
-                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-neutral-50 focus:bg-white text-sm"
+                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-200 focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all bg-neutral-50 focus:bg-white text-sm"
                                     placeholder="you@example.com"
                                 />
                             </div>
@@ -152,23 +163,23 @@ const SignIn = () => {
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
                                     minLength={6}
-                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-neutral-50 focus:bg-white text-sm"
+                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-200 focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all bg-neutral-50 focus:bg-white text-sm"
                                     placeholder="At least 6 characters"
                                 />
                             </div>
                         </div>
 
                         {error && (
-                            <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-red-50 border border-red-100 text-red-600 text-sm">
-                                <AlertCircle className="w-4 h-4 flex-shrink-0" />
-                                {error}
+                            <div className="flex items-start gap-2 px-4 py-3 rounded-xl bg-red-50 border border-red-100 text-red-600 text-sm">
+                                <AlertCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                                <span>{error}</span>
                             </div>
                         )}
 
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full py-3 bg-blue-600 text-white rounded-xl font-bold text-sm hover:bg-blue-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+                            className="w-full py-3.5 bg-emerald-600 text-white rounded-xl font-bold text-sm hover:bg-emerald-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
                         >
                             {loading ? (
                                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -186,12 +197,17 @@ const SignIn = () => {
                         {isSignUp ? 'Already have an account?' : "Don't have an account?"}{' '}
                         <button
                             onClick={() => { setIsSignUp(!isSignUp); setError(''); }}
-                            className="text-blue-600 font-semibold hover:underline"
+                            className="text-emerald-600 font-semibold hover:underline"
                         >
                             {isSignUp ? 'Sign In' : 'Create One'}
                         </button>
                     </p>
                 </div>
+
+                {/* Privacy note */}
+                <p className="text-center text-xs text-neutral-400 mt-4">
+                    By signing in, you agree to participate in our community exchange program.
+                </p>
             </motion.div>
         </div>
     );

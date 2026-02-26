@@ -4,6 +4,8 @@ import type { User } from 'firebase/auth';
 import {
     onAuthStateChanged,
     signInWithPopup,
+    signInWithRedirect,
+    getRedirectResult,
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
     signOut,
@@ -74,6 +76,15 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        // Check for redirect result on page load (from signInWithRedirect)
+        getRedirectResult(auth).then(async (result) => {
+            if (result?.user) {
+                await ensureUserProfile(result.user);
+            }
+        }).catch((err) => {
+            console.error('Redirect sign-in error:', err);
+        });
+
         const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
             setUser(firebaseUser);
             if (firebaseUser) {
@@ -99,8 +110,24 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const signInWithGoogle = async () => {
-        const result = await signInWithPopup(auth, googleProvider);
-        await ensureUserProfile(result.user);
+        try {
+            // Try popup first
+            const result = await signInWithPopup(auth, googleProvider);
+            await ensureUserProfile(result.user);
+        } catch (err: any) {
+            // If popup is blocked or fails, fall back to redirect
+            if (
+                err?.code === 'auth/popup-blocked' ||
+                err?.code === 'auth/popup-closed-by-user' ||
+                err?.code === 'auth/cancelled-popup-request'
+            ) {
+                // For popup-closed, just re-throw so SignIn page ignores it
+                if (err?.code === 'auth/popup-closed-by-user') throw err;
+                await signInWithRedirect(auth, googleProvider);
+            } else {
+                throw err;
+            }
+        }
     };
 
     const signInWithEmail = async (email: string, password: string) => {
