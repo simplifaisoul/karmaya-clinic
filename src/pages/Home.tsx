@@ -64,20 +64,44 @@ const Home = () => {
                 <Innovation />
             </ScrollReveal>
 
-            {/* Gallery CTA */}
+            {/* Gallery Preview */}
             <ScrollReveal width="100%">
-                <section className="py-16 md:py-20 bg-violet-50">
-                    <div className="max-w-4xl mx-auto px-4 text-center">
-                        <div className="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mx-auto mb-5">
-                            <Camera className="w-6 h-6 text-violet-600" />
+                <section className="py-16 md:py-20 bg-neutral-50">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-center mb-10">
+                            <div className="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mx-auto mb-5">
+                                <Camera className="w-6 h-6 text-violet-600" />
+                            </div>
+                            <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4">Our Impact in Action</h2>
+                            <p className="text-neutral-600 max-w-2xl mx-auto leading-relaxed">
+                                Real stories, real people, real change across the Philippines.
+                            </p>
                         </div>
-                        <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4">See Our Impact</h2>
-                        <p className="text-neutral-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-                            Explore photos and testimonials from our community clinics across the Philippines.
-                        </p>
-                        <Link to="/gallery" className="inline-flex items-center gap-2 px-7 py-3.5 bg-violet-600 text-white rounded-full font-bold text-sm hover:bg-violet-700 transition-colors shadow-lg shadow-violet-600/20">
-                            View Gallery <ArrowRight className="w-4 h-4" />
-                        </Link>
+
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-8">
+                            {[
+                                { src: '/images/gallery/Karmaya Clinic Big and nice photo everyone outside with Mac.jpeg', alt: 'Karmaya Clinic Team', span: 'md:col-span-2 md:row-span-2' },
+                                { src: '/images/gallery/Checking Vitals.jpeg', alt: 'Checking Vitals', span: '' },
+                                { src: '/images/gallery/Child mouth check.jpeg', alt: 'Child Health Check', span: '' },
+                                { src: '/images/gallery/Inside the Clinic.jpeg', alt: 'Inside the Clinic', span: '' },
+                                { src: '/images/gallery/Doctor Eyesight test Older man.jpeg', alt: 'Vision Test', span: '' },
+                            ].map((img, i) => (
+                                <div key={i} className={`rounded-xl overflow-hidden ${img.span} aspect-square md:aspect-auto`}>
+                                    <img
+                                        src={img.src}
+                                        alt={img.alt}
+                                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                        loading="lazy"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="text-center">
+                            <Link to="/gallery" className="inline-flex items-center gap-2 px-7 py-3.5 bg-violet-600 text-white rounded-full font-bold text-sm hover:bg-violet-700 transition-colors shadow-lg shadow-violet-600/20">
+                                View Full Gallery <ArrowRight className="w-4 h-4" />
+                            </Link>
+                        </div>
                     </div>
                 </section>
             </ScrollReveal>

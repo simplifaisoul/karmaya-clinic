@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Layout from "./components/Layout";
+import PageTitle from "./components/PageTitle";
 import Home from "./pages/Home";
 import Resources from "./pages/Resources";
 import AboutUs from "./pages/AboutUs";
@@ -9,6 +10,7 @@ import GalleryPage from "./pages/GalleryPage";
 import PillarsPage from "./pages/PillarsPage";
 import ContactPage from "./pages/ContactPage";
 import TeamPage from "./pages/TeamPage";
+import NotFound from "./pages/NotFound";
 import WhatsAppWidget from "./components/WhatsAppWidget";
 
 function App() {
@@ -40,6 +42,7 @@ function App() {
 
   return (
     <Layout>
+      <PageTitle />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
@@ -49,6 +52,7 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/resources" element={<Resources />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <WhatsAppWidget />
     </Layout>

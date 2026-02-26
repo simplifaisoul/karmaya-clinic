@@ -178,7 +178,10 @@ const AboutUs = () => {
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Make a Difference?</h2>
                     <p className="text-blue-100 mb-8 max-w-2xl mx-auto">Join our growing community of volunteers, partners, and supporters building a healthier future.</p>
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                        <Link to="/exchange" className="px-8 py-3.5 bg-white text-blue-600 rounded-full font-bold hover:bg-blue-50 transition-colors">
+                        <Link to="/team" className="px-8 py-3.5 bg-white text-blue-600 rounded-full font-bold hover:bg-blue-50 transition-colors">
+                            Meet Our Team
+                        </Link>
+                        <Link to="/exchange" className="px-8 py-3.5 bg-white/15 text-white border border-white/25 rounded-full font-semibold hover:bg-white/25 transition-colors">
                             Join the Exchange
                         </Link>
                         <Link to="/contact" className="px-8 py-3.5 bg-white/15 text-white border border-white/25 rounded-full font-semibold hover:bg-white/25 transition-colors">
