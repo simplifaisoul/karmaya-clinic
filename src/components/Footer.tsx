@@ -1,5 +1,5 @@
 import { Heart, Mail, MapPin, Facebook, Instagram, Twitter, ArrowRight } from 'lucide-react';
-import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -16,17 +16,13 @@ const Footer = () => {
                                 Join 1,000+ community members building a healthier world together.
                             </p>
                         </div>
-                        <a
-                            href="#join-hub"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                document.getElementById('join-hub')?.scrollIntoView({ behavior: 'smooth' });
-                            }}
+                        <Link
+                            to="/exchange"
                             className="px-8 py-3.5 bg-white text-neutral-900 rounded-full font-semibold text-sm hover:bg-neutral-100 transition-all flex items-center gap-2 group shadow-lg whitespace-nowrap"
                         >
                             Join Our Mission
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -64,16 +60,17 @@ const Footer = () => {
                         <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Navigate</h4>
                         <ul className="space-y-2.5">
                             {[
-                                { name: 'Our Mission', to: '/#mission' },
-                                { name: 'Our Work', to: '/#pillars' },
-                                { name: 'Impact Gallery', to: '/#gallery' },
-                                { name: 'Service Exchange', to: '/#join-hub' },
+                                { name: 'About Us', to: '/about' },
+                                { name: 'Our Team', to: '/team' },
+                                { name: '9 Steps', to: '/pillars' },
+                                { name: 'Gallery', to: '/gallery' },
+                                { name: 'Exchange Center', to: '/exchange' },
                                 { name: 'Resources', to: '/resources' }
                             ].map(link => (
                                 <li key={link.name}>
-                                    <HashLink smooth to={link.to} className="text-neutral-400 hover:text-white text-sm transition-colors">
+                                    <Link to={link.to} className="text-neutral-400 hover:text-white text-sm transition-colors">
                                         {link.name}
-                                    </HashLink>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -94,6 +91,11 @@ const Footer = () => {
                                 </a>
                             </li>
                         </ul>
+                        <div className="mt-6">
+                            <Link to="/contact" className="text-blue-400 hover:text-blue-300 text-sm font-semibold transition-colors flex items-center gap-1">
+                                Contact Us <ArrowRight className="w-3 h-3" />
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

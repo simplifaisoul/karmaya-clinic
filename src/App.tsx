@@ -8,6 +8,7 @@ import ExchangeCenter from "./pages/ExchangeCenter";
 import GalleryPage from "./pages/GalleryPage";
 import PillarsPage from "./pages/PillarsPage";
 import ContactPage from "./pages/ContactPage";
+import TeamPage from "./pages/TeamPage";
 import WhatsAppWidget from "./components/WhatsAppWidget";
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/pillars" element={<PillarsPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/team" element={<TeamPage />} />
         <Route path="/resources" element={<Resources />} />
       </Routes>
       <WhatsAppWidget />

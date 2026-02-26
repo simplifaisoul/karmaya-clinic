@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Star } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     return (
@@ -61,24 +62,20 @@ const Hero = () => {
                         transition={{ delay: 0.3, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                         className="flex flex-col sm:flex-row gap-3"
                     >
-                        <a
-                            href="#join-hub"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                document.getElementById('join-hub')?.scrollIntoView({ behavior: 'smooth' });
-                            }}
+                        <Link
+                            to="/exchange"
                             className="px-7 py-3.5 bg-white text-blue-600 rounded-full font-bold text-sm shadow-lg shadow-blue-600/20 hover:shadow-xl hover:bg-blue-50 transition-all text-center flex items-center justify-center gap-2 group"
                         >
                             Join Our Mission
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </a>
+                        </Link>
 
-                        <button
-                            onClick={() => document.getElementById('pillars')?.scrollIntoView({ behavior: 'smooth' })}
+                        <Link
+                            to="/pillars"
                             className="px-7 py-3.5 bg-white/15 text-white border border-white/25 rounded-full font-semibold text-sm hover:bg-white/25 transition-all text-center backdrop-blur-sm"
                         >
                             Explore Our Work
-                        </button>
+                        </Link>
                     </motion.div>
 
                     <motion.div
@@ -128,7 +125,7 @@ const Hero = () => {
                         {/* Floating pillar count */}
                         <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-white px-4 py-2.5 rounded-xl shadow-lg border border-blue-100 z-20">
                             <div className="text-xl font-extrabold text-blue-600">9</div>
-                            <div className="text-[10px] text-neutral-500 font-semibold">Pillars</div>
+                            <div className="text-[10px] text-neutral-500 font-semibold">Steps</div>
                         </div>
                     </div>
                 </motion.div>

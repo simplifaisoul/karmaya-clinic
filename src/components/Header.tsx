@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Heart, Globe } from 'lucide-react';
+import { Menu, X, Heart, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import GoogleTranslate from './GoogleTranslate';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [showTranslate, setShowTranslate] = useState(false);
     const location = useLocation();
     const isHome = location.pathname === '/';
 
@@ -20,16 +21,23 @@ const Header = () => {
         return () => { document.body.style.overflow = ''; };
     }, [isOpen]);
 
-    // On non-home pages, always show scrolled (white bg) style
+    // Close translate dropdown on outside click
+    useEffect(() => {
+        if (!showTranslate) return;
+        const handleClick = () => setShowTranslate(false);
+        document.addEventListener('click', handleClick);
+        return () => document.removeEventListener('click', handleClick);
+    }, [showTranslate]);
+
     const showDark = scrolled || !isHome;
 
     const navLinks = [
         { name: 'About', to: '/about' },
+        { name: 'Team', to: '/team' },
         { name: '9 Steps', to: '/pillars' },
         { name: 'Gallery', to: '/gallery' },
         { name: 'Exchange', to: '/exchange' },
         { name: 'Resources', to: '/resources' },
-        { name: 'Contact', to: '/contact' },
     ];
 
     return (
@@ -62,23 +70,49 @@ const Header = () => {
                                 </Link>
                             ))}
 
-                            {/* Google Translate with icon */}
-                            <div className="flex items-center gap-1.5 ml-1">
-                                <Globe className={`w-3.5 h-3.5 ${showDark ? 'text-neutral-400' : 'text-white/50'}`} />
-                                <div className="scale-90">
-                                    <GoogleTranslate isMobile={false} />
-                                </div>
+                            {/* Translate Toggle */}
+                            <div className="relative">
+                                <button
+                                    onClick={(e) => { e.stopPropagation(); setShowTranslate(!showTranslate); }}
+                                    className={`flex items-center gap-1 font-medium text-sm transition-colors ${showDark ? 'text-neutral-500 hover:text-neutral-900' : 'text-white/70 hover:text-white'
+                                        }`}
+                                    aria-label="Translate this page"
+                                >
+                                    🌐
+                                    <ChevronDown className={`w-3 h-3 transition-transform ${showTranslate ? 'rotate-180' : ''}`} />
+                                </button>
+                                {showTranslate && (
+                                    <div
+                                        className="absolute right-0 top-full mt-2 bg-white rounded-xl shadow-lg border border-neutral-200 p-3 min-w-[200px] z-50"
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+                                        <p className="text-xs font-semibold text-neutral-500 mb-2">Translate Page</p>
+                                        <GoogleTranslate isMobile={false} />
+                                    </div>
+                                )}
                             </div>
+
+                            <Link
+                                to="/contact"
+                                className={`px-5 py-2 rounded-full font-semibold text-sm transition-all ${showDark
+                                    ? 'bg-neutral-900 text-white hover:bg-neutral-800 shadow-sm'
+                                    : 'bg-white text-neutral-900 hover:bg-neutral-100 shadow-lg'
+                                    }`}
+                            >
+                                Contact Us
+                            </Link>
                         </div>
 
                         {/* Mobile controls */}
                         <div className="flex lg:hidden items-center gap-2">
-                            <div className="flex items-center gap-1">
-                                <Globe className={`w-3.5 h-3.5 ${showDark ? 'text-neutral-400' : 'text-white/50'}`} />
-                                <div className="scale-75 origin-left">
-                                    <GoogleTranslate isMobile={true} />
-                                </div>
-                            </div>
+                            {/* Mobile translate toggle */}
+                            <button
+                                onClick={(e) => { e.stopPropagation(); setShowTranslate(!showTranslate); }}
+                                className={`p-2 rounded-lg transition-colors ${showDark ? 'text-neutral-600' : 'text-white/70'}`}
+                                aria-label="Translate"
+                            >
+                                🌐
+                            </button>
                             <button
                                 onClick={() => setIsOpen(!isOpen)}
                                 className={`relative z-50 p-2 rounded-lg transition-colors ${isOpen ? 'text-white' : showDark ? 'text-neutral-900' : 'text-white'}`}
@@ -88,6 +122,17 @@ const Header = () => {
                             </button>
                         </div>
                     </div>
+
+                    {/* Mobile translate dropdown */}
+                    {showTranslate && (
+                        <div
+                            className="lg:hidden bg-white rounded-xl shadow-lg border border-neutral-200 p-3 mb-2"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <p className="text-xs font-semibold text-neutral-500 mb-2">Translate Page</p>
+                            <GoogleTranslate isMobile={true} />
+                        </div>
+                    )}
                 </div>
             </nav>
 
@@ -110,6 +155,13 @@ const Header = () => {
                             {link.name}
                         </Link>
                     ))}
+                    <Link
+                        to="/contact"
+                        className="mt-4 px-8 py-3.5 bg-white text-neutral-900 rounded-full font-bold text-base hover:bg-neutral-100 transition-all"
+                        onClick={() => setIsOpen(false)}
+                    >
+                        Contact Us
+                    </Link>
                 </div>
             </div>
         </>
