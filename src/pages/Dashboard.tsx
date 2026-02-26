@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { doc, updateDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import { motion } from 'framer-motion';
-import { User, Mail, MapPin, Phone, FileText, ArrowRightLeft, LogOut, Save, Plus, X, Coins } from 'lucide-react';
+import { User, Mail, MapPin, Phone, FileText, ArrowRightLeft, LogOut, Save, Plus, X } from 'lucide-react';
 
 const Dashboard = () => {
     const { user, profile, logout, refreshProfile, loading } = useAuth();
@@ -122,19 +122,15 @@ const Dashboard = () => {
                         </div>
                     )}
 
-                    {/* Credit Balance */}
-                    <div className="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl p-6 mb-6 text-white">
+                    {/* Quick Actions */}
+                    <div className="bg-gradient-to-r from-emerald-600 to-teal-500 rounded-2xl p-6 mb-6 text-white">
                         <div className="flex items-center justify-between">
                             <div>
-                                <div className="flex items-center gap-2 mb-2">
-                                    <Coins className="w-5 h-5" />
-                                    <span className="text-sm font-semibold text-white/80">Exchange Credits</span>
-                                </div>
-                                <div className="text-4xl font-extrabold">{profile.credits}</div>
-                                <p className="text-sm text-white/70 mt-1">Use credits to request services from the community</p>
+                                <h2 className="text-lg font-bold mb-1">Exchange Center</h2>
+                                <p className="text-sm text-white/80">Post services, browse offers, and connect with community members</p>
                             </div>
-                            <Link to="/exchange" className="px-5 py-2.5 bg-white text-blue-600 rounded-xl font-bold text-sm hover:bg-blue-50 transition-colors flex items-center gap-2">
-                                <ArrowRightLeft className="w-4 h-4" /> Exchange Center
+                            <Link to="/exchange" className="px-5 py-2.5 bg-white text-emerald-600 rounded-xl font-bold text-sm hover:bg-emerald-50 transition-colors flex items-center gap-2 whitespace-nowrap">
+                                <ArrowRightLeft className="w-4 h-4" /> Go to Exchange
                             </Link>
                         </div>
                     </div>

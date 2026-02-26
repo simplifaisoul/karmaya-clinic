@@ -24,7 +24,6 @@ interface UserProfile {
     bio: string;
     servicesOffered: string[];
     servicesNeeded: string[];
-    credits: number;
     createdAt: any;
 }
 
@@ -62,7 +61,6 @@ const ensureUserProfile = async (user: User): Promise<UserProfile> => {
         bio: '',
         servicesOffered: [],
         servicesNeeded: [],
-        credits: 10, // Starting credits
         createdAt: serverTimestamp(),
     };
 
