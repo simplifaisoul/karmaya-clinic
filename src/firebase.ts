@@ -3,13 +3,13 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAILsVuSVw6HpjY-Ptf03-DyS4tAvc2orI",
-    authDomain: "karmaya-clinic.firebaseapp.com",
-    projectId: "karmaya-clinic",
-    storageBucket: "karmaya-clinic.firebasestorage.app",
-    messagingSenderId: "307987663395",
-    appId: "1:307987663395:web:af43fa34e652e09c737f96",
-    measurementId: "G-2PEXNDQ56E"
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID,
+    measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
