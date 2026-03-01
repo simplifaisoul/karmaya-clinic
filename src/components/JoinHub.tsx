@@ -227,8 +227,8 @@ const JoinHub = () => {
                                                 exit={{ opacity: 0, x: -15 }}
                                                 transition={{ duration: 0.25 }}
                                             >
-                                                <div className="bg-amber-50 w-12 h-12 rounded-xl flex items-center justify-center mb-5">
-                                                    <Search className="w-6 h-6 text-amber-600" />
+                                                <div className="bg-slate-50 w-12 h-12 rounded-xl flex items-center justify-center mb-5">
+                                                    <Search className="w-6 h-6 text-slate-600" />
                                                 </div>
                                                 <h3 className="text-2xl font-bold text-neutral-900 mb-1">The Get.</h3>
                                                 <p className="text-neutral-500 mb-6">What help are you looking for in return?</p>
@@ -238,7 +238,7 @@ const JoinHub = () => {
                                                     <textarea
                                                         autoFocus
                                                         rows={4}
-                                                        className="w-full px-4 py-3 rounded-xl bg-neutral-50 border border-neutral-200 focus:ring-2 focus:ring-amber-500 focus:bg-white outline-none transition-all resize-none text-sm"
+                                                        className="w-full px-4 py-3 rounded-xl bg-neutral-50 border border-neutral-200 focus:ring-2 focus:ring-slate-500 focus:bg-white outline-none transition-all resize-none text-sm"
                                                         placeholder="e.g. I need help fixing a leaky faucet, or someone to walk my dog..."
                                                         value={formData.serviceNeeded}
                                                         onChange={e => setFormData({ ...formData, serviceNeeded: e.target.value })}
@@ -255,8 +255,8 @@ const JoinHub = () => {
                                                 transition={{ type: "spring", duration: 0.6 }}
                                                 className="text-center py-8"
                                             >
-                                                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                                                    <Check className="w-10 h-10 text-green-600" />
+                                                <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                                    <Check className="w-10 h-10 text-blue-600" />
                                                 </div>
                                                 <h3 className="text-3xl font-bold text-neutral-900 mb-3">You're on the list!</h3>
                                                 <p className="text-neutral-500 max-w-sm mx-auto mb-6">

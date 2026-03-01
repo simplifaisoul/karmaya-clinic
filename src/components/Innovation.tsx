@@ -20,8 +20,8 @@ const Innovation = () => {
             icon: Globe,
             title: 'Scaling & Partnerships',
             desc: 'From our pilot in the Philippines to Cebu. A hybrid model where commercial arms subsidize micro-clinics globally.',
-            color: 'text-emerald-500',
-            bg: 'bg-emerald-50'
+            color: 'text-blue-500',
+            bg: 'bg-blue-50'
         }
     ];
 
@@ -72,7 +72,7 @@ const Innovation = () => {
                         {/* Floating card */}
                         <div className="absolute -bottom-4 -left-2 bg-white p-4 rounded-xl shadow-premium-hover max-w-[180px] hidden sm:block z-30 border border-neutral-100">
                             <div className="flex items-center gap-2 mb-1">
-                                <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                                <div className="w-2 h-2 rounded-full bg-blue-500"></div>
                                 <span className="font-bold text-xs text-neutral-600">Impact Tracker</span>
                             </div>
                             <div className="text-xl font-extrabold text-neutral-900">1,000+</div>

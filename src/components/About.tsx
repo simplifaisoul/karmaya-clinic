@@ -2,13 +2,13 @@ import { Heart, Target, Users, Sparkles } from 'lucide-react';
 
 const About = () => {
     const values = [
-        { letter: 'K', word: 'Kindness', icon: Heart, color: 'text-rose-500', bg: 'bg-rose-50' },
-        { letter: 'A', word: 'Action', icon: Sparkles, color: 'text-amber-500', bg: 'bg-amber-50' },
+        { letter: 'K', word: 'Kindness', icon: Heart, color: 'text-slate-500', bg: 'bg-slate-50' },
+        { letter: 'A', word: 'Action', icon: Sparkles, color: 'text-slate-500', bg: 'bg-slate-50' },
         { letter: 'R', word: 'Resilience', icon: Target, color: 'text-cyan-500', bg: 'bg-cyan-50' },
-        { letter: 'M', word: 'Motivation', icon: Sparkles, color: 'text-violet-500', bg: 'bg-violet-50' },
-        { letter: 'A', word: 'Affection', icon: Heart, color: 'text-pink-500', bg: 'bg-pink-50' },
-        { letter: 'Y', word: 'Youthfulness', icon: Users, color: 'text-emerald-500', bg: 'bg-emerald-50' },
-        { letter: 'A', word: 'Appreciation', icon: Sparkles, color: 'text-orange-500', bg: 'bg-orange-50' },
+        { letter: 'M', word: 'Motivation', icon: Sparkles, color: 'text-blue-500', bg: 'bg-blue-50' },
+        { letter: 'A', word: 'Affection', icon: Heart, color: 'text-slate-500', bg: 'bg-slate-50' },
+        { letter: 'Y', word: 'Youthfulness', icon: Users, color: 'text-blue-500', bg: 'bg-blue-50' },
+        { letter: 'A', word: 'Appreciation', icon: Sparkles, color: 'text-slate-500', bg: 'bg-slate-50' },
     ];
 
     return (

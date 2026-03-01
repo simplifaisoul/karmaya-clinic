@@ -44,16 +44,16 @@ const Home = () => {
 
             {/* Exchange CTA */}
             <ScrollReveal width="100%">
-                <section className="py-16 md:py-20 bg-emerald-50">
+                <section className="py-16 md:py-20 bg-blue-50">
                     <div className="max-w-4xl mx-auto px-4 text-center">
-                        <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mx-auto mb-5">
-                            <ArrowRightLeft className="w-6 h-6 text-emerald-600" />
+                        <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-5">
+                            <ArrowRightLeft className="w-6 h-6 text-blue-600" />
                         </div>
                         <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4">The Service Exchange Center</h2>
                         <p className="text-neutral-600 max-w-2xl mx-auto mb-8 leading-relaxed">
                             Exchange your unique skills for healthcare services. No money required — just your talents and our community-powered network.
                         </p>
-                        <Link to="/exchange" className="inline-flex items-center gap-2 px-7 py-3.5 bg-emerald-600 text-white rounded-full font-bold text-sm hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-600/20">
+                        <Link to="/exchange" className="inline-flex items-center gap-2 px-7 py-3.5 bg-blue-600 text-white rounded-full font-bold text-sm hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20">
                             Explore the Exchange <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>
@@ -69,8 +69,8 @@ const Home = () => {
                 <section className="py-16 md:py-20 bg-neutral-50">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="text-center mb-10">
-                            <div className="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mx-auto mb-5">
-                                <Camera className="w-6 h-6 text-violet-600" />
+                            <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-5">
+                                <Camera className="w-6 h-6 text-blue-600" />
                             </div>
                             <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4">Our Impact in Action</h2>
                             <p className="text-neutral-600 max-w-2xl mx-auto leading-relaxed">
@@ -98,7 +98,7 @@ const Home = () => {
                         </div>
 
                         <div className="text-center">
-                            <Link to="/gallery" className="inline-flex items-center gap-2 px-7 py-3.5 bg-violet-600 text-white rounded-full font-bold text-sm hover:bg-violet-700 transition-colors shadow-lg shadow-violet-600/20">
+                            <Link to="/gallery" className="inline-flex items-center gap-2 px-7 py-3.5 bg-blue-600 text-white rounded-full font-bold text-sm hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20">
                                 View Full Gallery <ArrowRight className="w-4 h-4" />
                             </Link>
                         </div>
@@ -115,16 +115,16 @@ const Home = () => {
 
             {/* Resources CTA */}
             <ScrollReveal width="100%">
-                <section className="py-16 md:py-20 bg-amber-50">
+                <section className="py-16 md:py-20 bg-slate-50">
                     <div className="max-w-4xl mx-auto px-4 text-center">
-                        <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mx-auto mb-5">
-                            <BookOpen className="w-6 h-6 text-amber-600" />
+                        <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mx-auto mb-5">
+                            <BookOpen className="w-6 h-6 text-slate-600" />
                         </div>
                         <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4">Resources & Documents</h2>
                         <p className="text-neutral-600 max-w-2xl mx-auto mb-8 leading-relaxed">
                             Access research papers, community health guidelines, and educational materials.
                         </p>
-                        <Link to="/resources" className="inline-flex items-center gap-2 px-7 py-3.5 bg-amber-600 text-white rounded-full font-bold text-sm hover:bg-amber-700 transition-colors shadow-lg shadow-amber-600/20">
+                        <Link to="/resources" className="inline-flex items-center gap-2 px-7 py-3.5 bg-slate-600 text-white rounded-full font-bold text-sm hover:bg-slate-700 transition-colors shadow-lg shadow-slate-600/20">
                             Browse Resources <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>

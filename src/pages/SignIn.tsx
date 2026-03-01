@@ -70,7 +70,7 @@ const SignIn = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-cyan-50 flex items-center justify-center px-4 pt-20 pb-12">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50 flex items-center justify-center px-4 pt-20 pb-12">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -80,9 +80,9 @@ const SignIn = () => {
                 {/* Logo */}
                 <div className="text-center mb-8">
                     <Link to="/" className="inline-flex items-center gap-2">
-                        <Heart className="h-8 w-8 text-emerald-600 fill-current" />
+                        <Heart className="h-8 w-8 text-blue-600 fill-current" />
                         <span className="font-bold text-2xl text-neutral-900 tracking-tight">
-                            Karmaya<span className="text-emerald-500">Clinics</span>
+                            Karmaya<span className="text-blue-500">Clinics</span>
                         </span>
                     </Link>
                     <h1 className="text-2xl font-bold text-neutral-900 mt-6 mb-2">
@@ -131,7 +131,7 @@ const SignIn = () => {
                                         type="text"
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
-                                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-200 focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all bg-neutral-50 focus:bg-white text-sm"
+                                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-neutral-50 focus:bg-white text-sm"
                                         placeholder="Your full name"
                                     />
                                 </div>
@@ -147,7 +147,7 @@ const SignIn = () => {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
-                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-200 focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all bg-neutral-50 focus:bg-white text-sm"
+                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-neutral-50 focus:bg-white text-sm"
                                     placeholder="you@example.com"
                                 />
                             </div>
@@ -163,7 +163,7 @@ const SignIn = () => {
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
                                     minLength={6}
-                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-200 focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all bg-neutral-50 focus:bg-white text-sm"
+                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-neutral-50 focus:bg-white text-sm"
                                     placeholder="At least 6 characters"
                                 />
                             </div>
@@ -179,7 +179,7 @@ const SignIn = () => {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full py-3.5 bg-emerald-600 text-white rounded-xl font-bold text-sm hover:bg-emerald-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+                            className="w-full py-3.5 bg-blue-600 text-white rounded-xl font-bold text-sm hover:bg-blue-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
                         >
                             {loading ? (
                                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -197,7 +197,7 @@ const SignIn = () => {
                         {isSignUp ? 'Already have an account?' : "Don't have an account?"}{' '}
                         <button
                             onClick={() => { setIsSignUp(!isSignUp); setError(''); }}
-                            className="text-emerald-600 font-semibold hover:underline"
+                            className="text-blue-600 font-semibold hover:underline"
                         >
                             {isSignUp ? 'Sign In' : 'Create One'}
                         </button>

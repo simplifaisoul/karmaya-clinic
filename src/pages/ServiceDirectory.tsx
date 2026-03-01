@@ -67,10 +67,10 @@ const ServiceDirectory = () => {
 
     const colors = [
         'from-blue-500 to-cyan-500',
-        'from-violet-500 to-purple-500',
-        'from-rose-500 to-pink-500',
-        'from-emerald-500 to-teal-500',
-        'from-amber-500 to-orange-500',
+        'from-blue-500 to-indigo-500',
+        'from-slate-500 to-slate-500',
+        'from-blue-500 to-cyan-500',
+        'from-slate-500 to-slate-500',
         'from-indigo-500 to-blue-500',
     ];
 
@@ -221,10 +221,10 @@ const ServiceDirectory = () => {
                                         {/* Services Offered */}
                                         {member.servicesOffered.length > 0 && (
                                             <div className="mb-3">
-                                                <span className="text-xs font-semibold text-emerald-600 uppercase tracking-wider">Can Offer</span>
+                                                <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider">Can Offer</span>
                                                 <div className="flex flex-wrap gap-1.5 mt-1.5">
                                                     {member.servicesOffered.map((s, j) => (
-                                                        <span key={j} className="px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-full text-xs font-medium">{s}</span>
+                                                        <span key={j} className="px-2.5 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">{s}</span>
                                                     ))}
                                                 </div>
                                             </div>

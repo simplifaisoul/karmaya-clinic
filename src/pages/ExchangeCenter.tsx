@@ -36,16 +36,16 @@ const fadeUp = {
 };
 
 const categories = [
-    { name: 'Healthcare', icon: Stethoscope, color: 'text-rose-600', bg: 'bg-rose-50', border: 'border-rose-200' },
-    { name: 'Construction', icon: Wrench, color: 'text-amber-600', bg: 'bg-amber-50', border: 'border-amber-200' },
+    { name: 'Healthcare', icon: Stethoscope, color: 'text-slate-600', bg: 'bg-slate-50', border: 'border-slate-200' },
+    { name: 'Construction', icon: Wrench, color: 'text-slate-600', bg: 'bg-slate-50', border: 'border-slate-200' },
     { name: 'Teaching', icon: GraduationCap, color: 'text-blue-600', bg: 'bg-blue-50', border: 'border-blue-200' },
-    { name: 'Agriculture', icon: Sprout, color: 'text-green-600', bg: 'bg-green-50', border: 'border-green-200' },
-    { name: 'Cooking', icon: UtensilsCrossed, color: 'text-orange-600', bg: 'bg-orange-50', border: 'border-orange-200' },
+    { name: 'Agriculture', icon: Sprout, color: 'text-blue-600', bg: 'bg-blue-50', border: 'border-blue-200' },
+    { name: 'Cooking', icon: UtensilsCrossed, color: 'text-slate-600', bg: 'bg-slate-50', border: 'border-slate-200' },
     { name: 'Transportation', icon: Car, color: 'text-slate-600', bg: 'bg-slate-50', border: 'border-slate-200' },
     { name: 'Technology', icon: Monitor, color: 'text-indigo-600', bg: 'bg-indigo-50', border: 'border-indigo-200' },
-    { name: 'Childcare', icon: Baby, color: 'text-pink-600', bg: 'bg-pink-50', border: 'border-pink-200' },
-    { name: 'Arts & Crafts', icon: Palette, color: 'text-purple-600', bg: 'bg-purple-50', border: 'border-purple-200' },
-    { name: 'Community', icon: HandHeart, color: 'text-teal-600', bg: 'bg-teal-50', border: 'border-teal-200' },
+    { name: 'Childcare', icon: Baby, color: 'text-slate-600', bg: 'bg-slate-50', border: 'border-slate-200' },
+    { name: 'Arts & Crafts', icon: Palette, color: 'text-indigo-600', bg: 'bg-indigo-50', border: 'border-indigo-200' },
+    { name: 'Community', icon: HandHeart, color: 'text-cyan-600', bg: 'bg-cyan-50', border: 'border-cyan-200' },
 ];
 
 const ExchangeCenter = () => {
@@ -155,9 +155,9 @@ const ExchangeCenter = () => {
     });
 
     const gradients = [
-        'from-blue-500 to-cyan-500', 'from-violet-500 to-purple-500',
-        'from-rose-500 to-pink-500', 'from-emerald-500 to-teal-500',
-        'from-amber-500 to-orange-500', 'from-indigo-500 to-blue-500',
+        'from-blue-500 to-cyan-500', 'from-blue-500 to-indigo-500',
+        'from-slate-500 to-slate-500', 'from-blue-500 to-cyan-500',
+        'from-slate-500 to-slate-500', 'from-indigo-500 to-blue-500',
     ];
 
     const offerCount = posts.filter(p => p.type === 'offer').length;
@@ -166,7 +166,7 @@ const ExchangeCenter = () => {
     return (
         <div className="min-h-screen bg-neutral-50">
             {/* Hero */}
-            <div className="relative bg-gradient-to-br from-emerald-600 via-emerald-500 to-teal-500 pt-28 pb-24 md:pt-36 md:pb-32 overflow-hidden">
+            <div className="relative bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500 pt-28 pb-24 md:pt-36 md:pb-32 overflow-hidden">
                 <div className="absolute inset-0 z-[1] opacity-[0.04] pointer-events-none bg-[linear-gradient(rgba(255,255,255,1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,1)_1px,transparent_1px)] bg-[size:80px_80px]" />
                 <div className="absolute -bottom-[20%] -left-[15%] w-[50vw] h-[50vw] bg-white/5 rounded-full blur-[100px]" />
                 <div className="absolute top-[10%] right-[5%] w-[30vw] h-[30vw] bg-white/5 rounded-full blur-[80px]" />
@@ -182,14 +182,14 @@ const ExchangeCenter = () => {
                                     <ArrowRightLeft className="w-3 h-3" /> Community Exchange Network
                                 </span>
                                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-[1.1]">
-                                    Exchange Your <span className="text-emerald-200">Skills</span>,<br />
+                                    Exchange Your <span className="text-blue-200">Skills</span>,<br />
                                     Not Your <span className="text-white/50">Wallet</span>
                                 </h1>
                             </motion.div>
                             <motion.p
                                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.1, duration: 0.6 }}
-                                className="text-lg md:text-xl text-emerald-100 max-w-xl leading-relaxed mb-8"
+                                className="text-lg md:text-xl text-blue-100 max-w-xl leading-relaxed mb-8"
                             >
                                 Post what you can offer, request what you need. Connect with community members and exchange services — no money required.
                             </motion.p>
@@ -200,7 +200,7 @@ const ExchangeCenter = () => {
                             >
                                 {user ? (
                                     <>
-                                        <button onClick={() => setShowPostForm(true)} className="px-7 py-3.5 bg-white text-emerald-600 rounded-full font-bold text-sm shadow-lg hover:bg-emerald-50 transition-colors flex items-center gap-2">
+                                        <button onClick={() => setShowPostForm(true)} className="px-7 py-3.5 bg-white text-blue-600 rounded-full font-bold text-sm shadow-lg hover:bg-blue-50 transition-colors flex items-center gap-2">
                                             <Plus className="w-4 h-4" /> Post a Service
                                         </button>
                                         <Link to="/dashboard" className="px-7 py-3.5 bg-white/15 text-white border border-white/25 rounded-full font-semibold text-sm hover:bg-white/25 transition-colors backdrop-blur-sm">
@@ -209,7 +209,7 @@ const ExchangeCenter = () => {
                                     </>
                                 ) : (
                                     <>
-                                        <Link to="/signin" className="px-7 py-3.5 bg-white text-emerald-600 rounded-full font-bold text-sm shadow-lg hover:bg-emerald-50 transition-colors flex items-center gap-2">
+                                        <Link to="/signin" className="px-7 py-3.5 bg-white text-blue-600 rounded-full font-bold text-sm shadow-lg hover:bg-blue-50 transition-colors flex items-center gap-2">
                                             <UserPlus className="w-4 h-4" /> Join the Exchange
                                         </Link>
                                         <Link to="/directory" className="px-7 py-3.5 bg-white/15 text-white border border-white/25 rounded-full font-semibold text-sm hover:bg-white/25 transition-colors backdrop-blur-sm">
@@ -237,9 +237,9 @@ const ExchangeCenter = () => {
                                         { label: 'Requests', value: requestCount || '—', icon: Search },
                                     ].map((stat, i) => (
                                         <div key={i} className="bg-white/10 rounded-2xl p-4 text-center">
-                                            <stat.icon className="w-5 h-5 text-emerald-200 mx-auto mb-2" />
+                                            <stat.icon className="w-5 h-5 text-blue-200 mx-auto mb-2" />
                                             <div className="text-2xl font-extrabold text-white">{stat.value}</div>
-                                            <div className="text-xs text-emerald-200 font-medium">{stat.label}</div>
+                                            <div className="text-xs text-blue-200 font-medium">{stat.label}</div>
                                         </div>
                                     ))}
                                 </div>
@@ -259,7 +259,7 @@ const ExchangeCenter = () => {
             <section className="py-16 md:py-20 bg-white border-b border-neutral-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12">
-                        <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 font-semibold text-xs tracking-wider uppercase mb-4">
+                        <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 font-semibold text-xs tracking-wider uppercase mb-4">
                             <ArrowRightLeft className="w-3 h-3" /> How It Works
                         </span>
                         <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 tracking-tight">Exchange in 3 Simple Steps</h2>
@@ -274,12 +274,12 @@ const ExchangeCenter = () => {
                             {
                                 step: '02', title: 'Post & Browse',
                                 desc: 'Post services you can offer or request help you need. Browse the board to find community members near you.',
-                                icon: Search, color: 'from-emerald-500 to-teal-500'
+                                icon: Search, color: 'from-blue-500 to-cyan-500'
                             },
                             {
                                 step: '03', title: 'Connect & Exchange',
                                 desc: 'Reach out directly to community members and arrange your exchange. Real people, real skills, real impact.',
-                                icon: MessageCircle, color: 'from-amber-500 to-orange-500'
+                                icon: MessageCircle, color: 'from-slate-500 to-slate-500'
                             }
                         ].map((item, i) => (
                             <motion.div
@@ -332,7 +332,7 @@ const ExchangeCenter = () => {
                                 value={searchTerm}
                                 onChange={e => setSearchTerm(e.target.value)}
                                 placeholder="Search by service, name, or city..."
-                                className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-200 focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none text-sm bg-white transition-all"
+                                className="w-full pl-10 pr-4 py-3 rounded-xl border border-neutral-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-sm bg-white transition-all"
                             />
                         </div>
                         <div className="flex gap-2">
@@ -341,7 +341,7 @@ const ExchangeCenter = () => {
                                     key={t}
                                     onClick={() => setFilterType(t)}
                                     className={`px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors ${filterType === t
-                                        ? 'bg-emerald-600 text-white shadow-sm'
+                                        ? 'bg-blue-600 text-white shadow-sm'
                                         : 'bg-white text-neutral-600 border border-neutral-200 hover:bg-neutral-100'
                                         }`}
                                 >
@@ -352,7 +352,7 @@ const ExchangeCenter = () => {
                         {user && (
                             <button
                                 onClick={() => setShowPostForm(true)}
-                                className="px-5 py-2.5 bg-emerald-600 text-white rounded-lg font-semibold text-sm hover:bg-emerald-700 transition-colors flex items-center gap-1.5 shadow-sm whitespace-nowrap"
+                                className="px-5 py-2.5 bg-blue-600 text-white rounded-lg font-semibold text-sm hover:bg-blue-700 transition-colors flex items-center gap-1.5 shadow-sm whitespace-nowrap"
                             >
                                 <Plus className="w-4 h-4" /> Post
                             </button>
@@ -370,7 +370,7 @@ const ExchangeCenter = () => {
                             {filterCategory !== 'all' && ` in ${filterCategory}`}
                         </p>
                         {filterCategory !== 'all' && (
-                            <button onClick={() => setFilterCategory('all')} className="text-sm text-emerald-600 font-medium hover:underline">
+                            <button onClick={() => setFilterCategory('all')} className="text-sm text-blue-600 font-medium hover:underline">
                                 Clear filter ×
                             </button>
                         )}
@@ -405,11 +405,11 @@ const ExchangeCenter = () => {
                                 }
                             </p>
                             {!user ? (
-                                <Link to="/signin" className="inline-flex items-center gap-2 px-7 py-3.5 bg-emerald-600 text-white rounded-full font-bold text-sm hover:bg-emerald-700 transition-colors">
+                                <Link to="/signin" className="inline-flex items-center gap-2 px-7 py-3.5 bg-blue-600 text-white rounded-full font-bold text-sm hover:bg-blue-700 transition-colors">
                                     <UserPlus className="w-4 h-4" /> Create Free Account
                                 </Link>
                             ) : (
-                                <button onClick={() => setShowPostForm(true)} className="inline-flex items-center gap-2 px-7 py-3.5 bg-emerald-600 text-white rounded-full font-bold text-sm hover:bg-emerald-700 transition-colors">
+                                <button onClick={() => setShowPostForm(true)} className="inline-flex items-center gap-2 px-7 py-3.5 bg-blue-600 text-white rounded-full font-bold text-sm hover:bg-blue-700 transition-colors">
                                     <Plus className="w-4 h-4" /> Post a Service
                                 </button>
                             )}
@@ -444,7 +444,7 @@ const ExchangeCenter = () => {
                                         {/* Type Badge */}
                                         <div className="flex items-center justify-between mb-4">
                                             <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${post.type === 'offer'
-                                                ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                                                ? 'bg-blue-50 text-blue-700 border border-blue-200'
                                                 : 'bg-blue-50 text-blue-700 border border-blue-200'
                                                 }`}>
                                                 {post.type === 'offer' ? '🤲 Offering' : '🔎 Looking For'}
@@ -475,12 +475,12 @@ const ExchangeCenter = () => {
                                                 </span>
                                             )}
                                             {post.phone && (
-                                                <a href={`tel:${post.phone}`} className="flex items-center gap-1 hover:text-emerald-600 transition-colors">
+                                                <a href={`tel:${post.phone}`} className="flex items-center gap-1 hover:text-blue-600 transition-colors">
                                                     <Phone className="w-3 h-3 text-neutral-400" /> {post.phone}
                                                 </a>
                                             )}
                                             {post.email && (
-                                                <a href={`mailto:${post.email}`} className="flex items-center gap-1 hover:text-emerald-600 transition-colors">
+                                                <a href={`mailto:${post.email}`} className="flex items-center gap-1 hover:text-blue-600 transition-colors">
                                                     <Mail className="w-3 h-3 text-neutral-400" /> {post.email}
                                                 </a>
                                             )}
@@ -501,7 +501,7 @@ const ExchangeCenter = () => {
                                             {post.phone && (
                                                 <a
                                                     href={`tel:${post.phone}`}
-                                                    className="text-xs font-bold text-emerald-600 hover:text-emerald-700 flex items-center gap-1"
+                                                    className="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1"
                                                 >
                                                     <Phone className="w-3 h-3" /> Call Now
                                                 </a>
@@ -524,14 +524,14 @@ const ExchangeCenter = () => {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                         {[
-                            { icon: ArrowRightLeft, title: 'Skills for Services', desc: 'Trade your expertise — carpentry, teaching, farming — for healthcare and community support.', color: 'text-emerald-600', bg: 'bg-emerald-50' },
+                            { icon: ArrowRightLeft, title: 'Skills for Services', desc: 'Trade your expertise — carpentry, teaching, farming — for healthcare and community support.', color: 'text-blue-600', bg: 'bg-blue-50' },
                             { icon: Shield, title: 'No Money Required', desc: 'Exchange services directly with community members. No fees, no costs.', color: 'text-blue-600', bg: 'bg-blue-50' },
-                            { icon: Users, title: 'Build Community', desc: 'Every exchange strengthens community bonds and creates lasting partnerships.', color: 'text-violet-600', bg: 'bg-violet-50' },
-                            { icon: Zap, title: 'Instant Matching', desc: 'We connect your skills with those who need them — quickly and efficiently.', color: 'text-amber-600', bg: 'bg-amber-50' },
+                            { icon: Users, title: 'Build Community', desc: 'Every exchange strengthens community bonds and creates lasting partnerships.', color: 'text-blue-600', bg: 'bg-blue-50' },
+                            { icon: Zap, title: 'Instant Matching', desc: 'We connect your skills with those who need them — quickly and efficiently.', color: 'text-slate-600', bg: 'bg-slate-50' },
                         ].map((b, i) => (
                             <motion.div
                                 key={i} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-                                className="bg-neutral-50 p-6 rounded-xl border border-neutral-100 hover:border-emerald-200 transition-colors"
+                                className="bg-neutral-50 p-6 rounded-xl border border-neutral-100 hover:border-blue-200 transition-colors"
                             >
                                 <div className={`w-10 h-10 ${b.bg} rounded-lg flex items-center justify-center mb-4`}>
                                     <b.icon className={`w-5 h-5 ${b.color}`} />
@@ -545,20 +545,20 @@ const ExchangeCenter = () => {
             </section>
 
             {/* Bottom CTA */}
-            <section className="py-16 bg-gradient-to-r from-emerald-600 to-teal-500">
+            <section className="py-16 bg-gradient-to-r from-blue-600 to-cyan-500">
                 <div className="max-w-4xl mx-auto px-4 text-center">
                     <Heart className="w-10 h-10 text-white/60 mx-auto mb-4" />
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Start Exchanging?</h2>
-                    <p className="text-emerald-100 mb-8 max-w-2xl mx-auto">
+                    <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
                         Join a community that values people over profit. Sign up for free and start exchanging services today.
                     </p>
                     <div className="flex flex-wrap gap-3 justify-center">
                         {user ? (
-                            <button onClick={() => setShowPostForm(true)} className="px-8 py-3.5 bg-white text-emerald-600 rounded-full font-bold hover:bg-emerald-50 transition-colors flex items-center gap-2">
+                            <button onClick={() => setShowPostForm(true)} className="px-8 py-3.5 bg-white text-blue-600 rounded-full font-bold hover:bg-blue-50 transition-colors flex items-center gap-2">
                                 <Plus className="w-4 h-4" /> Post a Service
                             </button>
                         ) : (
-                            <Link to="/signin" className="px-8 py-3.5 bg-white text-emerald-600 rounded-full font-bold hover:bg-emerald-50 transition-colors flex items-center gap-2">
+                            <Link to="/signin" className="px-8 py-3.5 bg-white text-blue-600 rounded-full font-bold hover:bg-blue-50 transition-colors flex items-center gap-2">
                                 <UserPlus className="w-4 h-4" /> Create Free Account
                             </Link>
                         )}
@@ -588,7 +588,7 @@ const ExchangeCenter = () => {
                             {/* Modal Header */}
                             <div className="px-6 py-5 border-b border-neutral-100 flex items-center justify-between">
                                 <h3 className="text-lg font-bold text-neutral-900 flex items-center gap-2">
-                                    <Sparkles className="w-5 h-5 text-emerald-600" /> Post a Service
+                                    <Sparkles className="w-5 h-5 text-blue-600" /> Post a Service
                                 </h3>
                                 <button onClick={() => setShowPostForm(false)} className="p-2 text-neutral-400 hover:text-neutral-900 rounded-lg hover:bg-neutral-100 transition-colors">
                                     <X className="w-5 h-5" />
@@ -604,12 +604,12 @@ const ExchangeCenter = () => {
                                         <button
                                             onClick={() => setPostType('offer')}
                                             className={`p-4 rounded-xl border-2 text-center transition-all ${postType === 'offer'
-                                                ? 'border-emerald-500 bg-emerald-50'
+                                                ? 'border-blue-500 bg-blue-50'
                                                 : 'border-neutral-200 hover:border-neutral-300'
                                                 }`}
                                         >
-                                            <HandHeart className={`w-6 h-6 mx-auto mb-2 ${postType === 'offer' ? 'text-emerald-600' : 'text-neutral-400'}`} />
-                                            <span className={`text-sm font-bold ${postType === 'offer' ? 'text-emerald-700' : 'text-neutral-600'}`}>Offering</span>
+                                            <HandHeart className={`w-6 h-6 mx-auto mb-2 ${postType === 'offer' ? 'text-blue-600' : 'text-neutral-400'}`} />
+                                            <span className={`text-sm font-bold ${postType === 'offer' ? 'text-blue-700' : 'text-neutral-600'}`}>Offering</span>
                                             <p className="text-xs text-neutral-400 mt-1">I can help with...</p>
                                         </button>
                                         <button
@@ -652,7 +652,7 @@ const ExchangeCenter = () => {
                                         type="text"
                                         value={postTitle}
                                         onChange={e => setPostTitle(e.target.value)}
-                                        className="w-full px-4 py-3 rounded-xl bg-neutral-50 border border-neutral-200 focus:ring-2 focus:ring-emerald-500 focus:bg-white outline-none transition-all text-sm"
+                                        className="w-full px-4 py-3 rounded-xl bg-neutral-50 border border-neutral-200 focus:ring-2 focus:ring-blue-500 focus:bg-white outline-none transition-all text-sm"
                                         placeholder={postType === 'offer' ? 'e.g., 2 hours of carpentry work' : 'e.g., Need help fixing a leaky faucet'}
                                     />
                                 </div>
@@ -664,7 +664,7 @@ const ExchangeCenter = () => {
                                         value={postDescription}
                                         onChange={e => setPostDescription(e.target.value)}
                                         rows={3}
-                                        className="w-full px-4 py-3 rounded-xl bg-neutral-50 border border-neutral-200 focus:ring-2 focus:ring-emerald-500 focus:bg-white outline-none transition-all resize-none text-sm"
+                                        className="w-full px-4 py-3 rounded-xl bg-neutral-50 border border-neutral-200 focus:ring-2 focus:ring-blue-500 focus:bg-white outline-none transition-all resize-none text-sm"
                                         placeholder="Add more details about what you're offering or looking for..."
                                     />
                                 </div>
@@ -672,13 +672,13 @@ const ExchangeCenter = () => {
                                 {/* Email */}
                                 <div>
                                     <label className="block text-sm font-semibold text-neutral-700 mb-1.5 flex items-center gap-1">
-                                        <Mail className="w-3.5 h-3.5 text-violet-500" /> Email <span className="text-red-400">*</span>
+                                        <Mail className="w-3.5 h-3.5 text-blue-500" /> Email <span className="text-red-400">*</span>
                                     </label>
                                     <input
                                         type="email"
                                         value={postEmail}
                                         onChange={e => setPostEmail(e.target.value)}
-                                        className="w-full px-4 py-3 rounded-xl bg-neutral-50 border border-neutral-200 focus:ring-2 focus:ring-emerald-500 focus:bg-white outline-none text-sm"
+                                        className="w-full px-4 py-3 rounded-xl bg-neutral-50 border border-neutral-200 focus:ring-2 focus:ring-blue-500 focus:bg-white outline-none text-sm"
                                         placeholder="your@email.com"
                                     />
                                 </div>
@@ -693,19 +693,19 @@ const ExchangeCenter = () => {
                                             type="text"
                                             value={postCity}
                                             onChange={e => setPostCity(e.target.value)}
-                                            className="w-full px-4 py-3 rounded-xl bg-neutral-50 border border-neutral-200 focus:ring-2 focus:ring-emerald-500 outline-none text-sm"
+                                            className="w-full px-4 py-3 rounded-xl bg-neutral-50 border border-neutral-200 focus:ring-2 focus:ring-blue-500 outline-none text-sm"
                                             placeholder="Your city"
                                         />
                                     </div>
                                     <div>
                                         <label className="block text-sm font-semibold text-neutral-700 mb-1.5 flex items-center gap-1">
-                                            <Phone className="w-3.5 h-3.5 text-emerald-500" /> Phone <span className="text-red-400">*</span>
+                                            <Phone className="w-3.5 h-3.5 text-blue-500" /> Phone <span className="text-red-400">*</span>
                                         </label>
                                         <input
                                             type="tel"
                                             value={postPhone}
                                             onChange={e => setPostPhone(e.target.value)}
-                                            className="w-full px-4 py-3 rounded-xl bg-neutral-50 border border-neutral-200 focus:ring-2 focus:ring-emerald-500 outline-none text-sm"
+                                            className="w-full px-4 py-3 rounded-xl bg-neutral-50 border border-neutral-200 focus:ring-2 focus:ring-blue-500 outline-none text-sm"
                                             placeholder="(555) 123-4567"
                                         />
                                     </div>
@@ -717,7 +717,7 @@ const ExchangeCenter = () => {
                                 <button
                                     onClick={handlePost}
                                     disabled={posting || !postTitle.trim() || !postCategory || !postCity.trim() || !postPhone.trim() || !postEmail.trim()}
-                                    className="w-full py-3 bg-emerald-600 text-white rounded-xl font-bold text-sm hover:bg-emerald-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                                    className="w-full py-3 bg-blue-600 text-white rounded-xl font-bold text-sm hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
                                 >
                                     {posting ? (
                                         <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />

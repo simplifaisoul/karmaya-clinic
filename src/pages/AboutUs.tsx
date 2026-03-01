@@ -12,13 +12,13 @@ const fadeUp = {
 
 const AboutUs = () => {
     const values = [
-        { letter: 'K', word: 'Kindness', desc: 'Every interaction begins with compassion and care.', icon: Heart, color: 'text-rose-500', bg: 'bg-rose-50' },
-        { letter: 'A', word: 'Action', desc: 'We don\'t just plan — we act decisively for those in need.', icon: Sparkles, color: 'text-amber-500', bg: 'bg-amber-50' },
+        { letter: 'K', word: 'Kindness', desc: 'Every interaction begins with compassion and care.', icon: Heart, color: 'text-slate-500', bg: 'bg-slate-50' },
+        { letter: 'A', word: 'Action', desc: 'We don\'t just plan — we act decisively for those in need.', icon: Sparkles, color: 'text-slate-500', bg: 'bg-slate-50' },
         { letter: 'R', word: 'Resilience', desc: 'Building communities that withstand and grow through adversity.', icon: Target, color: 'text-cyan-500', bg: 'bg-cyan-50' },
-        { letter: 'M', word: 'Motivation', desc: 'Inspiring individuals to take charge of their health.', icon: Sparkles, color: 'text-violet-500', bg: 'bg-violet-50' },
-        { letter: 'A', word: 'Affection', desc: 'Treating every patient like family — with warmth and dignity.', icon: Heart, color: 'text-pink-500', bg: 'bg-pink-50' },
-        { letter: 'Y', word: 'Youthfulness', desc: 'Investing in tomorrow by nurturing the next generation.', icon: Users, color: 'text-emerald-500', bg: 'bg-emerald-50' },
-        { letter: 'A', word: 'Appreciation', desc: 'Recognizing every contribution, no matter how small.', icon: Sparkles, color: 'text-orange-500', bg: 'bg-orange-50' },
+        { letter: 'M', word: 'Motivation', desc: 'Inspiring individuals to take charge of their health.', icon: Sparkles, color: 'text-blue-500', bg: 'bg-blue-50' },
+        { letter: 'A', word: 'Affection', desc: 'Treating every patient like family — with warmth and dignity.', icon: Heart, color: 'text-slate-500', bg: 'bg-slate-50' },
+        { letter: 'Y', word: 'Youthfulness', desc: 'Investing in tomorrow by nurturing the next generation.', icon: Users, color: 'text-blue-500', bg: 'bg-blue-50' },
+        { letter: 'A', word: 'Appreciation', desc: 'Recognizing every contribution, no matter how small.', icon: Sparkles, color: 'text-slate-500', bg: 'bg-slate-50' },
     ];
 
     const teamHighlights = [
@@ -82,11 +82,11 @@ const AboutUs = () => {
                                     <div className="text-xs text-neutral-500 font-medium">Patients Served</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="text-3xl font-extrabold text-emerald-600">9</div>
+                                    <div className="text-3xl font-extrabold text-blue-600">9</div>
                                     <div className="text-xs text-neutral-500 font-medium">Essential Steps</div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="text-3xl font-extrabold text-violet-600">3</div>
+                                    <div className="text-3xl font-extrabold text-blue-600">3</div>
                                     <div className="text-xs text-neutral-500 font-medium">Communities</div>
                                 </div>
                             </div>

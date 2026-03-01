@@ -27,7 +27,7 @@ const Hero = () => {
                         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                     >
                         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/15 border border-white/20 text-white font-medium text-xs tracking-wide mb-6 backdrop-blur-sm">
-                            <Star className="w-3 h-3 fill-amber-300 text-amber-300" />
+                            <Star className="w-3 h-3 fill-slate-300 text-slate-300" />
                             <span>Community-First Healthcare</span>
                         </div>
                     </motion.div>
@@ -107,7 +107,7 @@ const Hero = () => {
                     <div className="relative w-full max-w-md mx-auto">
                         <div className="rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/20 aspect-[4/5] border-2 border-white/20">
                             <img
-                                src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?auto=format&fit=crop&w=800&q=80"
+                                src="/images/clinic_team_outside.jpg"
                                 alt="Karmaya Community Healthcare"
                                 className="w-full h-full object-cover"
                                 loading="eager"
@@ -117,7 +117,7 @@ const Hero = () => {
                         {/* Floating status card */}
                         <div className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 bg-white p-3 sm:p-4 rounded-xl shadow-lg border border-blue-100 z-20">
                             <div className="flex items-center gap-2">
-                                <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_6px_rgba(34,197,94,0.4)]" />
+                                <div className="w-2.5 h-2.5 bg-blue-500 rounded-full animate-pulse shadow-[0_0_6px_rgba(34,197,94,0.4)]" />
                                 <span className="text-xs font-bold text-neutral-800">Accepting Patients</span>
                             </div>
                         </div>

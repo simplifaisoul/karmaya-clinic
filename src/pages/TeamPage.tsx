@@ -34,7 +34,7 @@ const teamMembers: TeamMember[] = [
         bio: 'Board-certified physician with over 15 years of experience in community medicine. Dr. Santos oversees all clinical operations and ensures quality healthcare delivery across all Karmaya micro-clinics.',
         image: '',
         initials: 'MS',
-        color: 'from-rose-500 to-pink-500',
+        color: 'from-slate-500 to-slate-500',
     },
     {
         name: 'James Rivera',
@@ -42,7 +42,7 @@ const teamMembers: TeamMember[] = [
         bio: 'A skilled organizer with deep roots in Philippine communities, James manages the service exchange program and builds trust between the clinic and the populations it serves.',
         image: '',
         initials: 'JR',
-        color: 'from-emerald-500 to-teal-500',
+        color: 'from-blue-500 to-cyan-500',
     },
     {
         name: 'Sarah Chen',
@@ -50,7 +50,7 @@ const teamMembers: TeamMember[] = [
         bio: 'Leading our digital transformation efforts, Sarah works on the exchange platform and partnerships with Canadian universities to deploy multi-use machines and sustainable technology solutions.',
         image: '',
         initials: 'SC',
-        color: 'from-violet-500 to-purple-500',
+        color: 'from-blue-500 to-indigo-500',
     },
     {
         name: 'Dr. Ana Reyes',
@@ -58,7 +58,7 @@ const teamMembers: TeamMember[] = [
         bio: 'Specializing in holistic health, Dr. Reyes designs and implements the 9 Steps to Wellness program, ensuring each community member receives comprehensive care addressing biological and societal wellness.',
         image: '',
         initials: 'AR',
-        color: 'from-amber-500 to-orange-500',
+        color: 'from-slate-500 to-slate-500',
     },
     {
         name: 'Carlos Mendoza',
@@ -77,7 +77,7 @@ const TeamPage = () => {
             <div className="relative bg-gradient-to-br from-neutral-800 via-neutral-900 to-neutral-800 pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden">
                 <div className="absolute inset-0 z-[1] opacity-[0.04] pointer-events-none bg-[linear-gradient(rgba(255,255,255,1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,1)_1px,transparent_1px)] bg-[size:80px_80px]" />
                 <div className="absolute top-[20%] -right-[10%] w-[40vw] h-[40vw] bg-blue-500/10 rounded-full blur-[100px]" />
-                <div className="absolute bottom-[10%] -left-[10%] w-[30vw] h-[30vw] bg-emerald-500/10 rounded-full blur-[80px]" />
+                <div className="absolute bottom-[10%] -left-[10%] w-[30vw] h-[30vw] bg-blue-500/10 rounded-full blur-[80px]" />
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <Link to="/" className="inline-flex items-center text-white/70 hover:text-white text-sm font-medium transition-colors mb-8">

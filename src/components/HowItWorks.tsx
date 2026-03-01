@@ -25,18 +25,18 @@ const steps = [
         number: '03',
         title: 'Exchange & Grow',
         desc: 'Complete your exchange and earn credits. No money needed — just genuine service.',
-        color: 'text-rose-500',
-        bg: 'bg-rose-50',
-        border: 'border-rose-200'
+        color: 'text-slate-500',
+        bg: 'bg-slate-50',
+        border: 'border-slate-200'
     },
     {
         icon: Sparkles,
         number: '04',
         title: 'Build Community',
         desc: 'Every exchange strengthens the network, creating a self-sustaining ecosystem of care.',
-        color: 'text-emerald-500',
-        bg: 'bg-emerald-50',
-        border: 'border-emerald-200'
+        color: 'text-blue-500',
+        bg: 'bg-blue-50',
+        border: 'border-blue-200'
     }
 ];
 
@@ -72,7 +72,7 @@ const HowItWorks = () => {
                     {/* Connecting line — desktop only */}
                     <div className="hidden lg:block absolute top-20 left-[12%] right-[12%] h-[2px] bg-neutral-200 z-0">
                         <div
-                            className="h-full bg-gradient-to-r from-blue-400 to-emerald-400 rounded-full"
+                            className="h-full bg-gradient-to-r from-blue-400 to-blue-400 rounded-full"
                             style={{
                                 transform: isVisible ? 'scaleX(1)' : 'scaleX(0)',
                                 transformOrigin: 'left',

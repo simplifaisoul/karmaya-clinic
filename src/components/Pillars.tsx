@@ -12,12 +12,12 @@ import {
 
 const Pillars = () => {
     const pillars = [
-        { title: 'Physical', icon: HeartPulse, desc: 'General examinations and emergency action for immediate healthcare needs.', color: 'text-rose-500', bg: 'bg-rose-50', border: 'border-rose-100' },
-        { title: 'Emotional', icon: Smile, desc: 'Mental wellness assessments and support for emotional well-being.', color: 'text-amber-500', bg: 'bg-amber-50', border: 'border-amber-100' },
+        { title: 'Physical', icon: HeartPulse, desc: 'General examinations and emergency action for immediate healthcare needs.', color: 'text-slate-500', bg: 'bg-slate-50', border: 'border-slate-100' },
+        { title: 'Emotional', icon: Smile, desc: 'Mental wellness assessments and support for emotional well-being.', color: 'text-slate-500', bg: 'bg-slate-50', border: 'border-slate-100' },
         { title: 'Educational', icon: BookOpen, desc: 'Guidance and learning led by qualified community volunteers.', color: 'text-blue-500', bg: 'bg-blue-50', border: 'border-blue-100' },
-        { title: 'Environmental', icon: Leaf, desc: 'Community-led recycling, greening, and sustainability programs.', color: 'text-emerald-500', bg: 'bg-emerald-50', border: 'border-emerald-100' },
-        { title: 'Nutritional', icon: Apple, desc: 'Weekly education on healthy eating habits and food access.', color: 'text-orange-500', bg: 'bg-orange-50', border: 'border-orange-100' },
-        { title: 'Social', icon: Users, desc: 'Weekly sports and activities for youth engagement and community.', color: 'text-violet-500', bg: 'bg-violet-50', border: 'border-violet-100' },
+        { title: 'Environmental', icon: Leaf, desc: 'Community-led recycling, greening, and sustainability programs.', color: 'text-blue-500', bg: 'bg-blue-50', border: 'border-blue-100' },
+        { title: 'Nutritional', icon: Apple, desc: 'Weekly education on healthy eating habits and food access.', color: 'text-slate-500', bg: 'bg-slate-50', border: 'border-slate-100' },
+        { title: 'Social', icon: Users, desc: 'Weekly sports and activities for youth engagement and community.', color: 'text-blue-500', bg: 'bg-blue-50', border: 'border-blue-100' },
         { title: 'Spiritual', icon: Sparkles, desc: 'Connecting members with local support and spiritual groups.', color: 'text-indigo-500', bg: 'bg-indigo-50', border: 'border-indigo-100' },
         { title: 'Intellectual', icon: BrainCircuit, desc: 'Access to books, learning tools, and community education.', color: 'text-cyan-500', bg: 'bg-cyan-50', border: 'border-cyan-100' },
         { title: 'Financial', icon: Coins, desc: 'Income generation tools and economic opportunity programs.', color: 'text-slate-500', bg: 'bg-slate-50', border: 'border-slate-100' },

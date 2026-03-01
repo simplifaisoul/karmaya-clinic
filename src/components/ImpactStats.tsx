@@ -33,8 +33,8 @@ const AnimatedCounter = ({ target, suffix, isVisible }: { target: number; suffix
 
 const stats: StatProps[] = [
     { icon: Stethoscope, value: 1000, suffix: '+', label: 'Patients Served', color: 'text-blue-600', bg: 'bg-blue-50' },
-    { icon: Heart, value: 9, suffix: '', label: 'Pillars of Health', color: 'text-rose-500', bg: 'bg-rose-50' },
-    { icon: Users, value: 50, suffix: '+', label: 'Active Volunteers', color: 'text-emerald-500', bg: 'bg-emerald-50' },
+    { icon: Heart, value: 9, suffix: '', label: 'Pillars of Health', color: 'text-slate-500', bg: 'bg-slate-50' },
+    { icon: Users, value: 50, suffix: '+', label: 'Active Volunteers', color: 'text-blue-500', bg: 'bg-blue-50' },
     { icon: Globe, value: 3, suffix: '', label: 'Communities Reached', color: 'text-indigo-500', bg: 'bg-indigo-50' },
 ];
 

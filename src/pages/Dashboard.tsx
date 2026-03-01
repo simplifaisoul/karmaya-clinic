@@ -106,7 +106,7 @@ const Dashboard = () => {
                                     Edit Profile
                                 </button>
                             ) : (
-                                <button onClick={handleSave} disabled={saving} className="px-5 py-2 bg-emerald-600 text-white rounded-xl font-semibold text-sm hover:bg-emerald-700 transition-colors flex items-center gap-2 disabled:opacity-50">
+                                <button onClick={handleSave} disabled={saving} className="px-5 py-2 bg-blue-600 text-white rounded-xl font-semibold text-sm hover:bg-blue-700 transition-colors flex items-center gap-2 disabled:opacity-50">
                                     <Save className="w-4 h-4" /> {saving ? 'Saving...' : 'Save'}
                                 </button>
                             )}
@@ -117,19 +117,19 @@ const Dashboard = () => {
                     </div>
 
                     {success && (
-                        <div className="mb-6 px-4 py-3 bg-emerald-50 border border-emerald-200 text-emerald-700 rounded-xl text-sm font-medium">
+                        <div className="mb-6 px-4 py-3 bg-blue-50 border border-blue-200 text-blue-700 rounded-xl text-sm font-medium">
                             ✅ {success}
                         </div>
                     )}
 
                     {/* Quick Actions */}
-                    <div className="bg-gradient-to-r from-emerald-600 to-teal-500 rounded-2xl p-6 mb-6 text-white">
+                    <div className="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl p-6 mb-6 text-white">
                         <div className="flex items-center justify-between">
                             <div>
                                 <h2 className="text-lg font-bold mb-1">Exchange Center</h2>
                                 <p className="text-sm text-white/80">Post services, browse offers, and connect with community members</p>
                             </div>
-                            <Link to="/exchange" className="px-5 py-2.5 bg-white text-emerald-600 rounded-xl font-bold text-sm hover:bg-emerald-50 transition-colors flex items-center gap-2 whitespace-nowrap">
+                            <Link to="/exchange" className="px-5 py-2.5 bg-white text-blue-600 rounded-xl font-bold text-sm hover:bg-blue-50 transition-colors flex items-center gap-2 whitespace-nowrap">
                                 <ArrowRightLeft className="w-4 h-4" /> Go to Exchange
                             </Link>
                         </div>
@@ -186,12 +186,12 @@ const Dashboard = () => {
                             {/* Services Offered */}
                             <div className="bg-white rounded-2xl border border-neutral-100 p-6">
                                 <h2 className="text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
-                                    <span className="w-6 h-6 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 text-xs font-bold">+</span>
+                                    <span className="w-6 h-6 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-xs font-bold">+</span>
                                     Services I Can Offer
                                 </h2>
                                 <div className="flex flex-wrap gap-2 mb-3">
                                     {servicesOffered.map((s, i) => (
-                                        <span key={i} className="inline-flex items-center gap-1 px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-xs font-semibold">
+                                        <span key={i} className="inline-flex items-center gap-1 px-3 py-1.5 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">
                                             {s}
                                             {editing && <button onClick={() => removeService('offered', i)}><X className="w-3 h-3" /></button>}
                                         </span>
@@ -200,8 +200,8 @@ const Dashboard = () => {
                                 </div>
                                 {editing && (
                                     <div className="flex gap-2">
-                                        <input value={newOffered} onChange={e => setNewOffered(e.target.value)} onKeyDown={e => e.key === 'Enter' && (e.preventDefault(), addService('offered'))} className="flex-1 px-3 py-2 rounded-lg border border-neutral-200 text-sm focus:ring-2 focus:ring-emerald-500 outline-none" placeholder="e.g., Carpentry, Teaching..." />
-                                        <button onClick={() => addService('offered')} className="p-2 bg-emerald-100 text-emerald-600 rounded-lg hover:bg-emerald-200 transition-colors"><Plus className="w-4 h-4" /></button>
+                                        <input value={newOffered} onChange={e => setNewOffered(e.target.value)} onKeyDown={e => e.key === 'Enter' && (e.preventDefault(), addService('offered'))} className="flex-1 px-3 py-2 rounded-lg border border-neutral-200 text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="e.g., Carpentry, Teaching..." />
+                                        <button onClick={() => addService('offered')} className="p-2 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition-colors"><Plus className="w-4 h-4" /></button>
                                     </div>
                                 )}
                             </div>
