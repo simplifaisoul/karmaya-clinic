@@ -1,4 +1,4 @@
-import { ArrowLeft, Linkedin, Mail } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -150,15 +150,7 @@ const TeamPage = () => {
                                 <div className="p-6">
                                     <h3 className="text-lg font-bold text-neutral-900 mb-1">{member.name}</h3>
                                     <p className="text-sm font-semibold text-blue-600 mb-3">{member.role}</p>
-                                    <p className="text-sm text-neutral-500 leading-relaxed mb-4">{member.bio}</p>
-                                    <div className="flex gap-2">
-                                        <a href="#" className="p-2 rounded-lg bg-neutral-100 hover:bg-blue-50 text-neutral-400 hover:text-blue-500 transition-colors" aria-label={`Email ${member.name}`}>
-                                            <Mail className="w-4 h-4" />
-                                        </a>
-                                        <a href="#" className="p-2 rounded-lg bg-neutral-100 hover:bg-blue-50 text-neutral-400 hover:text-blue-500 transition-colors" aria-label={`LinkedIn profile of ${member.name}`}>
-                                            <Linkedin className="w-4 h-4" />
-                                        </a>
-                                    </div>
+                                    <p className="text-sm text-neutral-500 leading-relaxed">{member.bio}</p>
                                 </div>
                             </motion.div>
                         ))}

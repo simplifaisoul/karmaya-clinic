@@ -14,7 +14,6 @@ import SignIn from "./pages/SignIn";
 import Dashboard from "./pages/Dashboard";
 import ServiceDirectory from "./pages/ServiceDirectory";
 import NotFound from "./pages/NotFound";
-import WhatsAppWidget from "./components/WhatsAppWidget";
 
 function App() {
   const location = useLocation();
@@ -55,7 +54,6 @@ function App() {
         <Route path="/directory" element={<ServiceDirectory />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <WhatsAppWidget />
     </Layout>
   );
 }

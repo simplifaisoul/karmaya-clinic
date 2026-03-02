@@ -33,10 +33,11 @@ const ScrollToTop = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.5 }}
                     onClick={scrollToTop}
-                    className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-primary text-white shadow-lg border border-primary-light hover:bg-primary-dark transition-colors focus:outline-none"
-                    whileHover={{ y: -5 }}
+                    className="fixed bottom-8 left-6 z-40 p-3 rounded-full bg-neutral-800 text-white shadow-lg hover:bg-neutral-700 transition-colors focus:outline-none"
+                    whileHover={{ y: -3 }}
+                    aria-label="Scroll to top"
                 >
-                    <ArrowUp className="w-6 h-6" />
+                    <ArrowUp className="w-5 h-5" />
                 </motion.button>
             )}
         </AnimatePresence>

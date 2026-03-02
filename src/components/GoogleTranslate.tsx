@@ -27,19 +27,30 @@ const GoogleTranslateWidget = ({ isMobile = false }: { isMobile?: boolean }) => 
             }
         };
 
+        // Set up global callback
+        window.googleTranslateElementInit = initWidget;
+
         if (!document.getElementById('google-translate-script')) {
             const addScript = document.createElement('script');
             addScript.id = 'google-translate-script';
             addScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
             addScript.async = true;
             document.body.appendChild(addScript);
-            window.googleTranslateElementInit = () => {
-                // Global init callback - we leave it empty as we poll/check in individual components
-            };
+        } else {
+            // Script already loaded, try initializing directly
+            initWidget();
         }
 
-        // Poll for library load to ensure widget initializes even if callback is missed or component mounts late
-        const interval = setInterval(initWidget, 500);
+        // Fallback polling in case callback fires before component mounts
+        const interval = setInterval(() => {
+            const element = document.getElementById(id);
+            if (element && element.hasChildNodes()) {
+                clearInterval(interval);
+                return;
+            }
+            initWidget();
+        }, 800);
+
         return () => clearInterval(interval);
     }, [id]);
 

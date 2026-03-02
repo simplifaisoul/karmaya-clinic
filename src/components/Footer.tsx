@@ -1,4 +1,4 @@
-import { Heart, Mail, MapPin, Facebook, Instagram, Twitter, ArrowRight, UserCircle } from 'lucide-react';
+import { Heart, Mail, MapPin, ArrowRight, UserCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
@@ -57,17 +57,9 @@ const Footer = () => {
                             "People helping people" through positive energy and tangible action.
                             Holistic primary care for underserved communities across the Philippines.
                         </p>
-                        <div className="flex gap-3">
-                            {[
-                                { icon: Facebook, label: 'Facebook' },
-                                { icon: Instagram, label: 'Instagram' },
-                                { icon: Twitter, label: 'Twitter' }
-                            ].map(({ icon: Icon, label }) => (
-                                <a key={label} href="#" aria-label={label} className="bg-neutral-800 p-2.5 rounded-lg hover:bg-neutral-700 hover:text-blue-400 transition-all">
-                                    <Icon className="h-4 w-4" />
-                                </a>
-                            ))}
-                        </div>
+                        <a href="mailto:info@karmayaclinics.org" className="inline-flex items-center gap-2 text-neutral-400 hover:text-blue-400 text-sm transition-colors font-medium">
+                            <Mail className="h-4 w-4" /> info@karmayaclinics.org
+                        </a>
                     </div>
 
                     {/* Quick Links */}
