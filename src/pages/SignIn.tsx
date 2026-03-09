@@ -23,6 +23,8 @@ const SignIn = () => {
 
     if (user) return null;
 
+    const [showVerifyMsg, setShowVerifyMsg] = useState(false);
+
     const handleEmailSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setError('');
@@ -31,6 +33,9 @@ const SignIn = () => {
             if (isSignUp) {
                 if (!name.trim()) { setError('Please enter your name'); setLoading(false); return; }
                 await signUpWithEmail(email, password, name);
+                setShowVerifyMsg(true);
+                setLoading(false);
+                return; // Don't redirect — show verification message
             } else {
                 await signInWithEmail(email, password);
             }
@@ -98,6 +103,21 @@ const SignIn = () => {
 
                 {/* Card */}
                 <div className="bg-white rounded-2xl shadow-lg border border-neutral-100 p-8">
+                    {/* Email Verification Message */}
+                    {showVerifyMsg && (
+                        <div className="mb-6 p-4 rounded-xl bg-blue-50 border border-blue-200">
+                            <div className="flex items-start gap-3">
+                                <Mail className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                                <div>
+                                    <h3 className="text-sm font-bold text-blue-900 mb-1">Check your email!</h3>
+                                    <p className="text-xs text-blue-700 leading-relaxed">
+                                        We've sent a verification link to <strong>{email}</strong>. Please click the link in the email to verify your account, then come back and sign in.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
                     {/* Google Sign-In */}
                     <button
                         onClick={handleGoogleSignIn}

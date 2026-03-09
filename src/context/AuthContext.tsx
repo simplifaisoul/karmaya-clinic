@@ -10,6 +10,7 @@ import {
     createUserWithEmailAndPassword,
     signOut,
     updateProfile,
+    sendEmailVerification,
 } from 'firebase/auth';
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { auth, db, googleProvider } from '../firebase';
@@ -136,6 +137,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const signUpWithEmail = async (email: string, password: string, name: string) => {
         const result = await createUserWithEmailAndPassword(auth, email, password);
         await updateProfile(result.user, { displayName: name });
+        await sendEmailVerification(result.user);
         await ensureUserProfile(result.user);
     };
 

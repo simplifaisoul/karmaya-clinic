@@ -467,22 +467,12 @@ const ExchangeCenter = () => {
                                             <p className="text-sm text-neutral-500 line-clamp-2 mb-4">{post.description}</p>
                                         )}
 
-                                        {/* City, Phone & Email */}
+                                        {/* City only - contact info is private */}
                                         <div className="flex flex-wrap gap-3 mb-4 text-xs text-neutral-500">
                                             {post.city && (
                                                 <span className="flex items-center gap-1">
                                                     <MapPin className="w-3 h-3 text-neutral-400" /> {post.city}
                                                 </span>
-                                            )}
-                                            {post.phone && (
-                                                <a href={`tel:${post.phone}`} className="flex items-center gap-1 hover:text-blue-600 transition-colors">
-                                                    <Phone className="w-3 h-3 text-neutral-400" /> {post.phone}
-                                                </a>
-                                            )}
-                                            {post.email && (
-                                                <a href={`mailto:${post.email}`} className="flex items-center gap-1 hover:text-blue-600 transition-colors">
-                                                    <Mail className="w-3 h-3 text-neutral-400" /> {post.email}
-                                                </a>
                                             )}
                                         </div>
 
@@ -498,13 +488,23 @@ const ExchangeCenter = () => {
                                                 </div>
                                                 <div className="text-xs font-semibold text-neutral-900">{post.userName}</div>
                                             </div>
-                                            {post.phone && (
-                                                <a
-                                                    href={`tel:${post.phone}`}
-                                                    className="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1"
-                                                >
-                                                    <Phone className="w-3 h-3" /> Call Now
-                                                </a>
+                                            {!isOwner && (
+                                                user ? (
+                                                    post.email ? (
+                                                        <a
+                                                            href={`mailto:${post.email}?subject=${encodeURIComponent(`Interest in: ${post.title}`)}&body=${encodeURIComponent(`Hi ${post.userName},\n\nI saw your ${post.type === 'offer' ? 'offer' : 'request'} "${post.title}" on the Karmaya Exchange and I'm interested.\n\nLet's connect!\n\nBest regards`)}`}
+                                                            className="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1"
+                                                        >
+                                                            <Mail className="w-3 h-3" /> I'm Interested
+                                                        </a>
+                                                    ) : (
+                                                        <span className="text-xs text-neutral-400">No contact provided</span>
+                                                    )
+                                                ) : (
+                                                    <Link to="/signin?redirect=/exchange" className="text-xs font-bold text-blue-500 hover:text-blue-700 flex items-center gap-1">
+                                                        <UserPlus className="w-3 h-3" /> Sign in to connect
+                                                    </Link>
+                                                )
                                             )}
                                         </div>
                                     </motion.div>
