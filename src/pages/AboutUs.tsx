@@ -93,7 +93,7 @@ const AboutUs = () => {
                         </div>
                         <div className="rounded-2xl overflow-hidden shadow-2xl">
                             <img
-                                src="/images/clinic_team_outside.jpg"
+                                src="/images/gallery/team-and-patient-clinic.jpg"
                                 alt="Karmaya Clinic Team"
                                 className="w-full h-full object-cover"
                                 loading="lazy"

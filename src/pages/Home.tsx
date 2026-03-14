@@ -38,7 +38,7 @@ const Home = () => {
             </ScrollReveal>
 
             <ParallaxDivider
-                image="/images/gallery/Group outside assesment.jpeg"
+                image="/images/gallery/clinic-overview-busy.jpg"
                 quote="People helping people — through positive energy and tangible action."
             />
 
@@ -80,11 +80,11 @@ const Home = () => {
 
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-8">
                             {[
-                                { src: '/images/gallery/Karmaya Clinic Big and nice photo everyone outside with Mac.jpeg', alt: 'Karmaya Clinic Team', span: 'md:col-span-2 md:row-span-2' },
-                                { src: '/images/gallery/Checking Vitals.jpeg', alt: 'Checking Vitals', span: '' },
-                                { src: '/images/gallery/Child mouth check.jpeg', alt: 'Child Health Check', span: '' },
-                                { src: '/images/gallery/Inside the Clinic.jpeg', alt: 'Inside the Clinic', span: '' },
-                                { src: '/images/gallery/Doctor Eyesight test Older man.jpeg', alt: 'Vision Test', span: '' },
+                                { src: '/images/gallery/team-and-patient-clinic.jpg', alt: 'Karmaya Clinic Team', span: 'md:col-span-2 md:row-span-2' },
+                                { src: '/images/gallery/patient-bp-assessment.jpg', alt: 'Checking Vitals', span: '' },
+                                { src: '/images/gallery/nurse-examining-patient.jpg', alt: 'Child Health Check', span: '' },
+                                { src: '/images/gallery/consultation-with-paperwork.jpg', alt: 'Inside the Clinic', span: '' },
+                                { src: '/images/gallery/eye-test-station.jpg', alt: 'Vision Test', span: '' },
                             ].map((img, i) => (
                                 <div key={i} className={`rounded-xl overflow-hidden ${img.span} aspect-square md:aspect-auto`}>
                                     <img
@@ -109,7 +109,7 @@ const Home = () => {
             <Testimonials />
 
             <ParallaxDivider
-                image="/images/gallery/Karmaya Group Photo with Mac.jpeg"
+                image="/images/gallery/outdoor-community-health-day.jpg"
                 quote="Every exchange strengthens the community. Every service creates a ripple of change."
             />
 
