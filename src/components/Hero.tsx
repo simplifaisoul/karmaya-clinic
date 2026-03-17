@@ -107,7 +107,7 @@ const Hero = () => {
                     <div className="relative w-full max-w-md mx-auto">
                         <div className="rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/20 aspect-[4/5] border-2 border-white/20">
                             <img
-                                src="/images/gallery/clinic-overview-busy.jpg"
+                                src="/images/gallery/outdoor-community-health-day.jpg"
                                 alt="Karmaya Community Healthcare"
                                 className="w-full h-full object-cover"
                                 loading="eager"
