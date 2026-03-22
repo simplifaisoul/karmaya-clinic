@@ -20,14 +20,14 @@ const ContactPage = () => {
                         transition={{ duration: 0.6 }}
                         className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight"
                     >
-                        Get In Touch
+                        Contact & Get Involved
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1, duration: 0.6 }}
                         className="text-lg md:text-xl text-neutral-300 max-w-3xl leading-relaxed"
                     >
-                        Whether you want to volunteer, donate, partner, or simply learn more — we'd love to hear from you.
+                        Whether you want to volunteer, donate supplies, open a clinic, or participate in the exchange — we'd love to hear from you.
                     </motion.p>
                 </div>
 

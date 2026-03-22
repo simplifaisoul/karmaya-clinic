@@ -6,18 +6,7 @@ import ParallaxDivider from "../components/ParallaxDivider";
 import Testimonials from "../components/Testimonials";
 import { ScrollReveal } from "../components/ScrollReveal";
 import { Link } from 'react-router-dom';
-import { ArrowRight, Camera, ArrowRightLeft, Users, BookOpen, HeartHandshake, Stethoscope, Eye, Mail } from 'lucide-react';
-
-const donationItems = [
-    { icon: Stethoscope, name: 'Stethoscopes' },
-    { icon: HeartHandshake, name: 'BP Monitors' },
-    { icon: HeartHandshake, name: 'Thermometers' },
-    { icon: HeartHandshake, name: 'Pulse Oximeters' },
-    { icon: HeartHandshake, name: 'Wheelchairs & Walkers' },
-    { icon: HeartHandshake, name: 'First Aid Supplies' },
-    { icon: HeartHandshake, name: 'PPE (Masks, Gloves)' },
-    { icon: Eye, name: 'Prescription / Reading Glasses' },
-];
+import { ArrowRight, Camera, ArrowRightLeft, Users, BookOpen, HeartHandshake, Mail } from 'lucide-react';
 
 const Home = () => {
     return (
@@ -120,42 +109,21 @@ const Home = () => {
             {/* Support Our Mission */}
             <ScrollReveal width="100%">
                 <section className="py-16 md:py-20 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50">
-                    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="text-center mb-10">
-                            <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mx-auto mb-5">
-                                <HeartHandshake className="w-6 h-6 text-amber-600" />
-                            </div>
-                            <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-3">Support Our Mission</h2>
-                            <p className="text-neutral-600 max-w-2xl mx-auto leading-relaxed">
-                                We are grateful for your support in enhancing our patient care.
-                                Your generosity directly impacts our patients' health and well-being.
-                            </p>
+                    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mx-auto mb-5">
+                            <HeartHandshake className="w-6 h-6 text-amber-600" />
                         </div>
-
-                        <div className="bg-white rounded-2xl shadow-sm border border-neutral-100 p-6 md:p-8 mb-8">
-                            <p className="text-sm font-bold text-neutral-500 uppercase tracking-wider mb-4">Items We Need</p>
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                                {donationItems.map((item, i) => {
-                                    const Icon = item.icon;
-                                    return (
-                                        <div key={i} className="flex items-center gap-2.5 bg-neutral-50 rounded-xl px-3.5 py-3 border border-neutral-100">
-                                            <Icon className="w-4 h-4 text-amber-500 flex-shrink-0" />
-                                            <span className="text-sm font-medium text-neutral-700">{item.name}</span>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        </div>
-
-                        <div className="text-center">
-                            <a
-                                href="mailto:info@karmayaclinics.org?subject=Donation%20Inquiry&body=Hello%2C%20I%20would%20like%20to%20contribute%20to%20Karmaya%20Clinics."
-                                className="inline-flex items-center gap-2 px-7 py-3.5 bg-amber-500 text-white rounded-full font-bold text-sm hover:bg-amber-600 transition-colors shadow-lg shadow-amber-500/20"
-                            >
-                                <Mail className="w-4 h-4" /> Contact Us to Donate
-                            </a>
-                            <p className="text-xs text-neutral-400 mt-3">info@karmayaclinics.org</p>
-                        </div>
+                        <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-3">Support Our Mission</h2>
+                        <p className="text-neutral-600 max-w-2xl mx-auto leading-relaxed mb-6">
+                            Volunteering, donations such as BP monitors, stethoscopes, pulse oximeters, glasses, or anything you find suitable for the clinic — your generosity directly impacts our patients' health and well-being.
+                        </p>
+                        <a
+                            href="mailto:info@karmayaclinics.org?subject=Support%20Karmaya%20Clinics&body=Hello%2C%20I%20would%20like%20to%20contribute%20to%20Karmaya%20Clinics."
+                            className="inline-flex items-center gap-2 px-7 py-3.5 bg-amber-500 text-white rounded-full font-bold text-sm hover:bg-amber-600 transition-colors shadow-lg shadow-amber-500/20"
+                        >
+                            <Mail className="w-4 h-4" /> Contact Us to Contribute
+                        </a>
+                        <p className="text-xs text-neutral-400 mt-3">info@karmayaclinics.org</p>
                     </div>
                 </section>
             </ScrollReveal>

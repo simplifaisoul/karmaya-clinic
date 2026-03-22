@@ -63,7 +63,7 @@ const Hero = () => {
                         className="flex flex-col sm:flex-row gap-3"
                     >
                         <Link
-                            to="/exchange"
+                            to="/contact"
                             className="px-7 py-3.5 bg-white text-blue-600 rounded-full font-bold text-sm shadow-lg shadow-blue-600/20 hover:shadow-xl hover:bg-blue-50 transition-all text-center flex items-center justify-center gap-2 group"
                         >
                             Join Our Mission
