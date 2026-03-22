@@ -27,7 +27,7 @@ const ContactPage = () => {
                         transition={{ delay: 0.1, duration: 0.6 }}
                         className="text-lg md:text-xl text-neutral-300 max-w-3xl leading-relaxed"
                     >
-                        Whether you want to volunteer, donate supplies, open a clinic, or participate in the exchange — we'd love to hear from you.
+                        Whether you want to volunteer, donate supplies, open a clinic, or participate in the exchange, we'd love to hear from you.
                     </motion.p>
                 </div>
 
@@ -48,7 +48,7 @@ const ContactPage = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-10">
                         <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-3 tracking-tight">Find Us</h2>
-                        <p className="text-neutral-500">Our pilot clinic in the Philippines — with expansion plans for Cebu.</p>
+                        <p className="text-neutral-500">Our pilot clinic in the Philippines, with expansion plans for Cebu.</p>
                     </div>
                     <div className="rounded-2xl overflow-hidden border border-neutral-200 shadow-sm">
                         <iframe

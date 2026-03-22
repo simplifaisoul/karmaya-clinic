@@ -191,7 +191,7 @@ const ExchangeCenter = () => {
                                 transition={{ delay: 0.1, duration: 0.6 }}
                                 className="text-lg md:text-xl text-blue-100 max-w-xl leading-relaxed mb-8"
                             >
-                                Post what you can offer, request what you need. Connect with community members and exchange services — no money required.
+                                Post what you can offer, request what you need. Connect with community members and exchange services, no money required.
                             </motion.p>
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
@@ -524,10 +524,10 @@ const ExchangeCenter = () => {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                         {[
-                            { icon: ArrowRightLeft, title: 'Skills for Services', desc: 'Trade your expertise — carpentry, teaching, farming — for healthcare and community support.', color: 'text-blue-600', bg: 'bg-blue-50' },
+                            { icon: ArrowRightLeft, title: 'Skills for Services', desc: 'Trade your expertise like carpentry, teaching, or farming for healthcare and community support.', color: 'text-blue-600', bg: 'bg-blue-50' },
                             { icon: Shield, title: 'No Money Required', desc: 'Exchange services directly with community members. No fees, no costs.', color: 'text-blue-600', bg: 'bg-blue-50' },
                             { icon: Users, title: 'Build Community', desc: 'Every exchange strengthens community bonds and creates lasting partnerships.', color: 'text-blue-600', bg: 'bg-blue-50' },
-                            { icon: Zap, title: 'Instant Matching', desc: 'We connect your skills with those who need them — quickly and efficiently.', color: 'text-slate-600', bg: 'bg-slate-50' },
+                            { icon: Zap, title: 'Instant Matching', desc: 'We connect your skills with those who need them, quickly and efficiently.', color: 'text-slate-600', bg: 'bg-slate-50' },
                         ].map((b, i) => (
                             <motion.div
                                 key={i} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}

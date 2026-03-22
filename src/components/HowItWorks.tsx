@@ -6,7 +6,7 @@ const steps = [
         icon: ClipboardCheck,
         number: '01',
         title: 'Share Your Skills',
-        desc: 'Tell us what services you can offer — from healthcare to carpentry, tutoring to farming.',
+        desc: 'Tell us what services you can offer, from healthcare to carpentry, tutoring to farming.',
         color: 'text-blue-600',
         bg: 'bg-blue-50',
         border: 'border-blue-200'
@@ -24,7 +24,7 @@ const steps = [
         icon: Heart,
         number: '03',
         title: 'Exchange & Grow',
-        desc: 'Complete your exchange and earn credits. No money needed — just genuine service.',
+        desc: 'Complete your exchange and earn credits. No money needed, just genuine service.',
         color: 'text-slate-500',
         bg: 'bg-slate-50',
         border: 'border-slate-200'

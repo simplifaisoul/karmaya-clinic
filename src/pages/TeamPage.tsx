@@ -95,7 +95,7 @@ const TeamPage = () => {
                         transition={{ delay: 0.1, duration: 0.6 }}
                         className="text-lg md:text-xl text-neutral-300 max-w-3xl leading-relaxed"
                     >
-                        Meet the dedicated individuals behind Karmaya Clinics — united by the belief that healthcare is a human right, not a privilege.
+                        Meet the dedicated individuals behind Karmaya Clinics, united by the belief that healthcare is a human right.
                     </motion.p>
                 </div>
 

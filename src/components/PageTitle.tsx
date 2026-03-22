@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const pageTitles: Record<string, string> = {
-    '/': 'Karmaya Clinics — Holistic Community Healthcare',
+    '/': 'Karmaya Clinics | Community Healthcare',
     '/about': 'About Us | Karmaya Clinics',
     '/team': 'Our Team | Karmaya Clinics',
     '/pillars': 'The 9 Steps to Wellness | Karmaya Clinics',

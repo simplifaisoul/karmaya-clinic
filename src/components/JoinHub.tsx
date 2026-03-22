@@ -59,7 +59,7 @@ const JoinHub = () => {
                     </h2>
                     <p className="text-base md:text-lg text-neutral-500 max-w-2xl mx-auto leading-relaxed">
                         Join a thriving ecosystem where community members trade services directly.
-                        No currency needed—just genuine human connection.
+                        No currency needed, just genuine human connection.
                     </p>
                 </div>
 

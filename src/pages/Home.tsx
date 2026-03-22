@@ -39,7 +39,7 @@ const Home = () => {
 
             <ParallaxDivider
                 image="/images/gallery/clinic-overview-busy.jpg"
-                quote="People helping people — through positive energy and tangible action."
+                quote="People helping people, through positive energy and tangible action."
             />
 
             {/* Exchange CTA */}
@@ -51,7 +51,7 @@ const Home = () => {
                         </div>
                         <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4">The Service Exchange Center</h2>
                         <p className="text-neutral-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-                            Exchange your unique skills for healthcare services. No money required — just your talents and our community-powered network.
+                            Exchange your unique skills for healthcare services. No money required, just your talents and our community-powered network.
                         </p>
                         <Link to="/exchange" className="inline-flex items-center gap-2 px-7 py-3.5 bg-blue-600 text-white rounded-full font-bold text-sm hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20">
                             Explore the Exchange <ArrowRight className="w-4 h-4" />
@@ -115,7 +115,7 @@ const Home = () => {
                         </div>
                         <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-3">Support Our Mission</h2>
                         <p className="text-neutral-600 max-w-2xl mx-auto leading-relaxed mb-6">
-                            Volunteering, donations such as BP monitors, stethoscopes, pulse oximeters, glasses, or anything you find suitable for the clinic — your generosity directly impacts our patients' health and well-being.
+                            Volunteering, donations such as BP monitors, stethoscopes, pulse oximeters, glasses, or anything you find suitable for the clinic. Your generosity directly impacts our patients' health and well-being.
                         </p>
                         <a
                             href="mailto:info@karmayaclinics.org?subject=Support%20Karmaya%20Clinics&body=Hello%2C%20I%20would%20like%20to%20contribute%20to%20Karmaya%20Clinics."

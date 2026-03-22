@@ -13,10 +13,10 @@ const fadeUp = {
 const AboutUs = () => {
     const values = [
         { letter: 'K', word: 'Kindness', desc: 'Every interaction begins with compassion and care.', icon: Heart, color: 'text-slate-500', bg: 'bg-slate-50' },
-        { letter: 'A', word: 'Action', desc: 'We don\'t just plan — we act decisively for those in need.', icon: Sparkles, color: 'text-slate-500', bg: 'bg-slate-50' },
+        { letter: 'A', word: 'Action', desc: 'We don\'t just plan, we act decisively for those in need.', icon: Sparkles, color: 'text-slate-500', bg: 'bg-slate-50' },
         { letter: 'R', word: 'Resilience', desc: 'Building communities that withstand and grow through adversity.', icon: Target, color: 'text-cyan-500', bg: 'bg-cyan-50' },
         { letter: 'M', word: 'Motivation', desc: 'Inspiring individuals to take charge of their health.', icon: Sparkles, color: 'text-blue-500', bg: 'bg-blue-50' },
-        { letter: 'A', word: 'Affection', desc: 'Treating every patient like family — with warmth and dignity.', icon: Heart, color: 'text-slate-500', bg: 'bg-slate-50' },
+        { letter: 'A', word: 'Affection', desc: 'Treating every patient like family, with warmth and dignity.', icon: Heart, color: 'text-slate-500', bg: 'bg-slate-50' },
         { letter: 'Y', word: 'Youthfulness', desc: 'Investing in tomorrow by nurturing the next generation.', icon: Users, color: 'text-blue-500', bg: 'bg-blue-50' },
         { letter: 'A', word: 'Appreciation', desc: 'Recognizing every contribution, no matter how small.', icon: Sparkles, color: 'text-slate-500', bg: 'bg-slate-50' },
     ];
@@ -50,7 +50,7 @@ const AboutUs = () => {
                         transition={{ delay: 0.1, duration: 0.6 }}
                         className="text-lg md:text-xl text-blue-100 max-w-3xl leading-relaxed"
                     >
-                        Driven by the philosophy of "People helping people," we are redefining holistic primary healthcare for underserved communities in the Philippines — and soon, the world.
+                        Driven by the philosophy of "People helping people," we are building holistic primary healthcare for underserved communities in the Philippines, and soon, beyond.
                     </motion.p>
                 </div>
 
@@ -74,7 +74,7 @@ const AboutUs = () => {
                                 To provide accessible, holistic primary healthcare to underserved communities through a sustainable micro-clinic model that empowers local populations and creates lasting positive change.
                             </p>
                             <p className="text-neutral-600 leading-relaxed mb-8">
-                                We believe healthcare is a human right — not a privilege. Our model eliminates financial barriers by introducing a community-powered service exchange, where every person's skills contribute to collective wellness.
+                                We believe healthcare is a human right, not a privilege. Our model eliminates financial barriers through a community-powered service exchange where every person's skills contribute to the community's wellness.
                             </p>
                             <div className="flex flex-wrap gap-6">
                                 <div className="text-center">
@@ -114,7 +114,7 @@ const AboutUs = () => {
                             The <span className="gradient-text">K.A.R.M.A.Y.A</span> Philosophy
                         </h2>
                         <p className="text-base md:text-lg text-neutral-500 max-w-3xl mx-auto leading-relaxed">
-                            More than an acronym — it's a <span className="text-neutral-900 font-semibold">way of life</span> that guides every interaction, every treatment, and every relationship we build.
+                            More than an acronym, it's a <span className="text-neutral-900 font-semibold">way of life</span> that guides how we care for our patients and build relationships.
                         </p>
                     </div>
 

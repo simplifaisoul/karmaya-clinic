@@ -52,7 +52,7 @@ const Hero = () => {
                         className="text-base md:text-lg text-blue-50 leading-relaxed max-w-xl mb-8"
                     >
                         Karmaya Clinics provide <span className="text-white font-semibold">holistic healthcare</span> through
-                        9 essential steps—serving underserved communities in the Philippines with a sustainable,
+                        9 essential steps, serving underserved communities in the Philippines with a sustainable,
                         community-powered micro-clinic model.
                     </motion.p>
 

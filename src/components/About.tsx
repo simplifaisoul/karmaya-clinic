@@ -22,7 +22,7 @@ const About = () => {
                         The <span className="gradient-text">K.A.R.M.A.Y.A</span> Philosophy
                     </h2>
                     <p className="text-base md:text-lg text-neutral-500 max-w-3xl mx-auto leading-relaxed">
-                        More than an acronym — it's a <span className="text-neutral-900 font-semibold">way of life</span> that guides every interaction, every treatment, and every relationship we build.
+                        More than an acronym, it's a <span className="text-neutral-900 font-semibold">way of life</span> that guides how we care for our patients and build relationships.
                     </p>
                 </div>
 
