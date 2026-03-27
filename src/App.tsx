@@ -13,6 +13,7 @@ import TeamPage from "./pages/TeamPage";
 import SignIn from "./pages/SignIn";
 import Dashboard from "./pages/Dashboard";
 import ServiceDirectory from "./pages/ServiceDirectory";
+import MicroClinicPage from "./pages/MicroClinicPage";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/directory" element={<ServiceDirectory />} />
+        <Route path="/microclinic" element={<MicroClinicPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>

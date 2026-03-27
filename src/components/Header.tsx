@@ -38,6 +38,7 @@ const Header = () => {
         { name: '9 Steps', to: '/pillars' },
         { name: 'Gallery', to: '/gallery' },
         { name: 'Exchange', to: '/exchange' },
+        { name: 'MicroClinic', to: '/microclinic' },
         { name: 'Resources', to: '/resources' },
     ];
 

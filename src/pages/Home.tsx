@@ -24,7 +24,7 @@ const Home = () => {
                         </div>
                         <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4">Discover Our Mission</h2>
                         <p className="text-neutral-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-                            Driven by the philosophy of "People helping people," we are redefining holistic primary healthcare for underserved communities in the Philippines.
+                            Driven by the philosophy of "People helping people," we are building holistic primary healthcare for underserved communities in the Philippines, and soon, Globally.
                         </p>
                         <Link to="/about" className="inline-flex items-center gap-2 px-7 py-3.5 bg-blue-600 text-white rounded-full font-bold text-sm hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20">
                             Learn About Us <ArrowRight className="w-4 h-4" />

@@ -10,6 +10,7 @@ const pageTitles: Record<string, string> = {
     '/gallery': 'Impact Gallery | Karmaya Clinics',
     '/contact': 'Contact Us | Karmaya Clinics',
     '/resources': 'Resources | Karmaya Clinics',
+    '/microclinic': 'Start a MicroClinic | Karmaya Clinics',
     '/signin': 'Sign In | Karmaya Clinics',
     '/dashboard': 'My Dashboard | Karmaya Clinics',
     '/directory': 'Service Directory | Karmaya Clinics',

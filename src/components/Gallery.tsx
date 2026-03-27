@@ -34,9 +34,7 @@ const allImages: GalleryImage[] = [
     { src: '/images/gallery/Karmaya Group Photo with Mac.jpeg', alt: 'Karmaya Team Group Photo', category: ['team'], span: 'sm:col-span-2 sm:row-span-2' },
 
     // ── New photos: Clinical Care ──
-    { src: '/images/gallery/patient-care-bed.jpg', alt: 'Patient receiving bedside care', category: ['clinical'] },
     { src: '/images/gallery/nurse-examining-patient.jpg', alt: 'Nurse examining a young patient', category: ['clinical'] },
-    { src: '/images/gallery/bp-monitoring-digital.jpg', alt: 'Digital blood pressure monitoring', category: ['clinical'], span: 'sm:col-span-2' },
     { src: '/images/gallery/arm-examination.jpg', alt: 'Medical arm examination', category: ['clinical'] },
     { src: '/images/gallery/doctor-examining-lady.jpg', alt: 'Doctor examining patient', category: ['clinical'] },
     { src: '/images/gallery/elder-patient-examination.jpg', alt: 'Elder patient examination', category: ['clinical'] },
@@ -64,7 +62,6 @@ const allImages: GalleryImage[] = [
     { src: '/images/gallery/patient-bp-assessment.jpg', alt: 'Community BP assessment outreach', category: ['community', 'clinical'] },
 
     // ── New photos: Vision Care ──
-    { src: '/images/gallery/eye-test-station.jpg', alt: 'Eye test and glasses station', category: ['vision'] },
     { src: '/images/gallery/community-glasses-distribution.jpg', alt: 'Community eyeglasses distribution', category: ['vision', 'community'], span: 'sm:col-span-2' },
 
     // ── New photos: Team & People ──
@@ -73,6 +70,41 @@ const allImages: GalleryImage[] = [
     { src: '/images/gallery/team-and-patient-clinic.jpg', alt: 'Team with patients at clinic', category: ['team'], span: 'sm:col-span-2' },
     { src: '/images/gallery/young-patient-smiling.jpg', alt: 'Young patient smiling', category: ['team'] },
     { src: '/images/gallery/elderly-man-checkup.jpg', alt: 'Elderly community member at checkup', category: ['team', 'community'] },
+
+    // ── Latest Updates ──
+    { src: '/images/gallery/karmaya-clinic-update-v2-34.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-35.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-36.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-37.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-38.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-39.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-40.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-41.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-42.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-43.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-44.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-45.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-46.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-47.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-48.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-49.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-50.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-51.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-52.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-53.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-54.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-55.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-56.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-57.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-58.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-59.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-60.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-61.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-62.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-63.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-64.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-65.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
+    { src: '/images/gallery/karmaya-clinic-update-v2-66.jpg', alt: 'Recent Clinic Update', category: ['community', 'clinical'] },
 ];
 
 const Gallery = () => {
