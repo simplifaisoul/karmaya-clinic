@@ -21,14 +21,6 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
     {
-        name: 'Mac Dulay',
-        role: 'Founder & Executive Director',
-        bio: 'Passionate about community-driven healthcare, Mac founded Karmaya Clinics to bring holistic primary care to underserved communities in the Philippines. With a vision rooted in sustainable social enterprise, he leads the organization\'s strategic direction and partnerships.',
-        image: '',
-        initials: 'MD',
-        color: 'from-blue-500 to-cyan-500',
-    },
-    {
         name: 'Peter Menchavez',
         role: 'Community Health Advocate',
         bio: 'Community health advocate volunteer and business person.',
@@ -147,12 +139,12 @@ const TeamPage = () => {
                                 className="bg-white rounded-2xl border border-neutral-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 group"
                             >
                                 {/* Photo / Avatar */}
-                                <div className="relative h-48 overflow-hidden">
+                                <div className="relative aspect-[4/5] overflow-hidden bg-neutral-100">
                                     {member.image ? (
                                         <img
                                             src={member.image}
                                             alt={member.name}
-                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                                             loading="lazy"
                                         />
                                     ) : (
