@@ -21,7 +21,7 @@ const PillarsPage = () => {
                         transition={{ duration: 0.6 }}
                         className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight"
                     >
-                        The 9 Steps to Wellness
+                        How We Work
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
@@ -47,6 +47,35 @@ const PillarsPage = () => {
             {/* Innovation & Sustainability */}
             <Innovation />
 
+            {/* Impact */}
+            <section className="py-16 md:py-24 bg-neutral-50">
+                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white border border-neutral-200 text-neutral-600 font-semibold text-xs tracking-wider uppercase mb-4 shadow-sm">
+                        Impact
+                    </span>
+                    <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4 tracking-tight">
+                        Rooted in the Community, for the Community
+                    </h2>
+                    <p className="text-base md:text-lg text-neutral-500 max-w-3xl mx-auto leading-relaxed mb-10">
+                        Our impact is measured by the lives we touch and the sustainable health standards we bring to our local neighborhoods.
+                    </p>
+                    <div className="flex flex-wrap gap-8 justify-center">
+                        <div className="text-center">
+                            <div className="text-4xl font-extrabold text-blue-600">1,000+</div>
+                            <div className="text-sm text-neutral-500 font-medium mt-1">Patients Served</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-4xl font-extrabold text-blue-600">9</div>
+                            <div className="text-sm text-neutral-500 font-medium mt-1">Steps of Wellness</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-4xl font-extrabold text-blue-600">3</div>
+                            <div className="text-sm text-neutral-500 font-medium mt-1">Communities</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* CTA */}
             <section className="py-16 bg-gradient-to-r from-indigo-600 to-blue-500">
                 <div className="max-w-4xl mx-auto px-4 text-center">
@@ -56,8 +85,8 @@ const PillarsPage = () => {
                         <Link to="/gallery" className="px-8 py-3.5 bg-white text-indigo-600 rounded-full font-bold hover:bg-indigo-50 transition-colors">
                             See Our Gallery
                         </Link>
-                        <Link to="/exchange" className="px-8 py-3.5 bg-white/15 text-white border border-white/25 rounded-full font-semibold hover:bg-white/25 transition-colors">
-                            Join the Exchange
+                        <Link to="/contact" className="px-8 py-3.5 bg-white/15 text-white border border-white/25 rounded-full font-semibold hover:bg-white/25 transition-colors">
+                            Get in Touch
                         </Link>
                     </div>
                 </div>

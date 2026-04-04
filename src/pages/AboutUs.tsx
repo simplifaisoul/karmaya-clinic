@@ -1,4 +1,5 @@
 import { Heart, Target, Users, Sparkles, Globe, Shield, ArrowLeft } from 'lucide-react';
+import Pillars from '../components/Pillars';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -144,6 +145,9 @@ const AboutUs = () => {
                 </div>
             </section>
 
+            {/* 9 Steps to Wellness (embedded) */}
+            <Pillars />
+
             {/* Team Highlights */}
             <section className="py-16 md:py-24">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -182,7 +186,7 @@ const AboutUs = () => {
                             Meet Our Team
                         </Link>
                         <Link to="/exchange" className="px-8 py-3.5 bg-white/15 text-white border border-white/25 rounded-full font-semibold hover:bg-white/25 transition-colors">
-                            Join the Exchange
+                            Learn About the Exchange
                         </Link>
                         <Link to="/contact" className="px-8 py-3.5 bg-white/15 text-white border border-white/25 rounded-full font-semibold hover:bg-white/25 transition-colors">
                             Contact Us

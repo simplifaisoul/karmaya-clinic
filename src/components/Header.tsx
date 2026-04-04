@@ -34,8 +34,8 @@ const Header = () => {
 
     const navLinks = [
         { name: 'About', to: '/about' },
+        { name: 'How We Work', to: '/pillars' },
         { name: 'Team', to: '/team' },
-        { name: '9 Steps', to: '/pillars' },
         { name: 'Gallery', to: '/gallery' },
         { name: 'Exchange', to: '/exchange' },
         { name: 'MicroClinic', to: '/microclinic' },

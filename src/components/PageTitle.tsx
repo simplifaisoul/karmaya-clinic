@@ -5,7 +5,7 @@ const pageTitles: Record<string, string> = {
     '/': 'Karmaya Clinics | Community Healthcare',
     '/about': 'About Us | Karmaya Clinics',
     '/team': 'Our Team | Karmaya Clinics',
-    '/pillars': 'The 9 Steps to Wellness | Karmaya Clinics',
+    '/pillars': 'How We Work | Karmaya Clinics',
     '/exchange': 'Service Exchange Center | Karmaya Clinics',
     '/gallery': 'Impact Gallery | Karmaya Clinics',
     '/contact': 'Contact Us | Karmaya Clinics',
