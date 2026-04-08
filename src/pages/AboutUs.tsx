@@ -51,7 +51,7 @@ const AboutUs = () => {
                         transition={{ delay: 0.1, duration: 0.6 }}
                         className="text-lg md:text-xl text-blue-100 max-w-3xl leading-relaxed"
                     >
-                        Driven by the philosophy of "People helping people," we are building holistic primary healthcare for underserved communities in the Philippines, and soon, beyond.
+                        Driven by the philosophy of "People helping people," we are a holistic first-stop clinic for underserved communities. We focus on preventives, and we provide free healthcare support and advocacy, designed specifically for those who need it most, starting in the Philippines and beyond.
                     </motion.p>
                 </div>
 
