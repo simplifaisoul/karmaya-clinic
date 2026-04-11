@@ -8,14 +8,7 @@ const Contact = () => {
 
                     {/* Contact Info */}
                     <div>
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white border border-neutral-200 text-neutral-600 font-semibold text-xs tracking-wider uppercase mb-4 shadow-sm">
-                            Get Involved
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 tracking-tight">Contact Us</h2>
-                        <p className="text-base md:text-lg text-neutral-500 mb-8 leading-relaxed">
-                            Whether you want to volunteer, donate, or partner with us, we'd love to hear from you.
-                            Together, we can expand our reach to more underserved communities.
-                        </p>
+                        <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-6 tracking-tight">Reach Out</h2>
 
                         <div className="space-y-5">
                             <div className="flex items-start gap-3">
