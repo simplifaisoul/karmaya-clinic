@@ -7,9 +7,7 @@ import {
     Users,
     Sparkles,
     Coins,
-    Activity,
-    Droplets,
-    Moon
+    Activity
 } from 'lucide-react';
 
 const Pillars = () => {
