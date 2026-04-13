@@ -65,32 +65,39 @@ const AboutUs = () => {
             {/* Mission Statement */}
             <section className="py-16 md:py-24">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                         <div>
                             <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 font-semibold text-xs tracking-wider uppercase mb-4">Our Mission</span>
                             <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6 tracking-tight">
-                                Accessible Healthcare for <span className="text-blue-600">Everyone</span>
+                                Every Patient Is an <span className="text-blue-600">Ecosystem</span>
                             </h2>
                             <p className="text-neutral-600 leading-relaxed mb-6">
-                                To provide accessible, holistic primary healthcare to underserved communities through a sustainable micro-clinic model that empowers local populations and creates lasting positive change.
+                                We view every patient as an ecosystem rather than a patient with a collection of isolated symptoms. To maintain a healthy internal ecosystem, we advocate for the Four Pillars of Living:
                             </p>
-                            <p className="text-neutral-600 leading-relaxed mb-8">
-                                We believe healthcare is a human right, not a privilege. Our model eliminates financial barriers through a community-powered service exchange where every person's skills contribute to the community's wellness.
-                            </p>
-                            <div className="flex flex-wrap gap-6">
-                                <div className="text-center">
-                                    <div className="text-3xl font-extrabold text-blue-600">1,000+</div>
-                                    <div className="text-xs text-neutral-500 font-medium">Patients Served</div>
-                                </div>
-                                <div className="text-center">
-                                    <div className="text-3xl font-extrabold text-blue-600">9</div>
-                                    <div className="text-xs text-neutral-500 font-medium">Essential Steps</div>
-                                </div>
-                                <div className="text-center">
-                                    <div className="text-3xl font-extrabold text-blue-600">3</div>
-                                    <div className="text-xs text-neutral-500 font-medium">Communities</div>
-                                </div>
+
+                            <div className="space-y-4 mb-8">
+                                {[
+                                    { title: 'Nutritional Variety', desc: 'Consume at least three colors of vegetables and fruits daily to ensure a full spectrum of nutrients.' },
+                                    { title: 'Active Lifestyle', desc: 'Incorporate daily movement, such as walking or structured exercise, into your routine.' },
+                                    { title: 'Hydration', desc: 'Maintain consistent fluid intake to support vital organ function.' },
+                                    { title: 'Stress Reduction', desc: 'Implement mindfulness or relaxation techniques to balance your nervous system and mental well-being.' },
+                                    { title: 'Sleep Hygiene', desc: 'Prioritize 7–8 hours of rest with a consistent wake-up time to regulate your body\'s natural rhythm.' },
+                                ].map((item, i) => (
+                                    <div key={i} className="flex items-start gap-3">
+                                        <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <span className="text-blue-600 font-bold text-xs">{i + 1}</span>
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-neutral-900 text-sm">{item.title}</h4>
+                                            <p className="text-neutral-500 text-sm leading-relaxed">{item.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
+
+                            <p className="text-neutral-600 leading-relaxed italic border-l-4 border-blue-200 pl-4">
+                                This is our mission and the must-do list for every one of us, including our patients.
+                            </p>
                         </div>
                         <div className="rounded-2xl overflow-hidden shadow-2xl">
                             <img

@@ -28,7 +28,7 @@ const PillarsPage = () => {
                         transition={{ delay: 0.1, duration: 0.6 }}
                         className="text-lg md:text-xl text-indigo-100 max-w-3xl leading-relaxed"
                     >
-                        A complete, holistic approach to health care that goes beyond traditional medication to address biological and societal wellness.
+                        Our holistic approach treats every patient as a complete ecosystem, addressing every facet of biological and societal health.
                     </motion.p>
                 </div>
 
