@@ -3,6 +3,7 @@ import { Menu, X, Heart, ChevronDown, UserCircle, Globe } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import LanguageSelector from './GoogleTranslate';
+import NotificationBell from './exchange/NotificationBell';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -111,7 +112,9 @@ const Header = () => {
                             {/* Auth Button */}
                             {!loading && (
                                 user ? (
-                                    <Link to="/dashboard" className="flex items-center gap-2 ml-2">
+                                    <div className="flex items-center gap-1 ml-2">
+                                        <NotificationBell onClick={() => window.location.href = '/exchange'} className={showDark ? '' : '[&_svg]:text-white/70 [&_svg]:hover:text-white'} />
+                                        <Link to="/dashboard">
                                         <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-xs font-bold overflow-hidden border-2 border-white shadow-md ring-2 ring-blue-100">
                                             {profile?.photoURL ? (
                                                 <img src={profile.photoURL} alt="" className="w-full h-full object-cover" />
@@ -119,7 +122,8 @@ const Header = () => {
                                                 profile?.displayName?.charAt(0)?.toUpperCase() || 'U'
                                             )}
                                         </div>
-                                    </Link>
+                                        </Link>
+                                    </div>
                                 ) : (
                                     <Link
                                         to="/signin"
