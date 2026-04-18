@@ -8,11 +8,33 @@ service cloud.firestore {
       allow write: if request.auth != null && request.auth.uid == userId;
     }
     
-    // Service listings
+    // Service listings (legacy)
     match /services/{serviceId} {
       allow read: if true;
       allow create: if request.auth != null;
       allow update, delete: if request.auth != null && request.auth.uid == resource.data.userId;
+    }
+
+    // Exchange Posts: anyone can read, authenticated users can create, only owner can edit/delete
+    match /exchangePosts/{postId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null && request.auth.uid == resource.data.userId;
+    }
+
+    // Conversations: only participants can read/write
+    match /conversations/{conversationId} {
+      allow read: if request.auth != null && request.auth.uid in resource.data.participants;
+      allow create: if request.auth != null;
+      allow update: if request.auth != null && request.auth.uid in resource.data.participants;
+      allow delete: if false;
+
+      // Messages subcollection: only conversation participants can read/write
+      match /messages/{messageId} {
+        allow read: if request.auth != null && request.auth.uid in get(/databases/$(database)/documents/conversations/$(conversationId)).data.participants;
+        allow create: if request.auth != null && request.auth.uid in get(/databases/$(database)/documents/conversations/$(conversationId)).data.participants;
+        allow update, delete: if false;
+      }
     }
   }
 }
