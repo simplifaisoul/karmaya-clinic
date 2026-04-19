@@ -1,7 +1,6 @@
 import { useState, useRef } from 'react';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { db, storage } from '../../firebase';
+import { db } from '../../firebase';
 import { useAuth } from '../../context/AuthContext';
 import { X, Plus, Image, Loader2 } from 'lucide-react';
 
@@ -9,6 +8,36 @@ const CATEGORIES = [
     'Healthcare', 'Construction', 'Teaching', 'Agriculture', 'Cooking',
     'Transportation', 'Technology', 'Childcare', 'Arts & Crafts', 'Community'
 ];
+
+// Compress and convert image to base64 data URL (max ~200KB each)
+const compressImage = (file: File, maxWidth = 800, quality = 0.6): Promise<string> => {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const img = new window.Image();
+            img.onload = () => {
+                const canvas = document.createElement('canvas');
+                let w = img.width;
+                let h = img.height;
+                if (w > maxWidth) {
+                    h = (maxWidth / w) * h;
+                    w = maxWidth;
+                }
+                canvas.width = w;
+                canvas.height = h;
+                const ctx = canvas.getContext('2d');
+                if (!ctx) { reject(new Error('Canvas not supported')); return; }
+                ctx.drawImage(img, 0, 0, w, h);
+                const dataUrl = canvas.toDataURL('image/jpeg', quality);
+                resolve(dataUrl);
+            };
+            img.onerror = () => reject(new Error('Failed to load image'));
+            img.src = e.target?.result as string;
+        };
+        reader.onerror = () => reject(new Error('Failed to read file'));
+        reader.readAsDataURL(file);
+    });
+};
 
 interface PostServiceFormProps {
     onClose: () => void;
@@ -60,13 +89,11 @@ const PostServiceForm = ({ onClose, onPosted }: PostServiceFormProps) => {
         setError('');
 
         try {
-            // Upload photos
-            const photoUrls: string[] = [];
+            // Compress photos to base64 data URLs (no Firebase Storage needed)
+            const photoDataUrls: string[] = [];
             for (const photo of photos) {
-                const storageRef = ref(storage, `exchange/${user.uid}/${Date.now()}_${photo.name}`);
-                const snap = await uploadBytes(storageRef, photo);
-                const url = await getDownloadURL(snap.ref);
-                photoUrls.push(url);
+                const dataUrl = await compressImage(photo);
+                photoDataUrls.push(dataUrl);
             }
 
             // Create post
@@ -81,7 +108,7 @@ const PostServiceForm = ({ onClose, onPosted }: PostServiceFormProps) => {
                 city: city.trim(),
                 phone: phone.trim(),
                 email: email.trim(),
-                photos: photoUrls,
+                photos: photoDataUrls,
                 status: 'open',
                 createdAt: serverTimestamp(),
             });

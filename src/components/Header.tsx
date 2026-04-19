@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Heart, ChevronDown, UserCircle, Globe } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import LanguageSelector from './GoogleTranslate';
 import NotificationBell from './exchange/NotificationBell';
@@ -11,6 +11,7 @@ const Header = () => {
     const [showTranslate, setShowTranslate] = useState(false);
     const { user, profile, loading } = useAuth();
     const location = useLocation();
+    const navigate = useNavigate();
     const isHome = location.pathname === '/';
 
     useEffect(() => {
@@ -113,7 +114,7 @@ const Header = () => {
                             {!loading && (
                                 user ? (
                                     <div className="flex items-center gap-1 ml-2">
-                                        <NotificationBell onClick={() => window.location.href = '/exchange'} className={showDark ? '' : '[&_svg]:text-white/70 [&_svg]:hover:text-white'} />
+                                        <NotificationBell onClick={() => navigate('/exchange?messages=true')} className={showDark ? '' : '[&_svg]:text-white/70 [&_svg]:hover:text-white'} />
                                         <Link to="/dashboard">
                                         <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-xs font-bold overflow-hidden border-2 border-white shadow-md ring-2 ring-blue-100">
                                             {profile?.photoURL ? (

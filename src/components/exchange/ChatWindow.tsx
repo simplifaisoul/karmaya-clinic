@@ -1,9 +1,37 @@
 import { useEffect, useState, useRef } from 'react';
 import { collection, query, orderBy, onSnapshot, addDoc, serverTimestamp, doc, updateDoc, increment } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { db, storage } from '../../firebase';
+import { db } from '../../firebase';
 import { useAuth } from '../../context/AuthContext';
 import { ArrowLeft, Send, Image, X, Loader2 } from 'lucide-react';
+
+// Compress image to base64 for chat messages (smaller for faster loading)
+const compressImage = (file: File, maxWidth = 600, quality = 0.5): Promise<string> => {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const img = new window.Image();
+            img.onload = () => {
+                const canvas = document.createElement('canvas');
+                let w = img.width;
+                let h = img.height;
+                if (w > maxWidth) {
+                    h = (maxWidth / w) * h;
+                    w = maxWidth;
+                }
+                canvas.width = w;
+                canvas.height = h;
+                const ctx = canvas.getContext('2d');
+                if (!ctx) { reject(new Error('Canvas not supported')); return; }
+                ctx.drawImage(img, 0, 0, w, h);
+                resolve(canvas.toDataURL('image/jpeg', quality));
+            };
+            img.onerror = () => reject(new Error('Failed to load image'));
+            img.src = e.target?.result as string;
+        };
+        reader.onerror = () => reject(new Error('Failed to read file'));
+        reader.readAsDataURL(file);
+    });
+};
 
 interface Message {
     id: string;
@@ -70,9 +98,8 @@ const ChatWindow = ({ conversationId, onBack }: ChatWindowProps) => {
         try {
             let imageUrl = '';
             if (imageFile) {
-                const storageRef = ref(storage, `messages/${conversationId}/${Date.now()}_${imageFile.name}`);
-                const snap = await uploadBytes(storageRef, imageFile);
-                imageUrl = await getDownloadURL(snap.ref);
+                // Compress to base64 instead of uploading to Storage
+                imageUrl = await compressImage(imageFile);
             }
 
             // Add message

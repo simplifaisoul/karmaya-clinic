@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { collection, query, orderBy, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useAuth } from '../context/AuthContext';
@@ -48,6 +48,15 @@ const ExchangeCenter = () => {
     // Messaging state
     const [showMessages, setShowMessages] = useState(false);
     const [activeConversation, setActiveConversation] = useState<string | null>(null);
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    // Auto-open messages drawer when navigated with ?messages=true
+    useEffect(() => {
+        if (searchParams.get('messages') === 'true' && user) {
+            setShowMessages(true);
+            setSearchParams({}, { replace: true });
+        }
+    }, [searchParams, user]);
 
     // Load posts real-time
     useEffect(() => {
