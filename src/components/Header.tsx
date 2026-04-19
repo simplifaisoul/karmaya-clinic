@@ -138,6 +138,10 @@ const Header = () => {
 
                         {/* Mobile controls */}
                         <div className="flex lg:hidden items-center gap-1">
+                            {/* Messages bell (mobile) */}
+                            {!loading && user && (
+                                <NotificationBell onClick={() => navigate('/exchange?messages=true')} className={showDark ? '' : '[&_svg]:text-white/80'} />
+                            )}
                             {/* Translate button */}
                             <button
                                 onClick={(e) => { e.stopPropagation(); setShowTranslate(!showTranslate); }}
