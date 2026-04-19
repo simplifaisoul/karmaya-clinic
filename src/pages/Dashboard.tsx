@@ -1,10 +1,28 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { doc, updateDoc } from 'firebase/firestore';
+import { doc, updateDoc, collection, query, where, orderBy, onSnapshot, limit } from 'firebase/firestore';
 import { db } from '../firebase';
 import { motion } from 'framer-motion';
-import { User, Mail, MapPin, Phone, FileText, ArrowRightLeft, LogOut, Save, Plus, X } from 'lucide-react';
+import { User, Mail, MapPin, Phone, FileText, ArrowRightLeft, LogOut, Save, Plus, X, MessageCircle, Sparkles } from 'lucide-react';
+
+interface ExchangePost {
+    id: string;
+    title: string;
+    category: string;
+    type: 'offer' | 'request';
+    status: string;
+    createdAt: any;
+}
+
+interface Conversation {
+    id: string;
+    postTitle: string;
+    postType: string;
+    lastMessage: string;
+    lastMessageAt: any;
+    unread: Record<string, number>;
+}
 
 const Dashboard = () => {
     const { user, profile, logout, refreshProfile, loading } = useAuth();
@@ -23,6 +41,10 @@ const Dashboard = () => {
     const [newOffered, setNewOffered] = useState('');
     const [newNeeded, setNewNeeded] = useState('');
 
+    // Real exchange data
+    const [myPosts, setMyPosts] = useState<ExchangePost[]>([]);
+    const [recentConvos, setRecentConvos] = useState<Conversation[]>([]);
+
     useEffect(() => {
         if (!loading && !user) navigate('/signin');
     }, [user, loading, navigate]);
@@ -37,6 +59,36 @@ const Dashboard = () => {
             setServicesNeeded(profile.servicesNeeded || []);
         }
     }, [profile]);
+
+    // Load user's exchange posts
+    useEffect(() => {
+        if (!user) return;
+        const q = query(
+            collection(db, 'exchangePosts'),
+            where('userId', '==', user.uid),
+            orderBy('createdAt', 'desc'),
+            limit(5)
+        );
+        const unsub = onSnapshot(q, (snap) => {
+            setMyPosts(snap.docs.map(d => ({ id: d.id, ...d.data() } as ExchangePost)));
+        }, () => {});
+        return unsub;
+    }, [user]);
+
+    // Load recent conversations
+    useEffect(() => {
+        if (!user) return;
+        const q = query(
+            collection(db, 'conversations'),
+            where('participants', 'array-contains', user.uid),
+            orderBy('lastMessageAt', 'desc'),
+            limit(3)
+        );
+        const unsub = onSnapshot(q, (snap) => {
+            setRecentConvos(snap.docs.map(d => ({ id: d.id, ...d.data() } as Conversation)));
+        }, () => {});
+        return unsub;
+    }, [user]);
 
     const handleSave = async () => {
         if (!user) return;
@@ -70,6 +122,18 @@ const Dashboard = () => {
         else setServicesNeeded(servicesNeeded.filter((_, i) => i !== index));
     };
 
+    const totalUnread = recentConvos.reduce((sum, c) => sum + (c.unread?.[user?.uid || ''] || 0), 0);
+
+    const timeAgo = (ts: any) => {
+        if (!ts?.toDate) return '';
+        const diff = Date.now() - ts.toDate().getTime();
+        const mins = Math.floor(diff / 60000);
+        if (mins < 60) return `${mins}m ago`;
+        const hrs = Math.floor(mins / 60);
+        if (hrs < 24) return `${hrs}h ago`;
+        return `${Math.floor(hrs / 24)}d ago`;
+    };
+
     if (loading) {
         return (
             <div className="min-h-screen flex items-center justify-center pt-20">
@@ -82,7 +146,7 @@ const Dashboard = () => {
 
     return (
         <div className="min-h-screen bg-neutral-50 pt-24 pb-16">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <div className="max-w-5xl mx-auto px-4 sm:px-6">
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
 
                     {/* Header */}
@@ -122,18 +186,106 @@ const Dashboard = () => {
                         </div>
                     )}
 
-                    {/* Quick Actions */}
-                    <div className="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl p-6 mb-6 text-white">
-                        <div className="flex items-center justify-between">
-                            <div>
-                                <h2 className="text-lg font-bold mb-1">Exchange Center</h2>
-                                <p className="text-sm text-white/80">Post services, browse offers, and connect with community members</p>
+                    {/* Quick Actions Row */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        {/* Exchange Center Card */}
+                        <div className="bg-gradient-to-br from-slate-800 via-slate-700 to-slate-600 rounded-2xl p-6 text-white relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+                            <div className="relative z-10">
+                                <div className="flex items-center gap-2 mb-2">
+                                    <ArrowRightLeft className="w-5 h-5 text-blue-300" />
+                                    <h2 className="text-lg font-bold">Exchange Center</h2>
+                                </div>
+                                <p className="text-sm text-slate-300 mb-4">Post services, browse offers, and connect with community members</p>
+                                <div className="flex flex-wrap gap-2">
+                                    <Link to="/exchange" className="px-4 py-2 bg-white text-slate-800 rounded-lg font-bold text-xs hover:bg-blue-50 transition-colors">
+                                        Browse Services
+                                    </Link>
+                                    <Link to="/exchange" onClick={() => setTimeout(() => document.querySelector<HTMLButtonElement>('[data-post-btn]')?.click(), 500)} className="px-4 py-2 bg-blue-500/20 text-blue-200 border border-blue-400/30 rounded-lg font-semibold text-xs hover:bg-blue-500/30 transition-colors">
+                                        + Post Service
+                                    </Link>
+                                </div>
                             </div>
-                            <Link to="/exchange" className="px-5 py-2.5 bg-white text-blue-600 rounded-xl font-bold text-sm hover:bg-blue-50 transition-colors flex items-center gap-2 whitespace-nowrap">
-                                <ArrowRightLeft className="w-4 h-4" /> Go to Exchange
-                            </Link>
+                        </div>
+
+                        {/* Messages Card */}
+                        <div className="bg-white rounded-2xl border border-neutral-100 p-6 relative overflow-hidden">
+                            <div className="flex items-center justify-between mb-3">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center">
+                                        <MessageCircle className="w-4 h-4 text-blue-600" />
+                                    </div>
+                                    <h2 className="text-lg font-bold text-neutral-900">Messages</h2>
+                                    {totalUnread > 0 && (
+                                        <span className="px-2 py-0.5 bg-red-500 text-white rounded-full text-[10px] font-bold">{totalUnread} new</span>
+                                    )}
+                                </div>
+                                <Link to="/exchange?messages=true" className="text-xs font-semibold text-blue-600 hover:text-blue-700">View All →</Link>
+                            </div>
+                            {recentConvos.length === 0 ? (
+                                <p className="text-sm text-neutral-400">No conversations yet. Message someone on the Exchange!</p>
+                            ) : (
+                                <div className="space-y-2">
+                                    {recentConvos.map(conv => {
+                                        const unread = conv.unread?.[user.uid] || 0;
+                                        return (
+                                            <Link
+                                                key={conv.id}
+                                                to="/exchange?messages=true"
+                                                className="flex items-center justify-between p-2.5 rounded-xl hover:bg-neutral-50 transition-colors group"
+                                            >
+                                                <div className="min-w-0 flex-1">
+                                                    <div className="flex items-center gap-1.5">
+                                                        <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded ${conv.postType === 'offer' ? 'bg-emerald-50 text-emerald-600' : 'bg-amber-50 text-amber-600'}`}>
+                                                            {conv.postType}
+                                                        </span>
+                                                        <span className="text-xs font-semibold text-neutral-800 truncate">{conv.postTitle}</span>
+                                                    </div>
+                                                    {conv.lastMessage && (
+                                                        <p className="text-[11px] text-neutral-400 truncate mt-0.5">{conv.lastMessage}</p>
+                                                    )}
+                                                </div>
+                                                <div className="flex items-center gap-2 flex-shrink-0 ml-2">
+                                                    <span className="text-[10px] text-neutral-300">{timeAgo(conv.lastMessageAt)}</span>
+                                                    {unread > 0 && (
+                                                        <span className="w-5 h-5 bg-blue-600 text-white rounded-full text-[10px] font-bold flex items-center justify-center">{unread}</span>
+                                                    )}
+                                                </div>
+                                            </Link>
+                                        );
+                                    })}
+                                </div>
+                            )}
                         </div>
                     </div>
+
+                    {/* My Exchange Posts */}
+                    {myPosts.length > 0 && (
+                        <div className="bg-white rounded-2xl border border-neutral-100 p-6 mb-6">
+                            <div className="flex items-center justify-between mb-4">
+                                <h2 className="text-lg font-bold text-neutral-900 flex items-center gap-2">
+                                    <Sparkles className="w-5 h-5 text-blue-500" /> My Exchange Posts
+                                </h2>
+                                <Link to="/exchange" className="text-xs font-semibold text-blue-600 hover:text-blue-700">View All →</Link>
+                            </div>
+                            <div className="space-y-2">
+                                {myPosts.map(post => (
+                                    <div key={post.id} className="flex items-center justify-between p-3 rounded-xl bg-neutral-50 border border-neutral-100">
+                                        <div className="flex items-center gap-2 min-w-0">
+                                            <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${post.type === 'offer' ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'}`}>
+                                                {post.type}
+                                            </span>
+                                            <span className="text-sm font-semibold text-neutral-800 truncate">{post.title}</span>
+                                        </div>
+                                        <div className="flex items-center gap-2 flex-shrink-0 ml-2">
+                                            <span className="text-[10px] text-neutral-400 bg-neutral-100 px-2 py-0.5 rounded">{post.category}</span>
+                                            <span className="text-[10px] text-neutral-300">{timeAgo(post.createdAt)}</span>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {/* Profile Info */}
@@ -186,12 +338,12 @@ const Dashboard = () => {
                             {/* Services Offered */}
                             <div className="bg-white rounded-2xl border border-neutral-100 p-6">
                                 <h2 className="text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
-                                    <span className="w-6 h-6 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-xs font-bold">+</span>
+                                    <span className="w-6 h-6 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 text-xs font-bold">+</span>
                                     Services I Can Offer
                                 </h2>
                                 <div className="flex flex-wrap gap-2 mb-3">
                                     {servicesOffered.map((s, i) => (
-                                        <span key={i} className="inline-flex items-center gap-1 px-3 py-1.5 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">
+                                        <span key={i} className="inline-flex items-center gap-1 px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-xs font-semibold">
                                             {s}
                                             {editing && <button onClick={() => removeService('offered', i)}><X className="w-3 h-3" /></button>}
                                         </span>
@@ -201,7 +353,7 @@ const Dashboard = () => {
                                 {editing && (
                                     <div className="flex gap-2">
                                         <input value={newOffered} onChange={e => setNewOffered(e.target.value)} onKeyDown={e => e.key === 'Enter' && (e.preventDefault(), addService('offered'))} className="flex-1 px-3 py-2 rounded-lg border border-neutral-200 text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="e.g., Carpentry, Teaching..." />
-                                        <button onClick={() => addService('offered')} className="p-2 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition-colors"><Plus className="w-4 h-4" /></button>
+                                        <button onClick={() => addService('offered')} className="p-2 bg-emerald-100 text-emerald-600 rounded-lg hover:bg-emerald-200 transition-colors"><Plus className="w-4 h-4" /></button>
                                     </div>
                                 )}
                             </div>
@@ -209,12 +361,12 @@ const Dashboard = () => {
                             {/* Services Needed */}
                             <div className="bg-white rounded-2xl border border-neutral-100 p-6">
                                 <h2 className="text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
-                                    <span className="w-6 h-6 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-xs font-bold">?</span>
+                                    <span className="w-6 h-6 bg-amber-100 rounded-lg flex items-center justify-center text-amber-600 text-xs font-bold">?</span>
                                     Services I Need
                                 </h2>
                                 <div className="flex flex-wrap gap-2 mb-3">
                                     {servicesNeeded.map((s, i) => (
-                                        <span key={i} className="inline-flex items-center gap-1 px-3 py-1.5 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">
+                                        <span key={i} className="inline-flex items-center gap-1 px-3 py-1.5 bg-amber-50 text-amber-700 rounded-full text-xs font-semibold">
                                             {s}
                                             {editing && <button onClick={() => removeService('needed', i)}><X className="w-3 h-3" /></button>}
                                         </span>
@@ -224,7 +376,7 @@ const Dashboard = () => {
                                 {editing && (
                                     <div className="flex gap-2">
                                         <input value={newNeeded} onChange={e => setNewNeeded(e.target.value)} onKeyDown={e => e.key === 'Enter' && (e.preventDefault(), addService('needed'))} className="flex-1 px-3 py-2 rounded-lg border border-neutral-200 text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="e.g., Medical, Dental..." />
-                                        <button onClick={() => addService('needed')} className="p-2 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition-colors"><Plus className="w-4 h-4" /></button>
+                                        <button onClick={() => addService('needed')} className="p-2 bg-amber-100 text-amber-600 rounded-lg hover:bg-amber-200 transition-colors"><Plus className="w-4 h-4" /></button>
                                     </div>
                                 )}
                             </div>
