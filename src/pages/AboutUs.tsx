@@ -71,32 +71,8 @@ const AboutUs = () => {
                             <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6 tracking-tight">
                                 Every Patient Is an <span className="text-blue-600">Ecosystem</span>
                             </h2>
-                            <p className="text-neutral-600 leading-relaxed mb-6">
-                                We view every patient as an ecosystem rather than a patient with a collection of isolated symptoms. To maintain a healthy internal ecosystem, we advocate for the Four Pillars of Living:
-                            </p>
-
-                            <div className="space-y-4 mb-8">
-                                {[
-                                    { title: 'Nutritional Variety', desc: 'Consume at least three colors of vegetables and fruits daily to ensure a full spectrum of nutrients.' },
-                                    { title: 'Active Lifestyle', desc: 'Incorporate daily movement, such as walking or structured exercise, into your routine.' },
-                                    { title: 'Hydration', desc: 'Maintain consistent fluid intake to support vital organ function.' },
-                                    { title: 'Stress Reduction', desc: 'Implement mindfulness or relaxation techniques to balance your nervous system and mental well-being.' },
-                                    { title: 'Sleep Hygiene', desc: 'Prioritize 7–8 hours of rest with a consistent wake-up time to regulate your body\'s natural rhythm.' },
-                                ].map((item, i) => (
-                                    <div key={i} className="flex items-start gap-3">
-                                        <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-                                            <span className="text-blue-600 font-bold text-xs">{i + 1}</span>
-                                        </div>
-                                        <div>
-                                            <h4 className="font-bold text-neutral-900 text-sm">{item.title}</h4>
-                                            <p className="text-neutral-500 text-sm leading-relaxed">{item.desc}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <p className="text-neutral-600 leading-relaxed italic border-l-4 border-blue-200 pl-4">
-                                This is our mission and the must-do list for every one of us, including our patients.
+                            <p className="text-neutral-600 leading-relaxed mb-8">
+                                We view every patient as a vibrant, interconnected ecosystem. We embrace a holistic approach to health by prioritizing four essential pillars: nutritional variety, daily movement, consistent hydration, and restorative sleep. We believe these fundamentals are critically important for every human being, serving as the foundation for lifelong vitality and a thriving community.
                             </p>
                         </div>
                         <div className="rounded-2xl overflow-hidden shadow-2xl">

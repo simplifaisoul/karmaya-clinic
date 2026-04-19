@@ -14,47 +14,47 @@ const Pillars = () => {
     const pillars = [
         {
             num: 1, title: 'Physical Health', subtitle: 'Foundational Care',
-            desc: 'Comprehensive general examinations and rapid-response emergency action for immediate healthcare needs.',
+            desc: 'Stay ahead with comprehensive check-ups and rapid-response care to keep your body strong and resilient.',
             icon: HeartPulse, color: 'text-slate-500', bg: 'bg-slate-50', border: 'border-slate-100'
         },
         {
-            num: 2, title: 'Preventive Lifestyle', subtitle: 'Daily Habits',
-            desc: 'Empowering patients with the "4 Critical Elements"—daily movement, 7–8 hours of consistent sleep, and proper hydration.',
+            num: 2, title: 'Preventive Lifestyle', subtitle: 'The Daily Essentials',
+            desc: 'Master the "Critical Elements" of consistent movement, 7–8 hours of sleep, and proper hydration.',
             icon: Activity, color: 'text-blue-500', bg: 'bg-blue-50', border: 'border-blue-100'
         },
         {
-            num: 3, title: 'Nutritional Wellness', subtitle: 'Fueling the System',
-            desc: 'Education on the "Power of Color," ensuring access and guidance for consuming three colors of fruits and vegetables daily.',
+            num: 3, title: 'Nutritional Wellness', subtitle: 'The Power of Color',
+            desc: 'Eat at least three colors of fruits and vegetables daily to fuel your body with essential nutrients and energy.',
             icon: Apple, color: 'text-green-500', bg: 'bg-green-50', border: 'border-green-100'
         },
         {
-            num: 4, title: 'Emotional & Mental Balance', subtitle: 'Stress Reduction',
-            desc: 'Mental wellness assessments and stress-management techniques to support a balanced nervous system.',
+            num: 4, title: 'Emotional & Mental Balance', subtitle: 'Nurture Your Mind',
+            desc: 'Keep your nervous system balanced through mental wellness check-ins and simple stress-management tools.',
             icon: BrainCircuit, color: 'text-indigo-500', bg: 'bg-indigo-50', border: 'border-indigo-100'
         },
         {
-            num: 5, title: 'Social Connection', subtitle: 'Community Engagement',
-            desc: 'Building belonging through weekly sports, youth programs, and collective community activities.',
+            num: 5, title: 'Social Connection', subtitle: 'Engage Your Community',
+            desc: 'Build a sense of belonging through local sports, youth programs, and shared community events.',
             icon: Users, color: 'text-blue-500', bg: 'bg-blue-50', border: 'border-blue-100'
         },
         {
-            num: 6, title: 'Environmental Health', subtitle: 'Sustainable Living',
-            desc: 'Community-led initiatives for recycling, greening spaces, and creating a healthier physical surroundings.',
+            num: 6, title: 'Environmental Health', subtitle: 'Thrive in Green Spaces',
+            desc: 'Join initiatives like recycling and community greening to create a healthier physical world for everyone.',
             icon: Leaf, color: 'text-emerald-500', bg: 'bg-emerald-50', border: 'border-emerald-100'
         },
         {
-            num: 7, title: 'Educational Growth', subtitle: 'Knowledge Sharing',
-            desc: 'Continuous learning and literacy programs led by qualified community volunteers and mentors.',
+            num: 7, title: 'Educational Growth', subtitle: 'Expand Your Horizons',
+            desc: 'Grow through literacy programs and mentorships that empower you with the knowledge to thrive.',
             icon: BookOpen, color: 'text-cyan-500', bg: 'bg-cyan-50', border: 'border-cyan-100'
         },
         {
-            num: 8, title: 'Financial Opportunity', subtitle: 'Economic Vitality',
-            desc: 'Providing income-generation tools and programs that create paths toward financial stability and independence.',
+            num: 8, title: 'Financial Opportunity', subtitle: 'Build Economic Vitality',
+            desc: 'Access programs and tools designed to create a clear path toward financial stability and independence.',
             icon: Coins, color: 'text-slate-500', bg: 'bg-slate-50', border: 'border-slate-100'
         },
         {
-            num: 9, title: 'Spiritual & Purposeful Connection', subtitle: 'Inner Harmony',
-            desc: 'Connecting members with local support groups and mindfulness practices to foster a sense of purpose and peace.',
+            num: 9, title: 'Spiritual & Purposeful Connection', subtitle: 'Align with Your Purpose',
+            desc: 'Find peace and inner harmony through local support groups and mindfulness practices.',
             icon: Sparkles, color: 'text-violet-500', bg: 'bg-violet-50', border: 'border-violet-100'
         },
     ];
@@ -67,7 +67,7 @@ const Pillars = () => {
                         Ecosystem Wellness
                     </span>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 tracking-tight">
-                        The 9 Pillars of Ecosystem Wellness
+                        The 9 Steps of Ecosystem Wellness
                     </h2>
                     <p className="text-base md:text-lg text-neutral-500 max-w-3xl mx-auto leading-relaxed">
                         Our holistic approach treats the patient as a complete ecosystem, addressing every facet of biological and societal health.
@@ -95,11 +95,11 @@ const Pillars = () => {
                     ))}
                 </div>
 
-                {/* Why the Ecosystem Model? */}
+                {/* The Power of the Ecosystem */}
                 <div className="mt-12 md:mt-16 bg-neutral-50 rounded-2xl p-8 md:p-12 border border-neutral-100 text-center">
-                    <h3 className="text-xl md:text-2xl font-bold text-neutral-900 mb-3">Why the Ecosystem Model?</h3>
+                    <h3 className="text-xl md:text-2xl font-bold text-neutral-900 mb-3">The Power of the Ecosystem</h3>
                     <p className="text-neutral-500 max-w-2xl mx-auto leading-relaxed">
-                        Traditional medicine often treats parts in isolation. By addressing these 9 Pillars, we ensure that the entire system—the individual and the community—thrives in harmony.
+                        True wellness is a collective effort. By following these 9 Steps, we go beyond the check-up to ensure individuals and communities thrive in perfect harmony.
                     </p>
                 </div>
             </div>
