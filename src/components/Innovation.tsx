@@ -5,7 +5,7 @@ const Innovation = () => {
         {
             icon: ArrowRightLeft,
             title: 'Service Credit Swap',
-            desc: 'Community members trade labor (e.g., carpentry) for clinic services. Hours are stored as "credit," eliminating the need for cash.',
+            desc: 'Community members trade labor (e.g., carpentry). Hours are stored as "credit," eliminating the need for cash.',
             color: 'text-blue-500',
             bg: 'bg-blue-50'
         },
@@ -39,7 +39,7 @@ const Innovation = () => {
                             The Sustainability Plan
                         </h2>
                         <p className="text-base md:text-lg text-neutral-500 mb-8 leading-relaxed">
-                            Moving beyond traditional donor-funding. We implement innovative economic models that empower communities to fund their own healthcare.
+                            Moving beyond traditional donor-funding. We implement innovative economic models that empower communities.
                         </p>
 
                         <div className="space-y-6">
