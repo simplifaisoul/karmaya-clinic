@@ -12,7 +12,7 @@ const Innovation = () => {
         {
             icon: Zap,
             title: 'Social Enterprise Technology',
-            desc: 'Partnering with a Canadian University to deploy Multi-Use Machines: plastic shredders, generators, and water pumps.',
+            desc: 'Deploying Multi-Use Machines: plastic shredders, generators, and water pumps to support community self-sufficiency.',
             color: 'text-indigo-500',
             bg: 'bg-indigo-50'
         },

@@ -16,7 +16,6 @@ const ownerBenefits = [
     'Full micro-clinic setup support and training',
     'Access to the Karmaya operational playbook',
     'Community-powered sustainability model',
-    'Partnership with Canadian university for technology',
     'Ongoing mentorship from the Karmaya team',
     'Social enterprise revenue streams built in',
 ];
