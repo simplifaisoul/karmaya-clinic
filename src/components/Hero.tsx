@@ -41,7 +41,7 @@ const Hero = () => {
                         Healing Communities,{' '}
                         <br className="hidden sm:block" />
                         <span className="text-white/90">
-                            One Pillar at a Time.
+                            One Step at a Time.
                         </span>
                     </motion.h1>
 
