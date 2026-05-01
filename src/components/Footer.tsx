@@ -123,9 +123,18 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/* Bottom bar */}
+            {/* Disclaimer */}
             <div className="border-t border-neutral-800">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-2">
+                    <p className="text-neutral-500 text-[11px] text-center leading-relaxed italic">
+                        For educational purposes only; not a substitute for professional medical advice, diagnosis, or treatment.
+                    </p>
+                </div>
+            </div>
+
+            {/* Bottom bar */}
+            <div className="border-t border-neutral-800/50">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
                     <p className="text-neutral-500 text-xs">
                         &copy; {new Date().getFullYear()} Karmaya Clinics. All rights reserved.
                     </p>
