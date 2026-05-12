@@ -76,6 +76,14 @@ const teamMembers: TeamMember[] = [
         initials: 'AE',
         color: 'from-indigo-500 to-blue-500',
     },
+    {
+        name: 'Lynn',
+        role: 'Daycare & Healthcare Advocate',
+        bio: 'Specialist in daycare, early childhood, and language training. Skilled healthcare advocate with Red Cross life-saving certification.',
+        image: '/images/team/lynn.jpg',
+        initials: 'LY',
+        color: 'from-rose-500 to-pink-500',
+    },
 ];
 
 const TeamPage = () => {
