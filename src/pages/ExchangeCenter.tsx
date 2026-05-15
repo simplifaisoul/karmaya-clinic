@@ -95,48 +95,51 @@ const ExchangeCenter = () => {
     return (
         <div className="min-h-screen bg-neutral-50">
             {/* Hero */}
-            <div className="relative bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500 pt-28 pb-24 md:pt-36 md:pb-32 overflow-hidden">
-                <div className="absolute inset-0 z-[1] opacity-[0.04] pointer-events-none bg-[linear-gradient(rgba(255,255,255,1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,1)_1px,transparent_1px)] bg-[size:80px_80px]" />
-                <div className="absolute -bottom-[20%] -left-[15%] w-[50vw] h-[50vw] bg-white/5 rounded-full blur-[100px]" />
-                <div className="absolute top-[10%] right-[5%] w-[30vw] h-[30vw] bg-white/5 rounded-full blur-[80px]" />
+            <div className="relative bg-slate-900 pt-28 pb-24 md:pt-36 md:pb-32 overflow-hidden">
+                {/* Modern Abstract Background */}
+                <div className="absolute inset-0 z-[1]">
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:64px_64px]" />
+                    <div className="absolute top-0 right-0 -mr-40 -mt-40 w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[120px] pointer-events-none" />
+                    <div className="absolute bottom-0 left-0 -ml-40 -mb-40 w-[600px] h-[600px] bg-cyan-500/20 rounded-full blur-[120px] pointer-events-none" />
+                </div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <Link to="/" className="inline-flex items-center text-white/70 hover:text-white text-sm font-medium transition-colors mb-8">
-                        <ArrowLeft className="w-4 h-4 mr-1.5" /> Back to Home
+                    <Link to="/" className="inline-flex items-center text-slate-400 hover:text-white text-sm font-semibold transition-colors mb-8 group">
+                        <ArrowLeft className="w-4 h-4 mr-1.5 group-hover:-translate-x-1 transition-transform" /> Back to Home
                     </Link>
                     <div className="max-w-3xl">
                         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-                            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/15 border border-white/20 text-white font-medium text-xs tracking-wide mb-6">
+                            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-cyan-400 font-bold text-xs tracking-wider uppercase mb-6 shadow-lg shadow-cyan-500/10">
                                 <ArrowRightLeft className="w-3 h-3" /> Community Exchange Network
                             </span>
                             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-[1.1]">
-                                Exchange Your <span className="text-blue-200">Skills</span>,<br />
-                                Not Your <span className="text-white/50">Wallet</span>
+                                Exchange Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Skills</span>,<br />
+                                Not Your <span className="text-slate-500">Wallet</span>
                             </h1>
                         </motion.div>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1, duration: 0.6 }}
-                            className="text-lg md:text-xl text-blue-100 max-w-xl leading-relaxed mb-8"
+                            className="text-lg md:text-xl text-slate-300 max-w-xl leading-relaxed mb-10"
                         >
                             Driven by the philosophy of "People helping people," we are a holistic first-stop clinic for underserved communities. We focus on preventives, and we provide free healthcare support and advocacy, designed specifically for those who need it most, starting in the Philippines and beyond.
                         </motion.p>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2, duration: 0.6 }}
-                            className="flex flex-wrap gap-3"
+                            className="flex flex-wrap gap-4"
                         >
                             {user ? (
                                 <>
-                                    <button onClick={() => setShowPostForm(true)} className="px-7 py-3.5 bg-white text-blue-600 rounded-full font-bold text-sm shadow-lg hover:bg-blue-50 transition-colors flex items-center gap-2">
+                                    <button onClick={() => setShowPostForm(true)} className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-2xl font-bold text-sm shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all flex items-center gap-2">
                                         <Plus className="w-4 h-4" /> Post a Service
                                     </button>
-                                    <button onClick={() => setShowMessages(true)} className="px-7 py-3.5 bg-white/15 text-white border border-white/25 rounded-full font-semibold text-sm hover:bg-white/25 transition-colors backdrop-blur-sm flex items-center gap-2">
+                                    <button onClick={() => setShowMessages(true)} className="px-8 py-4 bg-slate-800 text-white border border-slate-700 rounded-2xl font-semibold text-sm hover:bg-slate-700 hover:border-slate-600 hover:-translate-y-0.5 transition-all flex items-center gap-2">
                                         <MessageCircle className="w-4 h-4" /> My Messages
                                     </button>
                                 </>
                             ) : (
-                                <Link to="/signin" className="px-7 py-3.5 bg-white text-blue-600 rounded-full font-bold text-sm shadow-lg hover:bg-blue-50 transition-colors flex items-center gap-2">
+                                <Link to="/signin" className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-2xl font-bold text-sm shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center gap-2">
                                     <UserPlus className="w-4 h-4" /> Sign In to Post & Message
                                 </Link>
                             )}
