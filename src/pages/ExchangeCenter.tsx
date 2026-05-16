@@ -149,66 +149,67 @@ const ExchangeCenter = () => {
 
                 <div className="absolute bottom-0 left-0 right-0">
                     <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full" preserveAspectRatio="none">
-                        <path d="M0 60V20C360 50 720 0 1080 30C1260 45 1350 35 1440 40V60H0Z" fill="#FAFAFA" />
+                        <path d="M0 60V20C360 50 720 0 1080 30C1260 45 1350 35 1440 40V60H0Z" fill="#F8FAFC" />
                     </svg>
                 </div>
             </div>
 
             {/* How It Works */}
-            <section className="py-16 md:py-20 bg-white border-b border-neutral-100">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 font-semibold text-xs tracking-wider uppercase mb-4">
-                            <ArrowRightLeft className="w-3 h-3" /> How It Works
+            <section className="py-20 md:py-28 bg-slate-50 border-b border-slate-200 relative overflow-hidden">
+                <div className="absolute inset-0 z-[1] bg-[linear-gradient(rgba(15,23,42,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.02)_1px,transparent_1px)] bg-[size:64px_64px]" />
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="text-center mb-16">
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100/50 text-blue-700 font-bold text-xs tracking-wider uppercase mb-6 border border-blue-200/50">
+                            <ArrowRightLeft className="w-4 h-4" /> How It Works
                         </span>
-                        <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 tracking-tight">Exchange in 3 Simple Steps</h2>
+                        <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">Exchange in 3 Simple Steps</h2>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
-                            { step: '01', title: 'Post Your Service', desc: 'Share what you can offer or what you need. Add photos and details to help others find you.', icon: UserPlus, color: 'from-blue-500 to-indigo-500' },
-                            { step: '02', title: 'Browse & Connect', desc: 'Find services in your community. Use search, filters, and categories to find the right match.', icon: Search, color: 'from-blue-500 to-cyan-500' },
-                            { step: '03', title: 'Message Directly', desc: 'Open a private conversation with the poster. Arrange your exchange through secure, two-way messaging.', icon: MessageCircle, color: 'from-slate-500 to-slate-500' }
+                            { step: '01', title: 'Post Your Service', desc: 'Share what you can offer or what you need. Add photos and details to help others find you easily.', icon: UserPlus, color: 'from-blue-600 to-indigo-600' },
+                            { step: '02', title: 'Browse & Connect', desc: 'Find services in your community. Use our advanced search, filters, and categories to find the right match.', icon: Search, color: 'from-blue-500 to-cyan-500' },
+                            { step: '03', title: 'Message Directly', desc: 'Open a private conversation with the poster. Arrange your exchange through secure, real-time messaging.', icon: MessageCircle, color: 'from-slate-700 to-slate-900' }
                         ].map((item, i) => (
                             <motion.div
                                 key={i} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-                                className="relative bg-neutral-50 rounded-2xl p-8 border border-neutral-100 text-center group hover:shadow-lg transition-shadow"
+                                className="relative bg-white rounded-[2rem] p-10 border border-slate-100 text-center group shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-500"
                             >
-                                <div className="absolute top-4 right-4 text-5xl font-black text-neutral-100 group-hover:text-neutral-200 transition-colors">{item.step}</div>
-                                <div className={`w-14 h-14 mx-auto bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center mb-5 shadow-lg`}>
-                                    <item.icon className="w-7 h-7 text-white" />
+                                <div className="absolute top-6 right-8 text-6xl font-black text-slate-50 group-hover:text-blue-50 transition-colors duration-500">{item.step}</div>
+                                <div className={`w-16 h-16 mx-auto bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-blue-500/10 group-hover:-translate-y-1 transition-transform duration-500`}>
+                                    <item.icon className="w-8 h-8 text-white" />
                                 </div>
-                                <h3 className="text-xl font-bold text-neutral-900 mb-3">{item.title}</h3>
-                                <p className="text-neutral-500 text-sm leading-relaxed">{item.desc}</p>
+                                <h3 className="text-2xl font-bold text-slate-900 mb-4">{item.title}</h3>
+                                <p className="text-slate-500 leading-relaxed">{item.desc}</p>
                             </motion.div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Categories (scrollable on mobile) */}
-            <section className="py-8 md:py-12 bg-white">
+            {/* Categories */}
+            <section className="py-12 bg-white border-b border-slate-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-xl md:text-2xl font-bold text-neutral-900 mb-4">Service Categories</h2>
-                    <div className="flex gap-2 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0 md:flex-wrap md:overflow-visible scrollbar-hide">
+                    <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-6">Explore Categories</h2>
+                    <div className="flex gap-3 overflow-x-auto pb-4 -mx-4 px-4 md:mx-0 md:px-0 md:flex-wrap md:overflow-visible scrollbar-hide">
                         <button
                             onClick={() => setFilterCategory('all')}
-                            className={`px-4 py-3 rounded-xl border text-sm font-semibold transition-all whitespace-nowrap flex-shrink-0 ${filterCategory === 'all'
-                                ? 'bg-blue-600 text-white border-blue-600 shadow-sm'
-                                : 'bg-white border-neutral-200 text-neutral-600 hover:border-neutral-300'
+                            className={`px-6 py-3.5 rounded-2xl border text-sm font-bold transition-all whitespace-nowrap flex-shrink-0 flex items-center gap-2 ${filterCategory === 'all'
+                                ? 'bg-slate-900 text-white border-slate-900 shadow-md shadow-slate-900/10'
+                                : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 hover:border-slate-300'
                                 }`}
                         >
-                            All
+                            All Services
                         </button>
                         {categories.map((cat) => (
                             <button
                                 key={cat.name}
                                 onClick={() => setFilterCategory(filterCategory === cat.name ? 'all' : cat.name)}
-                                className={`flex items-center gap-2 px-4 py-3 rounded-xl border text-sm font-semibold transition-all whitespace-nowrap flex-shrink-0 ${filterCategory === cat.name
-                                    ? `${cat.bg} ${cat.border} ${cat.color} shadow-sm`
-                                    : 'bg-white border-neutral-200 text-neutral-600 hover:border-neutral-300'
+                                className={`flex items-center gap-2.5 px-6 py-3.5 rounded-2xl border text-sm font-bold transition-all whitespace-nowrap flex-shrink-0 ${filterCategory === cat.name
+                                    ? `${cat.bg} ${cat.border} ${cat.color} shadow-sm ring-1 ring-inset ring-current`
+                                    : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 hover:border-slate-300'
                                     }`}
                             >
-                                <cat.icon className={`w-4 h-4 ${filterCategory === cat.name ? cat.color : 'text-neutral-400'}`} />
+                                <cat.icon className={`w-4 h-4 ${filterCategory === cat.name ? cat.color : 'text-slate-400'}`} />
                                 {cat.name}
                             </button>
                         ))}
@@ -216,18 +217,18 @@ const ExchangeCenter = () => {
                 </div>
             </section>
 
-            {/* Search & Filter Bar */}
-            <section className="py-3 md:py-6 bg-neutral-50 sticky top-16 z-30 border-b border-neutral-200">
+            {/* Sticky Search & Filter Bar */}
+            <section className="py-4 bg-white/80 backdrop-blur-xl sticky top-16 z-30 border-b border-slate-200 shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center">
-                        <div className="relative flex-1 w-full">
-                            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
+                    <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
+                        <div className="relative flex-1 w-full group">
+                            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-blue-600 transition-colors" />
                             <input
                                 type="text"
                                 value={searchTerm}
                                 onChange={e => setSearchTerm(e.target.value)}
-                                placeholder="Search services..."
-                                className="w-full pl-10 pr-4 py-2.5 md:py-3 rounded-xl border border-neutral-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-sm bg-white transition-all"
+                                placeholder="Search by keyword..."
+                                className="w-full pl-12 pr-5 py-3.5 rounded-2xl border-2 border-slate-100 bg-slate-50 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none text-sm text-slate-900 transition-all font-medium placeholder:font-normal"
                             />
                         </div>
                         <div className="flex gap-2">
@@ -235,9 +236,9 @@ const ExchangeCenter = () => {
                                 <button
                                     key={t}
                                     onClick={() => setFilterType(t)}
-                                    className={`px-3 md:px-4 py-2 md:py-2.5 rounded-lg text-xs md:text-sm font-semibold transition-colors flex-1 sm:flex-none ${filterType === t
-                                        ? 'bg-blue-600 text-white shadow-sm'
-                                        : 'bg-white text-neutral-600 border border-neutral-200 hover:bg-neutral-100'
+                                    className={`px-5 py-3 rounded-2xl text-sm font-bold transition-all flex-1 sm:flex-none border-2 ${filterType === t
+                                        ? 'bg-blue-600 text-white border-blue-600 shadow-md shadow-blue-600/20'
+                                        : 'bg-white text-slate-600 border-slate-100 hover:bg-slate-50 hover:border-slate-200'
                                         }`}
                                 >
                                     {t === 'all' ? 'All' : t === 'offer' ? '🤲 Offers' : '🔍 Requests'}
@@ -247,7 +248,7 @@ const ExchangeCenter = () => {
                         {user && (
                             <button
                                 onClick={() => setShowPostForm(true)}
-                                className="px-5 py-2 md:py-2.5 bg-blue-600 text-white rounded-lg font-semibold text-sm hover:bg-blue-700 transition-colors flex items-center justify-center gap-1.5 shadow-sm whitespace-nowrap"
+                                className="px-6 py-3 bg-slate-900 text-white rounded-2xl font-bold text-sm hover:bg-slate-800 transition-all shadow-md shadow-slate-900/10 flex items-center justify-center gap-2 whitespace-nowrap"
                             >
                                 <Plus className="w-4 h-4" /> Post
                             </button>
